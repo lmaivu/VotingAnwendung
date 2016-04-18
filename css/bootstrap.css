@@ -1,0 +1,110 @@
+body {
+    font-family: Georgia, serif;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+header.row {
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.content {
+    height: 100%;
+    margin: 0;
+    padding-top: 15px;
+    text-align: center;
+    width: 100%;
+    background-color:#bfaa9a;
+    background-size: 100% auto;
+}
+
+.navbar{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-family:'Trebuchet MS', Helvetica, sans-serif;
+    /*letter-spacing: 3px;*/
+}
+.navbar-brand {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 30px;
+}
+.navbar-nav li a:hover {
+    color: cornflowerblue !important;
+}
+
+#main{
+
+    background-clip: padding-box;
+    /*background-image: url('http://erhvn.mn/wp-content/uploads/2016/01/photo-1450101499163-c8848c66ca85.jpg'); */
+    background-image: url('https://photos-1.dropbox.com/t/2/AAC6L7qO6TCO1wPTgpov9lJlYe7EdcOqXyOMjWzjm9mWnw/12/144797600/jpeg/32x32/1/_/1/2/photo-1437419764061-2473afe69fc2.jpeg/EKao6W4Y8gcgASACKAE/PdHSmnpDP27R22MA5UfaRAWj0vJsPc0DREn7xCDdF3s?size=1024x768&size_mode=3');
+    background-position: center; /*zentriert*/
+    background-attachment: fixed;
+    /*browserspezifische Anpassung folgen*/
+    -o-background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -khtml-background-size: 100% auto;
+    background-repeat: no-repeat;
+    font-size: 32px;
+    padding: 300px;
+    margin: 0;
+    color: #ffffff;
+}
+
+#kopfleiste {
+
+}
+
+
+#kopfleiste.h1 {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size:72px;
+    color: honeydew;
+    float: left;
+}
+/*
+#inhalt.p {
+    font-size: 36px;
+} bisher nicht definiert*/
+
+/* Login Formular */
+
+.form-group {
+    margin: 2px;
+    padding: 3px;
+    width: 100%;
+    vertical-align: middle;
+}
+.Absolute-Center.is-Responsive {
+    width: 50%;
+    height: 50%;
+    min-width: 200px;
+    max-width: 400px;
+    padding: 40px;
+} /*verändern?*/
+
+
+/*footer*/
+.row {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-family:'Trebuchet MS', Helvetica, sans-serif;
+}
+
+

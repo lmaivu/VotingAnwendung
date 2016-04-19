@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="PublishConfigData" autoUpload="Always" serverName="MARS">
     <serverData>
       <paths name="MARS">
         <serverdata>
           <mappings>
             <mapping deploy="/home/ln018/public_html" local="$PROJECT_DIR$" web="/" />
+=======
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="MARS SERVER">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/lb073/public_html" local="$PROJECT_DIR$" web="/" />
+>>>>>>> origin/master
           </mappings>
         </serverdata>
       </paths>

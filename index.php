@@ -21,9 +21,15 @@
     -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <!-- JQuery einbinden -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>ï»¿
 </head>
 
 <body>
+
+<!-- Mai's NavBar
+
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -43,9 +49,54 @@
     </div>
 </nav>
 
+-->
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    </div>
+
+    <!-- Logo-->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a href="#" class="navbar-brand">I-will-Survey</a>
+    </div>
+
+
+    <!-- MenÃ¼-Items -->
+    <div class="collapse navbar-collapse" id="mainNavBar">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Startseite</a></li>
+            <li> <a href="#">Kontakt</a></li>
+            <li> <a href="#">Impressum</a></li>
+
+            <!-- Dropdown-MenÃ¼ -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hallooo <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li> <a href="#">Mai</a></li>
+                    <li> <a href="#">Lena</a></li>
+                    <li> <a href="#">Luke</a></li>
+
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li> <a href="#">Logout</a></li>
+        </ul>
+
+    </div>
+</nav>
+
 
     <!-- Inhalt-->
-    <div id="main">  <!-- div main öffnen-->
+    <div id="main">  <!-- div main ï¿½ffnen-->
 
         <div id="kopfleiste">
             <!-- 2 -->
@@ -53,13 +104,13 @@
             <h3> Kurzes Slogan mit Logo</h3>
 
         </div>
-    </div> <!--div main schließen -->
+    </div> <!--div main schlieï¿½en -->
 
 <div class="content">
 
         <div class="login">
         <form class="form-horizontal" role="form" action="Mapper/login_do.php" method="post">
-            <!-- auf der Seite login_do werden die Userdaten überprüft-->
+            <!-- auf der Seite login_do werden die Userdaten ï¿½berprï¿½ft-->
 
 
             <div class="form-group input-group">

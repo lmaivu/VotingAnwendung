@@ -21,8 +21,8 @@
 
 -->
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<nav class="navbar navbar-default">
+    <div class="container">
     </div>
 
     <!-- Logo-->
@@ -42,8 +42,7 @@
     <div class="collapse navbar-collapse" id="mainNavBar">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Startseite</a></li>
-            <li> <a href="#">Kontakt</a></li>
-            <li> <a href="#">Impressum</a></li>
+            <li> <a href="#">Irgendwas</a></li>
 
             <!-- Dropdown-Menü -->
             <li class="dropdown">

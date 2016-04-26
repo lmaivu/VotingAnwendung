@@ -13,8 +13,8 @@ class Manager
                 $this->pdo = new PDO(
                     UserData::$dsn,
                     UserData::$dbuser,
-                    UserData::$dbpass
-                ); //DB-Verbindung wird durch neues PDO Objekt aufgebaut
+                    UserData::$dbpass);
+                //DB-Verbindung wird durch neues PDO Objekt aufgebaut
             }
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");

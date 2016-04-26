@@ -1,10 +1,9 @@
-
 <?php
 
 require_once("Manager.php");
 require_once("User.php");
 
-class UserManager extends Manager
+class DozentManager extends Manager
 {
 protected $pdo;
 
@@ -64,7 +63,7 @@ private function update(Dozent $dozent)
 {
 try {
 $stmt = $this->pdo->prepare('
-UPDATE dozent
+UPDATE Dozent
 SET vorname = :vorname,
 nachname = :nachname,
 hash = :hash

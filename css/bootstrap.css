@@ -16,7 +16,7 @@ header nav {
     justify-content: flex-end;
 }
 
-
+/* nicht mehr verfügbar
 .content {
     height: 100%;
     margin: 0;
@@ -25,7 +25,7 @@ header nav {
     width: 100%;
     background-color:#bfaa9a;
     background-size: 100% auto;
-}
+} */
 
 .navbar{
     padding-top: 15px;
@@ -45,7 +45,7 @@ header nav {
     color: cornflowerblue !important;
 }
 
-#main{
+.content{
 
     background-clip: padding-box;
     /*background-image: url('http://erhvn.mn/wp-content/uploads/2016/01/photo-1450101499163-c8848c66ca85.jpg'); */
@@ -57,8 +57,9 @@ header nav {
     -webkit-background-size: 100% auto;
     -khtml-background-size: 100% auto;
     background-repeat: no-repeat;
+    font-family: "Amatic SC", Georgia, sans-serif;
     font-size: 32px;
-    padding: 300px;
+    padding: 250px;
     margin: 0;
     color: #ffffff;
 }
@@ -95,6 +96,16 @@ header nav {
     padding: 40px;
 } /*verändern?*/
 
+.info {
+    position: relative;
+    margin:auto;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: black;
+    bottom: 0;
+
+}
 
 /*footer*/
 .row {
@@ -107,4 +118,11 @@ header nav {
     font-family:'Trebuchet MS', Helvetica, sans-serif;
 }
 
-
+/* Box für Loginfehler Anzeigen */
+.LoginFehler {
+    margin:0;
+    padding: 5px;
+    background-color: black;
+    color: antiquewhite;
+    font-size: 18px;
+}

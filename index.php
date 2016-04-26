@@ -64,7 +64,7 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a href="#" class="navbar-brand">I-will-Survey</a>
+        <a href="#" class="navbar-brand"> I-will-Survey</a>
     </div>
 
 

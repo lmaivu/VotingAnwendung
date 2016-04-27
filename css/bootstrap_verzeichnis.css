@@ -1,9 +1,17 @@
-body {
-    font-family: Georgia, serif;
-    height: 100%;
-    margin: 0;
-    text-align: center;
-    width: 100%;
+.btn-primary {
+    background: #bfaa9a;
+    color: #ffffff;
 }
 
-h1
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #504A4C;
+}
+
+.btn-info {
+    background: #778899;
+    color: #ffffff;
+}
+
+.btn-info:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #504A4C;
+}

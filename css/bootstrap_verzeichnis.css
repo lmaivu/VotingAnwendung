@@ -15,3 +15,7 @@
 .btn-info:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
     background: #504A4C;
 }
+
+tr.Spalte {
+    tdwidth: 90px;
+}

@@ -19,7 +19,7 @@ include "../inc/footer.php";
 
      <div class="table-responisve">
         <table class="table table-hover table-condensed">
-            <tr>
+            <tr class="Spalte">
                 <th>VorlesungsID</th>
                 <th>Vorlesung</th>
                 <th>Optionen</th>

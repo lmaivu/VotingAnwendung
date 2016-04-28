@@ -16,15 +16,17 @@ include "../inc/footer.php";
 
 <div class="body">
      <h1>Vorlesungsverzeichnis</h1>
+    <div class=".col-md-12 .col-md-offset-4">
 
-     <div class="table-responisve">
         <table class="table table-hover table-condensed">
-            <tr class="Spalte">
+
+            <tr class="row">
                 <th>VorlesungsID</th>
                 <th>Vorlesung</th>
                 <th>Optionen</th>
             </tr>
-            <tr>
+
+            <tr class="row">
                 <td>1</td>
                 <td>Crossmedia-Marketing</td>
                 <td>
@@ -32,10 +34,18 @@ include "../inc/footer.php";
                     <a type="button" class="btn btn-primary" href="#" role="button">bearbeiten</a>
                 </td>
             </tr>
-            <tr>
+
+            <tr class="row">
                 <td>2</td>
                 <td>Web-Engineering</td>
+                <td>
+                    <a type="button" class="btn btn-info" href="#" role="button">anzeigen</a>
+                    <a type="button" class="btn btn-primary" href="#" role="button">bearbeiten</a>
+                </td>
+
             </tr>
+
         </table>
-     </div>
+
+    </div>
 </div>

@@ -16,6 +16,23 @@
     background: #504A4C;
 }
 
-tr.Spalte {
-    tdwidth: 90px;
+.table-responsive {
+    height: 300px;
+    width: 600px;
+}
+
+.main {
+    font-family: 'Tahoma', serif;
+    font-size: medium;
+    text-align: left;
+}
+
+.table-responsive {
+
+}
+
+.row {
+    font-family: 'Tahoma', serif;
+    font-size: medium;
+    text-align: left;
 }

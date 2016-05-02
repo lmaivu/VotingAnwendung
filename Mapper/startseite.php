@@ -1,7 +1,7 @@
-<?php include_once("../inc/session_check.php");
-/*include("Dozent.php");
-include ("Manager.php");
-include ("DozentManager.php"); */
+<?php //include_once("../inc/session_check.php");
+/*require ("Manager.php");
+require_once("Dozent.php");
+require ("DozentManager.php");*/
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +11,26 @@ include ("DozentManager.php"); */
 include("../inc/head.php");
 include("../inc/navbar.php");
 include("../inc/footer.php");
-$dozent=$_SESSION ['dozent'];
-print_r ($_SESSION['dozent']);
+session_start();
+//$pdo = new PDO('mysql:host=localhost;dbname=u-lv018', 'root', '');
+
+if(isset($_POST['login'], $_POST['password'])) {
+
+    $statement = $pdo->prepare("SELECT * FROM Dozent WHERE login = :login");
+    $result = $statement->execute(array('login' => $login));
+    $dozent = $statement->fetch();
+}
+//Überprüfung des Passworts
+if ($dozent !== false && password_verify($password, $dozent['password'])) {
+    $_SESSION['nachname'] = $dozent['nachname'];
+    header('Location: ../Mapper/startseite.php');
+} else {
+    $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+}
+$nachname = $_SESSION['nachname'];
+$_SESSION['userid'] = $dozent['id'];
+
+echo "Hallo User: ".$nachname;
 ?>
 
 
@@ -23,7 +41,7 @@ print_r ($_SESSION['dozent']);
 <div id="main"> <!--div main-->
 
   <div id="kopfleiste">
-       Hallo <?php print_r ($_SESSION ["dozent"]) ?> - Willkommen zu I will survey
+       Hallo <?php echo ($_SESSION ["nachname"]) ?> - Willkommen zu I will survey
   <div>
 
    <div class="button">
@@ -36,8 +54,5 @@ print_r ($_SESSION['dozent']);
    </div>
 
 </div> <!--div main-->
-
-
-
 
 </html>

@@ -27,11 +27,19 @@ include "../inc/footer.php";
 <!-- Datenbankverbindung herstellen & Ausgeben -->
 <?php
 
-include "../Mapper/Userdata.php";
+require_once "../Mapper/Manager.php";
+require_once "../Mapper/Userdata.php";
 include "../Mapper/UserManager.php";
+
+if(!$db)
+{
+    exit("Verbindungsfehler: ".mysqli_connect_error());
+}
 
 $sqlabfrage = "SELECT * FROM Vorlesung";
 $ergebnis= $db->query($sqlabfrage);
+
+?>
 
 $anzahl_datensaetze = mysqli_num_rows($ergebnis);
 $anzahl_felder = mysqli_num_fields($ergebnis);
@@ -54,14 +62,14 @@ $anzahl_felder = mysqli_num_fields($ergebnis);
             ?>
             <tr class="row">
                 <td>
-                    <php
+                    <?php
                         echo $row->Vorlesung_ID;
                     ?>
                 </td>
                 <td>
-                    <php
+                    <?php
                         echo $row->Name;
-                        ?>
+                    ?>
                 </td>
                 <td>
                     <a type="button" class="btn btn-info" href="#" role="button">anzeigen</a>
@@ -82,6 +90,8 @@ $anzahl_felder = mysqli_num_fields($ergebnis);
             </tr>
 
         </table>
-
+          <?php
+            }
+          ?>
     </div>
 </div>

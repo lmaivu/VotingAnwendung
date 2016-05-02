@@ -12,12 +12,15 @@ include "../inc/footer.php";
 
 ?>
 
+<!-- Einbinden des Stylesheets -->
 <link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
 
+<!-- Erstellen der Klasse "body"-->
 <div class="body">
      <h1>Vorlesungsverzeichnis</h1>
     <div class=".col-md-12 .col-md-offset-4">
 
+        <!-- Erstellen der Tabelle -->
         <table class="table table-hover table-condensed">
 
             <tr class="row">

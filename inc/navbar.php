@@ -24,9 +24,9 @@
     <!-- Menü-Items -->
     <div class="collapse navbar-collapse" id="mainNavBar">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/Mapper/startseite.php">Startseite</a></li>
-            <li> <a href="/Verzeichnis/Votingverzeichnis.php">Votings</a></li>
-            <li> <a href="/Verzeichnis/Vorlesungsverzeichnis.php">Vorlesungen</a></li>
+            <li class="active"><a href="../Mapper/startseite.php">Startseite</a></li>
+            <li> <a href="../Verzeichnis/Votingverzeichnis.php">Votings</a></li>
+            <li> <a href="../Verzeichnis/Vorlesungsverzeichnis.php">Vorlesungen</a></li>
 
             <!-- Dropdown-Menü
             <li class="dropdown">

@@ -54,12 +54,12 @@ $anzahl_felder = mysqli_num_fields($ergebnis);
             ?>
             <tr class="row">
                 <td>
-                    <php
+                    <?php
                         echo $row->Vorlesung_ID;
                     ?>
                 </td>
                 <td>
-                    <php
+                    <?php
                         echo $row->Name;
                         ?>
                 </td>

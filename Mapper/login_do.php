@@ -3,8 +3,8 @@
 
 <?php
 require_once("Manager.php");
-require_once("UserManager.php");
-require_once("User.php");
+require_once("DozentManager.php");
+require_once("Dozent.php");
 
 
 $login = htmlspecialchars($_POST["login"], ENT_QUOTES, "UTF-8");

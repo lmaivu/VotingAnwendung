@@ -29,7 +29,7 @@ include "../inc/footer.php";
 
 require_once "../Mapper/Manager.php";
 require_once "../Mapper/Userdata.php";
-include "../Mapper/UserManager.php";
+include "../Mapper/DozentManager.php";
 
 if(!$db)
 {

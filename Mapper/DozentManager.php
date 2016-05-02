@@ -20,23 +20,43 @@ parent::__destruct();
 public function findByLogin($login, $password)
 {
 try {
-$stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login');
+$stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login AND password= :password');
 $stmt->bindParam(':login', $login);
+$stmt->bindParam(':password', $password);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_CLASS, 'Dozent');
 $dozent = $stmt->fetch();
-/*
-if (password_verify($password, $dozent->hash)) {
-return $dozent;
-} else {
-return null;
-}*/
+
+    return $dozent;
+// if (password_verify($password, $dozent->hash)) {
+//return $dozent;
+//} else {
+//return null;
+//}
 } catch (PDOException $e) {
 echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
 die();
 }
 return null;
 }
+
+ public function findName($vorname, $nachname)
+    {
+        try {
+            $stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login AND password= :password');
+            $stmt->bindParam(':vorname', $vorname);
+            $stmt->bindParam(':nachname', $nachname);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Dozent');
+            $dozent = $stmt->fetch();
+
+            return $dozent;}
+        catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        return null;
+    }
 
 public function create(Dozent $dozent)
 {
@@ -50,7 +70,7 @@ VALUES
 $stmt->bindParam(':login', $dozent->login);
 $stmt->bindParam(':vorname', $dozent->vorname);
 $stmt->bindParam(':nachname', $dozent->nachname);
-$stmt->bindParam(':hash', $dozent->password);
+$stmt->bindParam(':password', $dozent->password);
 $stmt->execute();
 } catch (PDOException $e) {
 echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
@@ -66,7 +86,7 @@ $stmt = $this->pdo->prepare('
 UPDATE Dozent
 SET vorname = :vorname,
 nachname = :nachname,
-hash = :hash
+password = :password
 WHERE login = :login
 ');
 $stmt->bindParam(':vorname', $dozent->vorname);

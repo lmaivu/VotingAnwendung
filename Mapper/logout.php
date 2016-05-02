@@ -1,7 +1,13 @@
+<!Doctype html>
+<html>
+
 <?php
-/**
- * Created by PhpStorm.
- * User: L.Mai
- * Date: 03.04.2016
- * Time: 17:03
- */
+session_start();
+unset($_SESSION["username"]);
+unset($_SESSION["password"]);
+
+echo "Sie haben sich erfolgreich ausgeloggt.";
+?>
+<a href="../index.php">Zur&uumlck zum Login</a>;
+
+</html>

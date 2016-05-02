@@ -23,12 +23,12 @@ class UserData
 class Vorlesung
 {
     public $Vorlesung_ID;
-    public $Name;
+    public $Vorlesung_name;
 
     function __construct($data=null) { //konstruktor, �berpr�ft ob Daten bereits bestehen?
         if (is_array($data)) { //�berpr�fen ob es sich um einen array handelt
             $this->Vorlesung_ID = $data['Vorlesung_ID'];
-            $this->Name = $data ['Name'];
+            $this->Vorlesung_name = $data ['Vorlesung_name'];
         }
         //return $this->$data;
     }
@@ -50,7 +50,7 @@ class Vorlesungsmanager extends Manager
         parent::__destruct();
     }
 
-    public function findByLogin($login, $password)
+    public function fetchAll($Vorlesung_ID, $Vorlesung_name)
     {
         try {
             $stmt = $this->pdo->prepare('SELECT * FROM Vorlesung');
@@ -60,7 +60,7 @@ class Vorlesungsmanager extends Manager
 
             while ($row = mysqli_fetch_object($vorlesung)) {
                 echo $row->Vorlesung_ID;
-                echo $row->Name;
+                echo $row->Vorlesung_name;
             }
         }
         catch (PDOException $e) {
@@ -74,12 +74,12 @@ class Vorlesungsmanager extends Manager
         try {
             $stmt = $this->pdo->prepare('
 INSERT INTO Vorlesung
-(Vorlesung_ID, Name)
+(Vorlesung_ID, Vorlesung_name)
 VALUES
-(:Vorlesung_ID, :Name)
+(:Vorlesung_ID, :Vorlesung_name)
 ');
             $stmt->bindParam(':Vorlesung_ID', $vorlesung->Vorlesung_ID);
-            $stmt->bindParam(':Name', $vorlesung->Name);
+            $stmt->bindParam(':Vorlesung_name', $vorlesung->Vorlesung_name);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
@@ -88,38 +88,35 @@ VALUES
         return $vorlesung;
     }
 
-    private function update(Dozent $dozent)
+    private function update(Vorlesung $vorlesung)
     {
         try {
             $stmt = $this->pdo->prepare('
-UPDATE dozent
-SET vorname = :vorname,
-nachname = :nachname,
-hash = :hash
-WHERE login = :login
+UPDATE vorlesung
+SET Vorlesung_ID = :Vorlesung_ID,
+Vorlesung_name = :Vorlesung_name,
 ');
-            $stmt->bindParam(':vorname', $dozent->vorname);
-            $stmt->bindParam(':nachname', $dozent->nachname);
-            $stmt->bindParam(':hash', $dozent->hash);
+            $stmt->bindParam(':Vorlesung_ID', $dozent->Vorlesung_ID);
+            $stmt->bindParam(':Vorlesung_name', $dozent->Vorlesung_name);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
         }
-        return $dozent;
+        return $vorlesung;
     }
 
-    public function delete(Dozent $dozent)
+    public function delete(Vorlesung $vorlesung)
     {
         try {
             $stmt = $this->pdo->prepare('
-DELETE FROM user WHERE login= :login
+DELETE FROM Vorlesung WHERE id =
 ');
-            $stmt->bindParam(':login', $dozent->login);
+            $stmt->bindParam('id=', $vorlesung->id);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
-            return $dozent;
+            return $vorlesung;
         }
         return null;
     }

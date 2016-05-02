@@ -1,7 +1,7 @@
 <?php
 
 require_once("Manager.php");
-require_once("User.php");
+require_once("Dozent.php");
 
 class DozentManager extends Manager
 {
@@ -25,12 +25,12 @@ $stmt->bindParam(':login', $login);
 $stmt->execute();
 $stmt->setFetchMode(PDO::FETCH_CLASS, 'Dozent');
 $dozent = $stmt->fetch();
-
+/*
 if (password_verify($password, $dozent->hash)) {
 return $dozent;
 } else {
 return null;
-}
+}*/
 } catch (PDOException $e) {
 echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
 die();
@@ -43,14 +43,14 @@ public function create(Dozent $dozent)
 try {
 $stmt = $this->pdo->prepare('
 INSERT INTO Dozent
-(login, vorname, nachname, hash)
+(login, vorname, nachname, password)
 VALUES
-(:login, :vorname , :nachname, :hash)
+(:login, :vorname , :nachname, :password)
 ');
 $stmt->bindParam(':login', $dozent->login);
 $stmt->bindParam(':vorname', $dozent->vorname);
 $stmt->bindParam(':nachname', $dozent->nachname);
-$stmt->bindParam(':hash', $dozent->hash);
+$stmt->bindParam(':hash', $dozent->password);
 $stmt->execute();
 } catch (PDOException $e) {
 echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
@@ -71,7 +71,7 @@ WHERE login = :login
 ');
 $stmt->bindParam(':vorname', $dozent->vorname);
 $stmt->bindParam(':nachname', $dozent->nachname);
-$stmt->bindParam(':hash', $dozent->hash);
+$stmt->bindParam(':password', $dozent->password);
 $stmt->execute();
 } catch (PDOException $e) {
 echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");

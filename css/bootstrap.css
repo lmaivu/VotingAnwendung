@@ -45,7 +45,7 @@ header nav {
     color: cornflowerblue !important;
 }
 
-.content{
+#main{
 
     background-clip: padding-box;
     /*background-image: url('http://erhvn.mn/wp-content/uploads/2016/01/photo-1450101499163-c8848c66ca85.jpg'); */
@@ -59,13 +59,13 @@ header nav {
     background-repeat: no-repeat;
     font-family: "Amatic SC", Georgia, sans-serif;
     font-size: 32px;
-    padding: 250px;
+    padding: 200px;
     margin: 0;
     color: #ffffff;
 }
 
 #kopfleiste {
-
+    text-shadow: darkgrey 0.1em 0.1em 0.2em;
 }
 
 
@@ -99,11 +99,11 @@ header nav {
 
 .info {
     position: relative;
-    margin:auto;
+    margin:0;
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background-color: black;
+    background-color: #bfaa9a;
     bottom: 0;
 
 }

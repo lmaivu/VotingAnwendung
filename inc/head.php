@@ -13,6 +13,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <!-- JQuery einbinden -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>?
+    <script src="js/bootstrap.min.js"></script>
 </head>
 

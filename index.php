@@ -58,7 +58,59 @@ include("inc/navbar.php")
     </div>
 </nav>
 
+<nav class="navbar navbar-default">
+    <div class="container">
+    </div>
 
+    <!-- Logo-->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a href="#" class="navbar-brand"> I-will-Survey</a>
+    </div>
+
+
+    <!-- Menü-Items -->
+    <div class="collapse navbar-collapse" id="mainNavBar">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Startseite</a></li>
+            <li> <a href="#">Irgendwas</a></li>
+
+            <!-- Dropdown-Menü -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hallooo <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li> <a href="#">Mai</a></li>
+                    <li> <a href="#">Lena</a></li>
+                    <li> <a href="#">Luke</a></li>
+
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li> <a href="#">Logout</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- Footer -->
+
+<div class ="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+
+        <a href="#" class="navbar-btn btn-default btn pull right">Kontakt</a>
+        <a href="#" class="navbar-btn btn-default btn pull right">Impressum</a>
+
+    </div>
+</div>
 <!-- Footer -->
 
 <div class ="navbar navbar-default navbar-fixed-bottom">

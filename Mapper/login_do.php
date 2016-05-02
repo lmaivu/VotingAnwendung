@@ -18,14 +18,15 @@ if (!empty($login) && !empty($hash)) {
     //dann wird ein neues Objekt der Klasse instanziiert
     $musterdozent= $dozent->findByLogin($login, $hash);
     //dann werden die Login und PW Daten mithilfe der Methode findByLogin geholt
-    if ($dozent==null) {
+    if ($musterdozent==null) {
         header('Location: FalseLogin.php'); //weiterleiten an FalseLogin Seite
         die();
         //wenn die Userdaten gleich null sind, also nicht übereinstimmen, wird der Nutzer direkt auf die Loginseite umgeleitet
     } else {
         session_start();
-        $_SESSION ['dozent'] = $dozent;
+        $_SESSION ['dozent'] = $musterdozent;
         $_SESSION ['login'] = "1";
+
         header('Location: startseite.php');
         die();
         //wenn die Userdaten nicht gleich null sind, wird eine Session gestartet und dem Login wird eine 1 übergeben,

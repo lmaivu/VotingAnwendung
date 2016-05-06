@@ -47,8 +47,8 @@ echo "Hallo User: ".$nachname;
    <div class="button">
 
     <div class="col-sm-offset-8">
-    <button type="button" class="btn btn-danger btn-lg btn-block">Vorlesung</button>
-    <button type="button" class="btn btn-danger btn-lg btn-block">Voting</button>
+        <a href="../Verzeichnis/Vorlesungsverzeichnis.php"> <button type="button" class="btn btn-danger btn-lg btn-block">Vorlesung</button> </a>
+        <a href="../Verzeichnis/Votingverzeichnis.php"><button type="button" class="btn btn-danger btn-lg btn-block">Voting</button> </a>
     </div>
 
    </div>

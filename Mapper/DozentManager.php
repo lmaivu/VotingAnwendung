@@ -114,6 +114,22 @@ DELETE FROM Dozent WHERE login= :login
             return $dozent;
         }
         return null;
-    } }
+    }}
+/**
+public function getName ($nachname)
+{
+    try {
+        $stmt = $this->pdo->prepare("SELECT nachname FROM Dozent WHERE login= :login");
+        $stmt->bindParam(':nachname', $nachname);
 
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Dozent');
+        $nachname = $stmt->fetch();
+    }
+    catch (PDOException $e) {
+        echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+
+    }
+    return null;
+}}**/
 

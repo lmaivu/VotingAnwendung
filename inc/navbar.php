@@ -42,7 +42,7 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li> <a href="#">Logout</a></li>
+            <li> <a href="../Mapper/logout.php">Logout</a></li>
         </ul>
 
     </div>

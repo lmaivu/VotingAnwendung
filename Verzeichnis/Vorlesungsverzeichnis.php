@@ -31,18 +31,39 @@ require_once "../Mapper/Manager.php";
 require_once "../Mapper/Userdata.php";
 include "../Mapper/DozentManager.php";
 
-if(!$db)
+
+$dsn='mysql:: host=localhost; dbname=u-lv018';
+try {
+    $pdo = new PDO($dsn, 'lv018', 'naiT0ohd0e', array('charset' => 'utf8'));
+}
+catch (PDOException $e) {
+    exit("Verbindungsfehler");
+}
+
+
+    $sql = $pdo->prepare("SELECT * FROM Vorlesung ORDER BY Vorlesung_name");
+    $sql->execute();
+    $result = $sql->fetchAll();
+    print_r($result);
+
+
+//$anzahl_datensaetze = mysqli_num_rows($result);
+//$anzahl_felder = mysqli_num_fields($result);
+
+    $anzahl_datensaetze = $result->mysqli_num_rows;
+    printf( $anzahl_datensaetze);
+
+/**
+if(!$pdo)
 {
     exit("Verbindungsfehler: ".mysqli_connect_error());
 }
 
 $sqlabfrage = "SELECT * FROM Vorlesung";
-$ergebnis= $db->query($sqlabfrage);
+$ergebnis= $pdo->query($sqlabfrage);
 
-?>
+**/
 
-$anzahl_datensaetze = mysqli_num_rows($ergebnis);
-$anzahl_felder = mysqli_num_fields($ergebnis);
 
 ?>
 
@@ -57,7 +78,7 @@ $anzahl_felder = mysqli_num_fields($ergebnis);
                 <th>Optionen</th>
             </tr>
             <?php
-                while($row = mysqli_fetch_object($ergebnis))
+                while($row = mysqli_fetch_object($result, MYSQLI_ASSOC))
                 {
             ?>
             <tr class="row">

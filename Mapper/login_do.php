@@ -3,7 +3,7 @@
 
 <?php
 require_once("Manager.php");
-require_once("DozentManager.php");
+require ("DozentManager.php");
 require_once("Dozent.php");
 
 
@@ -11,6 +11,7 @@ $login = htmlspecialchars($_POST["login"], ENT_QUOTES, "UTF-8");
 $password = htmlspecialchars($_POST["password"], ENT_QUOTES, "UTF-8");
 /*$hash=password_hash($password, PASSWORD_DEFAULT);//PW hashen
 $hash = htmlspecialchars($_POST["password"], ENT_QUOTES, "UTF-8"); //hash*/
+
 
 if (!empty($login) && !empty($password)) {
     // Wenn Logindaten und Passwort übergeben wurden
@@ -24,8 +25,10 @@ if (!empty($login) && !empty($password)) {
         //wenn die Userdaten gleich null sind, also nicht übereinstimmen, wird der Nutzer direkt auf die Loginseite umgeleitet
     } else {
         session_start();
-        $_SESSION ['dozent'] = $musterdozent;
-        $_SESSION ['login'] = "1";
+        $_SESSION ['dozent'] = $dozent;
+        $_SESSION ['session_steht'] = 1;
+        $_SESSION ["login"] = $login;
+
 
         header('Location: startseite.php');
         die();

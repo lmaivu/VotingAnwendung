@@ -96,8 +96,8 @@ UPDATE vorlesung
 SET Vorlesung_ID = :Vorlesung_ID,
 Vorlesung_name = :Vorlesung_name,
 ');
-            $stmt->bindParam(':Vorlesung_ID', $dozent->Vorlesung_ID);
-            $stmt->bindParam(':Vorlesung_name', $dozent->Vorlesung_name);
+            $stmt->bindParam(':Vorlesung_ID', $vorlesung->Vorlesung_ID);
+            $stmt->bindParam(':Vorlesung_name', $vorlesung->Vorlesung_name);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");

@@ -114,8 +114,8 @@ DELETE FROM Dozent WHERE login= :login
             return $dozent;
         }
         return null;
-    }
-
+    }}
+/**
     public function getName($nachname)
     {
         try {
@@ -131,5 +131,5 @@ DELETE FROM Dozent WHERE login= :login
         }
         return null;
     }
-}
+}**/
 

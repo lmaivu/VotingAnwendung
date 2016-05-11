@@ -44,6 +44,9 @@ catch(PDOException $e) {
 
     <div class="col-sm-offset-8">
         <a href="../Vorlesung/Vorlesungsverzeichnis.php"> <button type="button" class="btn btn-danger btn-lg btn-block">Vorlesung</button> </a>
+        <a type="button" class="btn btn-primary" href="../Vorlesung/VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
+
+
         <a href="../Voting/Votingverzeichnis.php"><button type="button" class="btn btn-danger btn-lg btn-block">Voting</button> </a>
     </div>
 

@@ -4,7 +4,7 @@
 <?php
 include("inc/head.php");
 include("inc/footer.php");
-include("inc/navbar.php");
+
 ?>
 
 <head>

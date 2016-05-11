@@ -4,11 +4,11 @@
 
 require_once("../Mapper/Manager.php");
 
-require_once("../Mapper/Dozent.php");
-require_once("../Mapper/DozentManager.php");
+require_once("../Voting/Voting.php");
+require_once("../Mapper/VotingManager.php");
 
 require_once("../Vorlesung/Vorlesung.php");
-require_once("../Vorlesung/VorlesungsManager.php");
+require_once("../Mapper/VorlesungManager.php");
 
 
 class VotingVorlesungManager extends Manager

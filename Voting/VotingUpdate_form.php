@@ -1,8 +1,8 @@
-<?php include("../inc/session_check.php"); ?>
+<?php //include("../inc/session_check.php"); ?>
 
 <?php
 
-require_once("VotingManager.php");
+require_once("../Mapper/VotingManager.php");
 require_once("Voting.php");
 
 $voting_id = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
@@ -22,16 +22,16 @@ $voting = $votingManager->findById($voting_id);
 <?php include("../inc/navbar.php"); ?>
 
 <div class="container">
-    <h1>Eintrag # <?php echo ($voting->id) ?></h1>
+    <h1>Voting-Eintrag <?php echo ($voting->voting_ID) ?></h1>
     <form action='VotingUpdate_do.php' method='post'>
-        <input type='hidden' name='Voting_id' value='<?php echo ($voting->id) ?>' />
-        Betreff:<br>
-        <input type='text' name='betreff' value='<?php echo ($voting->betreff) ?>' /><br>
-        Autor:<br>
-        <input type='text' name='name' value='<?php echo ($voting->name) ?>' /><br>
-        Text des Aushangs:<br>
-        <input type='text' name='text' size='40' maxlength='80' value='<?php echo ($voting->text) ?>' /><br><br>
-        <input type='submit' value='update!' />
+        <input type='hidden' name='voting_ID' value='<?php echo ($voting->voting_ID) ?>' />
+        Name des Votings:<br>
+        <input type='text' name='voting_name' value='<?php echo ($voting_name) ?>' /><br>
+        Ergebnis des Votings:<br>
+        <input type='text' name='voting_ergebnis' value='<?php echo ($voting->voting_ergebnis) ?>' /><br>
+        Ablaufzeit des Votings:<br>
+        <input type='date' name='voting_ablaufzeit' size='40' maxlength='80' value='<?php echo ($voting->voting_ablaufzeit) ?>' /><br><br>
+        <input type='submit' value='Eintrag speichern' />
     </form>
 </div>
 </body>

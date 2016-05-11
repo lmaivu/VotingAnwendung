@@ -6,7 +6,7 @@
  * Time: 12:06
  */
 
-require_once ("../Mapper/Manager.php");
+require_once("../Mapper/Manager.php");
 
 
 #USERDATA

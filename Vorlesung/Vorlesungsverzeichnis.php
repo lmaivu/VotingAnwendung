@@ -1,10 +1,7 @@
+<!-- erstellte Votingdaten werden hier mithilfe von GET übermittelt
+Darstellung der Daten in Tabellenform-->
+
 <?php
-/**
- * Created by PhpStorm.
- * User: LenaBogunovic
- * Date: 27.04.16
- * Time: 11:10
- */
 
 include "../inc/head.php";
 include "../inc/navbar.php";
@@ -12,107 +9,80 @@ include "../inc/footer.php";
 
 ?>
 
-<!-- Einbinden des Stylesheets -->
-<link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
+<?php //include("../inc/session_check.php"); ?>
 
-
-
-<!-- Erstellen der Klasse "body"-->
-<div class="body">
-    <h1>Vorlesungsverzeichnis</h1>
-    <div class=".col-md-12 .col-md-offset-4">
-
-
-
-<!-- Datenbankverbindung herstellen & Ausgeben -->
 <?php
+require_once("Vorlesung.php");
+require_once("../Mapper/VorlesungManager.php");
 
-require_once "../Mapper/Manager.php";
-require_once "../Mapper/Userdata.php";
-include "../Mapper/DozentManager.php";
+//require_once("../Voting/Voting.php");
+require_once("../Mapper/VotingManager.php");
 
-
-$dsn='mysql:: host=localhost; dbname=u-lv018';
-try {
-    $pdo = new PDO($dsn, 'lv018', 'naiT0ohd0e', array('charset' => 'utf8'));
-}
-catch (PDOException $e) {
-    exit("Verbindungsfehler");
-}
+require_once("../VotingVorlesung/VotingVorlesungManager.php");
 
 
-    $sql = $pdo->prepare("SELECT * FROM Vorlesung ORDER BY Vorlesung_name");
-    $sql->execute();
-    $result = $sql->fetchAll();
-    print_r($result);
-
-
-//$anzahl_datensaetze = mysqli_num_rows($result);
-//$anzahl_felder = mysqli_num_fields($result);
-
-    $anzahl_datensaetze = $result->mysqli_num_rows;
-    printf( $anzahl_datensaetze);
-
-/**
-if(!$pdo)
-{
-    exit("Verbindungsfehler: ".mysqli_connect_error());
-}
-
-$sqlabfrage = "SELECT * FROM Vorlesung";
-$ergebnis= $pdo->query($sqlabfrage);
-
-**/
-
-
+//eingetragenes Voting wird mittels GET Methode übermittelt
+//neues Objekt der Klasse initiiert, um auf bestimmte Methoden zuzugreifen
+$vorlesung_ID = (int)htmlspecialchars($_GET["vorlesung_ID"], ENT_QUOTES, "UTF-8");
+$vorlesungManager = new VorlesungManager();
+$vorlesung = $vorlesungManager->findById($vorlesung_id);
 ?>
 
 
-<!-- Erstellen der Tabelle -->
+<link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
 
-        <table class="table table-hover table-condensed">
 
-            <tr class="row">
-                <th>VorlesungsID</th>
-                <th>Vorlesung</th>
-                <th>Optionen</th>
-            </tr>
-            <?php
-                while($row = mysqli_fetch_object($result, MYSQLI_ASSOC))
-                {
-            ?>
-            <tr class="row">
-                <td>
-                    <?php
-                        echo $row->Vorlesung_ID;
-                    ?>
-                </td>
-                <td>
-                    <?php
-                        echo $row->Name;
-                    ?>
-                </td>
-                <td>
-                    <a type="button" class="btn btn-info" href="#" role="button">anzeigen</a>
-                    <a type="button" class="btn btn-primary" href="#" role="button">bearbeiten</a>
-                </td>
-            </tr>
+<!DOCTYPE html>
+<html>
 
 
 
-            <tr class="row">
-                <td>2</td>
-                <td>Web-Engineering</td>
-                <td>
-                    <a type="button" class="btn btn-info" href="#" role="button">anzeigen</a>
-                    <a type="button" class="btn btn-primary" href="#" role="button">bearbeiten</a>
-                </td>
+<body>
 
-            </tr>
 
-        </table>
-          <?php
-            }
-          ?>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Vorlesungsverzeichnis</h1>
+        <?php echo ($voting->name." / ".date("d.m.Y", strtotime($voting->datum))); ?>
     </div>
+
+    <?php
+    $vorlesungManager = new VorlesungManager();
+    $liste = $vorlesungManager->findAll ();
+    if (count($liste) > 0) { ?>
+    <table class="table table-hover">
+        <thead>
+        <th>Nummer</th>
+        <th>Vorlesung-Name</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($liste as $vorlesung) {
+            echo "<tr>";
+            echo "<td>$vorlesung->vorlesung_ID</td>";
+            echo "<td>$vorlesung->vorlesung_name</td>";
+             ?>
+            <td> <a type="button" class="btn btn-info" href="VorlesungRead.php" role="button">anzeigen</a> </td>
+            <td> <a type="button" class="btn btn-primary" href="VorlesungUpdate_form.php" role="button">bearbeiten</a> </td>
+            <td> <a type="button" class="btn btn-primary" href="VorlesungDelete.php" role="button">l&oumlschen</a> </td>
+            <td> <a type="button" class="btn btn-primary" href="../Voting/VotingRead.php" role="button">Voting anzeigen</a>
+                <!--überprüfen!!!-->
+            <?php //nicht nötig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung lösen</a>";
+            echo "<td></td>";
+            echo "</tr>";
+        } }
+        ?>
+        </tbody>
+    </table>
+    <br>
+
+    <a type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
+
+
+
+
 </div>
+</body>
+</html>
+

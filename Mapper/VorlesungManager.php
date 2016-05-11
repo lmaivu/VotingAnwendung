@@ -2,10 +2,10 @@
 mit folgenden Funktionen: findbyID, findAll, CRUD applikationen -->
 <?php
 
-require_once("Voting.php");
-require_once("../Mapper/UserData.php");
+require_once("../Vorlesung/Vorlesung.php");
+require_once("../Mapper/Userdata.php");
 
-class VotingManager
+class VorlesungManager
 {
     private $pdo;
 
@@ -31,13 +31,13 @@ class VotingManager
         $this->pdo = null;
     }
 
-    public function findById($id)
+    public function findById($vorlesung_ID)
     {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM Voting WHERE id = :id');
-            $stmt->bindParam(':id', $id);
+            $stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Vorlesung_ID = :vorlesung_ID');
+            $stmt->bindParam(':vorlesung_ID', $vorlesung_ID);
             $stmt->execute();
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Notiz');
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             $n = $stmt->fetch();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
@@ -51,10 +51,10 @@ class VotingManager
     {
         try {
             $stmt = $this->pdo->prepare('
-              SELECT * FROM Voting
+              SELECT * FROM Vorlesung
             ');
             $stmt->execute();
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             return $stmt->fetchAll();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
@@ -63,74 +63,69 @@ class VotingManager
 
     }
 
-    public function save(Voting $voting)
+    public function save(Vorlesung $vorlesung)
     {
         // wenn ID gesetzt, dann update...
-        if (isset($voting->id)) {
-            $this->update($voting);
-            return $voting;
+        if (isset($vorlesung->vorlesung_ID)) {
+            $this->update($vorlesung);
+            return $vorlesung;
         }
         // ...sonst Anlage eines neuen Datensatzes
         try {
             $stmt = $this->pdo->prepare('
-              INSERT INTO Voting
-                (betreff, name, text, datum)
+              INSERT INTO Vorlesung
+                (Vorlesung_Name)
               VALUES
-                (:betreff, :name , :text, NOW())
+                (:vorlesung_name)
             ');
-            $stmt->bindParam(':betreff', $voting->betreff);
-            $stmt->bindParam(':name', $voting->name);
-            $stmt->bindParam(':text', $voting->text);
+            $stmt->bindParam(':vorlesung_name', $vorlesung->vorlesung_name);
             $stmt->execute();
             // lastinsertId() gibt die zuletzt eingefügte Id zurück -> damit Update der internen Id
-            $voting->id = $this->pdo->lastInsertId();
+            $vorlesung->vorlesung_ID = $this->pdo->lastInsertId();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
         }
-        return $voting;
+        return $vorlesung;
     }
 
-    private function update(Voting $voting)
+    private function update(Vorlesung $vorlesung)
     {
         echo ("update!");
         try {
             $stmt = $this->pdo->prepare('
-              UPDATE Voting
-              SET betreff = :betreff,
-                  name = :name,
-                  text = :text
-              WHERE id = :id
+              UPDATE Vorlesung
+              SET Vorlesung_Name = :vorlesung_name,
+              WHERE Voting_ID = :voting_ID
             ');
-            $stmt->bindParam(':id', $voting->id);
-            $stmt->bindParam(':betreff', $voting->betreff);
-            $stmt->bindParam(':name', $voting->name);
-            $stmt->bindParam(':text', $voting->text);
+            $stmt->bindParam(':vorlesung_ID', $vorlesung->vorlesung_ID);
+            $stmt->bindParam(':vorlesung_name', $vorlesung->vorlesung_name);
+
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
         }
-        return $voting;
+        return $vorlesung;
     }
 
-    public function delete(Voting $voting)
+    public function delete(Vorlesung $vorlesung)
     {
-        if (!isset($voting->id)) {
-            $voting = null;
-            return $voting;
+        if (!isset($vorlesung->id)) {
+            $vorlesung = null;
+            return $vorlesung;
         }
         try {
             $stmt = $this->pdo->prepare('
-              DELETE FROM Voting WHERE id= :id
+              DELETE FROM Vorlesung WHERE Vorlesung_ID= :vorlesung_ID
             ');
-            $stmt->bindParam(':id', $voting->id);
+            $stmt->bindParam(':vorlesung_ID', $vorlesung->vorlesung_ID);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
         }
-        $voting = null;
-        return $voting;
+        $vorlesung = null;
+        return $vorlesung;
     }
 }

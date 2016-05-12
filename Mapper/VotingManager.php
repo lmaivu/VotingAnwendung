@@ -82,7 +82,7 @@ class VotingManager
             $stmt->bindParam(':voting_ergebnis', $voting->voting_ergebnis);
             $stmt->bindParam(':voting_ablaufzeit', $voting->voting_ablaufzeit);
             $stmt->execute();
-            // lastinsertId() gibt die zuletzt eingefügte Id zurück -> damit Update der internen Id
+            // lastinsertId() gibt die zuletzt eingefÃ¼gte Id zurÃ¼ck -> damit Update der internen Id
             $voting->voting_ID = $this->pdo->lastInsertId();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");

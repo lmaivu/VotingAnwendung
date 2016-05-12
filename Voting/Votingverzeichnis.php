@@ -1,4 +1,4 @@
-<!-- erstellte Votingdaten werden hier mithilfe von GET übermittelt
+<!-- erstellte Votingdaten werden hier mithilfe von GET Ã¼bermittelt
 Darstellung der Daten in Tabellenform-->
 
 <?php
@@ -21,7 +21,7 @@ require_once("../Mapper/VorlesungManager.php");
 require_once("../VotingVorlesung/VotingVorlesungManager.php");
 
 
-//eingetragenes Voting wird mittels GET Methode übermittelt
+//eingetragenes Voting wird mittels GET Methode Ã¼bermittelt
 //neues Objekt der Klasse initiiert, um auf bestimmte Methoden zuzugreifen
 $voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $votingManager = new VotingManager();
@@ -70,7 +70,7 @@ $voting = $votingManager->findById($voting_ID);
                 <td> <a type="button" class="btn btn-info" href="VotingRead.php" role="button">anzeigen</a> </td>
                 <td> <a type="button" class="btn btn-primary" href="VotingUpdate_form.php" role="button">bearbeiten</a> </td>
                 <td> <a type="button" class="btn btn-primary" href="VotingDelete.php" role="button">l&oumlschen</a> </td>
-                <?php //nicht nötig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung lösen</a>";
+                <?php //nicht nÃ¶tig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung lÃ¶sen</a>";
                 echo "<td></td>";
                 echo "</tr>";
             } }

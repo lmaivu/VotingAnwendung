@@ -10,8 +10,8 @@ session_start();
 $login = $_POST ['login'];
 if ($_SESSION ["session_steht"]<>"1") { //wenn session start nicht gleich 1 ist
     $_SESSION = array(); //Neu erstellte session als leeres array
-    session_destroy(); //session löschen
-    echo 'Bitte zuerst einloggen, um die Seite anzuschauen'; //ÜBERPRÜFEN!
+    session_destroy(); //session lÃ¶schen
+    echo 'Bitte zuerst einloggen, um die Seite anzuschauen'; //ÃœBERPRÃœFEN!
     header('Location: ../index.php'); //direkte Weiterleitung des Users auf login Seite
 } else {
     $dozent = $_SESSION ["dozent"];

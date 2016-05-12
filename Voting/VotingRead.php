@@ -22,6 +22,6 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
 //->?id findallbyVorlesung echo $voting
 //Darstellung des Diagramms?
 //aktualisierung der Daten in 5 sec schritten
-//Abgegebene Stimmen müssen hier in der DB aufgerufen werden
+//Abgegebene Stimmen mÃ¼ssen hier in der DB aufgerufen werden
 
 ?>

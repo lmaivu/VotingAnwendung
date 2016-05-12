@@ -1,4 +1,4 @@
-<!-- Datei um das Voting Hinzufügen Formular zu überprüfen, die eingegebenen Werte werden als string umgewandelt und gespeichert,
+<!-- Datei um das Voting HinzufÃ¼gen Formular zu Ã¼berprÃ¼fen, die eingegebenen Werte werden als string umgewandelt und gespeichert,
 als neuer Datensatz der Klasse Voting-->
 
 <?php //include("../inc/session_check.php"); ?>
@@ -23,5 +23,5 @@ if (!empty($voting_name) && !empty($voting_ablaufzeit) && !empty($voting_ergebni
     $votingManager->save($voting);
     header('Location: index.php');
 } else {
-    echo "Error: Bitte alle Felder ausfüllen!<br/>";
+    echo "Error: Bitte alle Felder ausfÃ¼llen!<br/>";
 }

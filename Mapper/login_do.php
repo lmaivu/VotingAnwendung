@@ -14,7 +14,7 @@ $hash = htmlspecialchars($_POST["password"], ENT_QUOTES, "UTF-8"); //hash*/
 
 
 if (!empty($login) && !empty($password)) {
-    // Wenn Logindaten und Passwort übergeben wurden
+    // Wenn Logindaten und Passwort Ã¼bergeben wurden
     $dozent = new DozentManager();
     //dann wird ein neues Objekt der Klasse instanziiert
     $musterdozent= $dozent->findByLogin($login, $password);
@@ -22,7 +22,7 @@ if (!empty($login) && !empty($password)) {
     if ($musterdozent==null) {
         header('Location: FalseLogin.php'); //weiterleiten an FalseLogin Seite
         die();
-        //wenn die Userdaten gleich null sind, also nicht übereinstimmen, wird der Nutzer direkt auf die Loginseite umgeleitet
+        //wenn die Userdaten gleich null sind, also nicht Ã¼bereinstimmen, wird der Nutzer direkt auf die Loginseite umgeleitet
     } else {
         session_start();
         $_SESSION ['dozent'] = $dozent;
@@ -32,14 +32,14 @@ if (!empty($login) && !empty($password)) {
 
         header('Location: startseite.php');
         die();
-        //wenn die Userdaten nicht gleich null sind, wird eine Session gestartet und dem Login wird eine 1 übergeben,
+        //wenn die Userdaten nicht gleich null sind, wird eine Session gestartet und dem Login wird eine 1 Ã¼bergeben,
         //es folgt eine Umleitung auf startseite.php
     }
 } else {
     header ('Location: UncompleteLogin.php');
 }
 
-//wenn die Felder leer sind, d.h. nicht ausgefüllt sind, erscheint die Anzeige
+//wenn die Felder leer sind, d.h. nicht ausgefÃ¼llt sind, erscheint die Anzeige
 // Error: blablah
 ?>
 </html>

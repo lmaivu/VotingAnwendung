@@ -1,6 +1,6 @@
-<!-- zum Löschen von Daten, die sich in der Zwischentabelle Voting und Vorlesung befinden -->
+<!-- zum LÃ¶schen von Daten, die sich in der Zwischentabelle Voting und Vorlesung befinden -->
 
-<!--nicht nötig-->
+<!--nicht nÃ¶tig-->
 
 <?php //include("../inc/session_check.php"); ?>
 

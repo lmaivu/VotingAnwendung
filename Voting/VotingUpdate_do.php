@@ -19,6 +19,6 @@ if (!empty($voting_id) && !empty($name) && !empty($betreff) && !empty($text)) {
     $votingManager->save($voting);
     header('Location: index.php');
 } else {
-    echo "Error: Bitte alle Felder ausfüllen!";
+    echo "Error: Bitte alle Felder ausfÃ¼llen!";
 }
 

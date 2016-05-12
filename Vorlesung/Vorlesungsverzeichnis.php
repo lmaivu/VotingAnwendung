@@ -36,8 +36,6 @@ $vorlesung = $vorlesungManager->findById($vorlesung_id);
 <html>
 
 
-
-
 <body>
 
 

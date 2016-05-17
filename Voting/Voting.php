@@ -10,10 +10,10 @@ class Voting
 
     function __construct($data=null) { //Construktor wird definiert mit dem Parameter $data mit dem festen Wert 0
         //Wert als assoziativer array,
-        if (is_array($data)) { //vordefiniert von PDO, überprüft ob &data ein array ist
+        if (is_array($data)) { //vordefiniert von PDO, ï¿½berprï¿½ft ob &data ein array ist
             if (isset($data['Voting_ID'])) $this->voting_ID = $data['Voting_ID'];
-            //Überprüfung, ob id vorhanden ist
-            //wenn bei data eine ID übergeben wurde, Aufruf des Attributs id
+            //ï¿½berprï¿½fung, ob id vorhanden ist
+            //wenn bei data eine ID ï¿½bergeben wurde, Aufruf des Attributs id
             //bekommt den Wert id des Parameters $data
             //wenn User in der DB besteht, dann bekommt er automatisch eine id
 
@@ -27,7 +27,7 @@ class Voting
 
     public function __toString() {
         return $this->voting_ID." ".$this->voting_name." ".$this->voting_ergebnis." ".$this->voting_ablaufzeit." ".$this->voting_erstellung;
-        //öffentliche Methode __troString() wird definiert
+        //ï¿½ffentliche Methode __troString() wird definiert
         //AUfgabe: Ausgabe id name usw  der Klasse
     }
 }

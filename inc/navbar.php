@@ -1,5 +1,5 @@
 
-<nav class="navbar">
+<nav class="navbar navbar-transparent">
     <div class="container">
     </div>
 

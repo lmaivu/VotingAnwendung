@@ -3,7 +3,7 @@
 
 <?php
 include("inc/head.php");
-include("inc/footer.php");
+include("inc/navbar.php");
 
 ?>
 
@@ -80,3 +80,8 @@ include("inc/footer.php");
 </body>
 
 </html>
+
+<?php
+include("inc/footer_new.php");
+
+?>

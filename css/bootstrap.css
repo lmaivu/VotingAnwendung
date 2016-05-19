@@ -41,9 +41,11 @@ header nav {
 .navbar-brand {
     font-family: 'Trebuchet MS', Georgia, sans-serif;
     font-size: 30px;
+    opacity: 0,5;
 }
 .navbar-nav li a:hover {
     color: cornflowerblue !important;
+    opacity: 0,5;
 }
 
 #main{

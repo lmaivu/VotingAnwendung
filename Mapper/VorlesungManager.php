@@ -80,7 +80,7 @@ class VorlesungManager
             ');
             $stmt->bindParam(':vorlesung_name', $vorlesung->vorlesung_name);
             $stmt->execute();
-            // lastinsertId() gibt die zuletzt eingefÃ¼gte Id zurÃ¼ck -> damit Update der internen Id
+            // lastinsertId() gibt die zuletzt eingefügte Id zurück -> damit Update der internen Id
             $vorlesung->vorlesung_ID = $this->pdo->lastInsertId();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");

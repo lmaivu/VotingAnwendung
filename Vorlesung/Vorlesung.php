@@ -8,10 +8,10 @@ class Vorlesung
 
     function __construct($data=null) { //Construktor wird definiert mit dem Parameter $data mit dem festen Wert 0
         //Wert als assoziativer array,
-        if (is_array($data)) { //vordefiniert von PDO, Ã¼berprÃ¼ft ob &data ein array ist
+        if (is_array($data)) { //vordefiniert von PDO, überprüft ob &data ein array ist
             if (isset($data['Vorlesung_ID'])) $this->vorlesung_ID = $data['Vorlesung_ID'];
-            //ÃœberprÃ¼fung, ob id vorhanden ist
-            //wenn bei data eine ID Ã¼bergeben wurde, Aufruf des Attributs id
+            //Überprüfung, ob id vorhanden ist
+            //wenn bei data eine ID übergeben wurde, Aufruf des Attributs id
             //bekommt den Wert id des Parameters $data
             //wenn User in der DB besteht, dann bekommt er automatisch eine id
 
@@ -22,7 +22,7 @@ class Vorlesung
 
     public function __toString() {
         return $this->vorlesung_ID." ".$this->vorlesung_name;
-        //Ã¶ffentliche Methode __troString() wird definiert
+        //öffentliche Methode __troString() wird definiert
         //AUfgabe: Ausgabe id name usw  der Klasse
     }
 }

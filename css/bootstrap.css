@@ -34,11 +34,11 @@ header nav {
     border-radius: 0;
     margin-bottom: 0;
     font-size: 20px;
-    font-family:'Trebuchet MS', Helvetica, sans-serif;
+    font-family:'Trebuchet MS', Georgia, sans-serif;
     /*letter-spacing: 3px;*/
 }
 .navbar-brand {
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-family: 'Trebuchet MS', Georgia, sans-serif;
     font-size: 30px;
 }
 .navbar-nav li a:hover {
@@ -133,3 +133,4 @@ header nav {
     width: 60%;
     height: 60%;
 }
+

@@ -1,4 +1,4 @@
-<!-- bisher unnÃ¶tig, da der LOGIN Ã¼ber die startseite ablÃ¤uft-->
+<!-- bisher unnötig, da der LOGIN über die startseite abläuft-->
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +26,7 @@
                 <input type="text" class="form-control" name="password" id="password" placeholder="Kennwort">
             </div>
         </div>
-        <!--BlÃ¶cke werden angesetzt bis die 12 Spaltenbreite voll sind, ansonsten wird der nÃ¤chste Block unten angesetzt
+        <!--Blöcke werden angesetzt bis die 12 Spaltenbreite voll sind, ansonsten wird der nächste Block unten angesetzt
         //ansonsten automatisch nebeneinander
         //durch div class= "form-group" wird also eine Zeile definiert
         //so kann man definieren, dass die Inhalte untereinander angeordnet werden -->

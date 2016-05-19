@@ -6,12 +6,12 @@
 <body>
 
 <div class="content">
-    <div class="LoginFehler"> <!-- Box fÃ¼r Loginfehler Anzeigen-->
+    <div class="LoginFehler"> <!-- Box für Loginfehler Anzeigen-->
 <?php
 echo "Ups. Bitte alle Felder ausf&uumlllen! "?> <br/>
 
 <a href="../index.php"> Zur&uuml;ck zur Anmeldung. </a>
-    </div> <!-- Box fÃ¼r Loginfehler Anzeigen-->
+    </div> <!-- Box für Loginfehler Anzeigen-->
 </div>
 
 </body>

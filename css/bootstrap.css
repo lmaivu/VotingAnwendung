@@ -35,6 +35,7 @@ header nav {
     margin-bottom: 0;
     font-size: 20px;
     font-family:'Trebuchet MS', Georgia, sans-serif;
+    opacity: 0,5;
     /*letter-spacing: 3px;*/
 }
 .navbar-brand {
@@ -134,4 +135,6 @@ header nav {
     height: 60%;
 }
 
+.footerBox {
 
+}

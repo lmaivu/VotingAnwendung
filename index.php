@@ -3,7 +3,6 @@
 
 <?php
 include("inc/head.php");
-include("inc/navbar.php");
 
 ?>
 
@@ -82,6 +81,6 @@ include("inc/navbar.php");
 </html>
 
 <?php
-include("inc/footer_new.php");
+include("inc/footer.php");
 
 ?>

@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-default">
+<nav class="navbar">
     <div class="container">
     </div>
 

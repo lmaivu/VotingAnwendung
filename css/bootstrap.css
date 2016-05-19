@@ -30,22 +30,22 @@ header nav {
 .navbar{
     padding-top: 15px;
     padding-bottom: 10px;
-    border: 0;
+    border: ;
     border-radius: 0;
     margin-bottom: 0;
-    font-size: 20px;
+    font-size: 17px;
     font-family:'Trebuchet MS', Georgia, sans-serif;
-    opacity: 0,5;
+
     /*letter-spacing: 3px;*/
 }
 .navbar-brand {
     font-family: 'Trebuchet MS', Georgia, sans-serif;
-    font-size: 30px;
-    opacity: 0,5;
+    font-size: 27px;
+
 }
 .navbar-nav li a:hover {
     color: cornflowerblue !important;
-    opacity: 0,5;
+
 }
 
 #main{

@@ -4,8 +4,8 @@ Darstellung der Daten in Tabellenform-->
 <?php
 
 include "../inc/head.php";
-include "../inc/navbar.php";
-include "../inc/footer.php";
+/*include "../inc/navbar.php";
+/*include "../inc/footer.php";*/
 
 ?>
 
@@ -25,7 +25,7 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
 //neues Objekt der Klasse initiiert, um auf bestimmte Methoden zuzugreifen
 $vorlesung_ID = (int)htmlspecialchars($_GET["vorlesung_ID"], ENT_QUOTES, "UTF-8");
 $vorlesungManager = new VorlesungManager();
-$vorlesung = $vorlesungManager->findById($vorlesung_id);
+$vorlesung = $vorlesungManager->findById($vorlesung_ID);
 ?>
 
 
@@ -46,7 +46,7 @@ $vorlesung = $vorlesungManager->findById($vorlesung_id);
 
     <?php
     $vorlesungManager = new VorlesungManager();
-    $liste = $vorlesungManager->findAll ();
+    $liste = $vorlesungManager->findAll();
     if (count($liste) > 0) { ?>
     <table class="table table-hover">
         <thead>
@@ -58,7 +58,7 @@ $vorlesung = $vorlesungManager->findById($vorlesung_id);
         <?php
         foreach ($liste as $vorlesung) {
             echo "<tr>";
-            echo "<td>$vorlesung->vo9rlesung_ID</td>";
+            echo "<td>$vorlesung->vorlesung_ID</td>";
             echo "<td>$vorlesung->vorlesung_name</td>";
              ?>
             <td> <a type="button" class="btn btn-info" href="VorlesungRead.php" role="button">anzeigen</a> </td>

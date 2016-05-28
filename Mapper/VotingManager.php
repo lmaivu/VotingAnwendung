@@ -82,7 +82,7 @@ class VotingManager
             $stmt->bindParam(':voting_ergebnis', $voting->voting_ergebnis);
             $stmt->bindParam(':voting_ablaufzeit', $voting->voting_ablaufzeit);
             $stmt->execute();
-            // lastinsertId() gibt die zuletzt eingefügte Id zurück -> damit Update der internen Id
+            // lastinsertId() gibt die zuletzt eingefï¿½gte Id zurï¿½ck -> damit Update der internen Id
             $voting->voting_ID = $this->pdo->lastInsertId();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
@@ -117,15 +117,15 @@ class VotingManager
 
     public function delete(Voting $voting)
     {
-        if (!isset($voting->id)) {
+        if (!isset($voting->Voting_ID)) {
             $voting = null;
             return $voting;
         }
         try {
             $stmt = $this->pdo->prepare('
-              DELETE FROM Voting WHERE id= :id
+              DELETE FROM Voting WHERE Voting_ID= :voting_ID
             ');
-            $stmt->bindParam(':id', $voting->id);
+            $stmt->bindParam(':voting_ID', $voting->voting_ID);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");

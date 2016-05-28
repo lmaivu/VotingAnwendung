@@ -43,9 +43,6 @@ $voting = $votingManager->findById($voting_ID);
 <div class="container">
     <div class="jumbotron">
         <h1>Voting-Verzeichnis</h1>
-        <h1><?php echo $voting->voting_name ?></h1>
-        <?php echo $voting->voting_ergebnis ?><br><br>
-        <?php echo ($voting->voting_ablaufzeit." / ".date("d.m.Y", strtotime($voting->voting_erstellung))); ?>
     </div>
 
     <?php
@@ -56,17 +53,16 @@ $voting = $votingManager->findById($voting_ID);
             <thead>
             <th>Nummer</th>
             <th>Voting-Name</th>
-            <th>Erstellungsdatum</th>
-            <th>Ablaufzeit</th>
+            <!--<th>Erstellungsdatum</th>
+            <th>Ablaufzeit</th>-->
             <th></th>
             </thead>
             <tbody>
             <?php
             foreach ($liste as $voting) {
                 echo "<tr>";
-                echo "<td>$voting->id</td>";
-                echo "<td>$voting->vorname</td>";
-                echo "<td>$voting->nachname</td>"; ?>
+                echo "<td>$voting->voting_ID</td>";
+                echo "<td>$voting->voting_name</td>"; ?>
                 <td> <a type="button" class="btn btn-info" href="VotingRead.php" role="button">anzeigen</a> </td>
                 <td> <a type="button" class="btn btn-primary" href="VotingUpdate_form.php" role="button">bearbeiten</a> </td>
                 <td> <a type="button" class="btn btn-primary" href="VotingDelete.php" role="button">l&oumlschen</a> </td>

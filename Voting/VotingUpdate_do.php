@@ -14,7 +14,6 @@ if (!empty($voting_id) && !empty($name) && !empty($betreff) && !empty($text)) {
     $votingManager = new VotingManager();
     $voting = $votingManager->findById($notiz_id);
     $voting->name = $voting;
-    $voting->betreff = $betreff;
     $voting->text = $text;
     $votingManager->save($voting);
     header('Location: index.php');

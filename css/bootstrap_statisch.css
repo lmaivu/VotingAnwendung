@@ -2,9 +2,9 @@
 .main {
     font-family: 'Tahoma', serif;
     font-size: 20px;
-    color: #ffffff;
+    color: #000000;
     text-align: center;
-    background: url(https://images.unsplash.com/photo-1437419764061-2473afe69fc2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=4d5761aef8b1604c83069905976133e6) no-repeat center center fixed;
+    background-color: #ebedf2;
     background-size: cover;
     min-height: 100%;
     min-width: 1024px;
@@ -15,23 +15,23 @@
 }
 
 #title {
-    font-family: 'Amatic SC', cursive;
-    color: #ffffff;
-    font-size: 70px;
+    font-family: 'Tahoma', cursive;
+    color: #000000;
+    font-size: 40px;
     text-align: center;
 }
 
 #title2 {
     font-family: 'Tahoma', serif;
     font-weight: bold;
-    font-size: 30px;
-    color: #ffffff;
+    font-size: 17px;
+    color: #000000;
     text-align: center;
 }
 
 .footer {
     font-family: 'Tahoma', serif;
     font-size: 15px;
-    color: #ffffff;
+    color: #000000;
     text-align: center;
 }

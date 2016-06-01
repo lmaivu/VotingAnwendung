@@ -18,8 +18,9 @@ include("inc/head.php");
 <div id="main">  <!-- div main �ffnen-->
 
         <div id="kopfleiste">
-            <h1> <strong> I will survey </strong> </h1>
-            <h3> Kurzes Slogan mit Logo</h3>
+            <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Logo_transparent.png" width="500" height="110" alt="Logo">
+            <h3>Prüfen Sie das Wissen ihrer Studenten im Vorlesungssaal<br>
+                - und haben Sie sofort Zugriff auf die Ergebnisse!</h3>
         </div>
 
 

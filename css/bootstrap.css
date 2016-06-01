@@ -60,22 +60,23 @@ header nav {
     -webkit-background-size: 100% auto;
     -khtml-background-size: 100% auto;
     background-repeat: no-repeat;
-    font-family: "Amatic SC", Georgia, sans-serif;
-    font-size: 32px;
+    font-family: "Tahoma", sans-serif;
+    font-size: 40px;
     padding: 200px;
     margin: 0;
-    color: firebrick;
+    color: #Cdbfa5;
 }
-
+/*
 #kopfleiste {
     text-shadow: darkgrey 0.1em 0.1em 0.2em;
 }
 
+*/
 
 #kopfleiste.h1 {
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    font-size:72px;
-    color: honeydew;
+    font-family: 'Tahoma', Helvetica, sans-serif;
+    font-size:40px;
+    color: #Cdbfa5;
     float: left
     text-shadow: darkgrey 0.1em 0.1em 0.2em;
 }
@@ -107,6 +108,7 @@ header nav {
     padding: 10px;
     font-size: 16px;
     bottom: 0;
+    color: #534532;
 
 }
 
@@ -118,7 +120,7 @@ header nav {
     border-radius: 0;
     margin-bottom: 0;
     font-size: 14px;
-    font-family:'Trebuchet MS', Helvetica, sans-serif;
+    font-family:'Tahoma', Helvetica, sans-serif;
 }
 
 /* Box f�r Loginfehler Anzeigen */
@@ -135,6 +137,7 @@ header nav {
     position: relative;
     width: 60%;
     height: 60%;
+    color: #8e7059;
 }
 
 .footerBox {

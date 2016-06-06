@@ -5,7 +5,7 @@
       <paths name="mars.iuk.hdm-stuttgart.de">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/public_html/lv018/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/lv018/public_html/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

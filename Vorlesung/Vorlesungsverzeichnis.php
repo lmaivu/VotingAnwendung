@@ -21,11 +21,8 @@ require_once("../Mapper/VotingManager.php");
 require_once("../VotingVorlesung/VotingVorlesungManager.php");
 
 
-//eingetragenes Voting wird mittels GET Methode �bermittelt
-//neues Objekt der Klasse initiiert, um auf bestimmte Methoden zuzugreifen
-$vorlesung_ID = (int)htmlspecialchars($_GET["vorlesung_ID"], ENT_QUOTES, "UTF-8");
-$vorlesungManager = new VorlesungManager();
-$vorlesung = $vorlesungManager->findById($vorlesung_ID);
+
+
 ?>
 
 
@@ -56,15 +53,15 @@ $vorlesung = $vorlesungManager->findById($vorlesung_ID);
         </thead>
         <tbody>
         <?php
-        foreach ($liste as $vorlesung) {
+        foreach ($liste as $Vorlesung) {
             echo "<tr>";
-            echo "<td>$vorlesung->vorlesung_ID</td>";
-            echo "<td>$vorlesung->vorlesung_name</td>";
+            echo "<td>$Vorlesung->Vorlesung_ID</td>";
+            echo "<td>$Vorlesung->Vorlesung_Name</td>";
              ?>
             <td> <a type="button" class="btn btn-info" href="VorlesungRead.php" role="button">anzeigen</a> </td>
             <td> <a type="button" class="btn btn-primary" href="VorlesungUpdate_form.php" role="button">bearbeiten</a> </td>
             <td> <a type="button" class="btn btn-primary" href="VorlesungDelete.php" role="button">l&oumlschen</a> </td>
-            <td> <a type="button" class="btn btn-primary" href="../Voting/VotingRead.php" role="button">Voting anzeigen</a>
+            <td> <a type="button" class="btn btn-primary" href="../Voting/VorlesungRead.php" role="button">Voting anzeigen</a>
                 <!--�berpr�fen!!!-->
             <?php //nicht n�tig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung l�sen</a>";
             echo "<td></td>";
@@ -81,6 +78,8 @@ $vorlesung = $vorlesungManager->findById($vorlesung_ID);
 
 
 </div>
+
 </body>
+
 </html>
 

@@ -30,7 +30,6 @@ header nav {
 .navbar{
     padding-top: 15px;
     padding-bottom: 10px;
-    border: ;
     border-radius: 0;
     margin-bottom: 0;
     font-size: 17px;
@@ -80,10 +79,7 @@ header nav {
     float: left
     text-shadow: darkgrey 0.1em 0.1em 0.2em;
 }
-/*
-#inhalt.p {
-    font-size: 36px;
-} bisher nicht definiert*/
+
 
 /* Login Formular */
 
@@ -132,14 +128,13 @@ header nav {
     font-size: 18px;
 }
 
-/* Button für startseite*/
-.button {
+
+/*Startseite*/
+figure {
     position: relative;
-    width: 60%;
-    height: 60%;
-    color: #8e7059;
-}
-
-.footerBox {
-
+    margin: 0;
+    padding:5px
+    width: 5px;
+    height: 5px;
+    float:left;
 }

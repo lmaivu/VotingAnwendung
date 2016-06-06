@@ -31,11 +31,11 @@ class VorlesungManager
         $this->pdo = null;
     }
 
-    public function findById($vorlesung_ID)
+    public function findById($Vorlesung_ID)
     {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Vorlesung_ID = :vorlesung_ID');
-            $stmt->bindParam(':vorlesung_ID', $vorlesung_ID);
+            $stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Vorlesung_ID = :Vorlesung_ID');
+            $stmt->bindParam(':Vorlesung_ID', $Vorlesung_ID);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             $n = $stmt->fetch();
@@ -63,12 +63,12 @@ class VorlesungManager
 
     }
 
-    public function save(Vorlesung $vorlesung)
+    public function save(Vorlesung $Vorlesung)
     {
         // wenn ID gesetzt, dann update...
-        if (isset($vorlesung->vorlesung_ID)) {
-            $this->update($vorlesung);
-            return $vorlesung;
+        if (isset($Vorlesung->Vorlesung_ID)) {
+            $this->update($Vorlesung);
+            return $Vorlesung;
         }
         // ...sonst Anlage eines neuen Datensatzes
         try {
@@ -78,54 +78,54 @@ class VorlesungManager
               VALUES
                 (:vorlesung_name)
             ');
-            $stmt->bindParam(':vorlesung_name', $vorlesung->vorlesung_name);
+            $stmt->bindParam(':Vorlesung_name', $Vorlesung->Vorlesung_name);
             $stmt->execute();
-            // lastinsertId() gibt die zuletzt eingefügte Id zurück -> damit Update der internen Id
-            $vorlesung->vorlesung_ID = $this->pdo->lastInsertId();
+            // lastinsertId() gibt die zuletzt eingefï¿½gte Id zurï¿½ck -> damit Update der internen Id
+            $Vorlesung->Vorlesung_ID = $this->pdo->lastInsertId();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
         }
-        return $vorlesung;
+        return $Vorlesung;
     }
 
-    private function update(Vorlesung $vorlesung)
+    private function update(Vorlesung $Vorlesung)
     {
         echo ("update!");
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Vorlesung
-              SET Vorlesung_Name = :vorlesung_name,
-              WHERE Voting_ID = :voting_ID
+              SET Vorlesung_Name = :Vorlesung_name,
+              WHERE Voting_ID = :Voting_ID
             ');
-            $stmt->bindParam(':vorlesung_ID', $vorlesung->vorlesung_ID);
-            $stmt->bindParam(':vorlesung_name', $vorlesung->vorlesung_name);
+            $stmt->bindParam(':Vorlesung_ID', $Vorlesung->Vorlesung_ID);
+            $stmt->bindParam(':Vorlesung_name', $Vorlesung->Vorlesung_Name);
 
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
         }
-        return $vorlesung;
+        return $Vorlesung;
     }
 
-    public function delete(Vorlesung $vorlesung)
+    public function delete(Vorlesung $Vorlesung)
     {
-        if (!isset($vorlesung->id)) {
-            $vorlesung = null;
-            return $vorlesung;
+        if (!isset($Vorlesung->Vorlesung_ID)) {
+            $Vorlesung = null;
+            return $Vorlesung;
         }
         try {
             $stmt = $this->pdo->prepare('
-              DELETE FROM Vorlesung WHERE Vorlesung_ID= :vorlesung_ID
+              DELETE FROM Vorlesung WHERE Vorlesung_ID= :Vorlesung_ID
             ');
-            $stmt->bindParam(':vorlesung_ID', $vorlesung->vorlesung_ID);
+            $stmt->bindParam(':Vorlesung_ID', $Vorlesung->Vorlesung_ID);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
         }
-        $vorlesung = null;
-        return $vorlesung;
+        $Vorlesung = null;
+        return $Vorlesung;
     }
 }

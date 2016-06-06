@@ -1,4 +1,4 @@
-<!-- Formular, um eine Voting zu erstellen
+????<!-- Formular, um eine Voting zu erstellen
 Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert werden-->
 
 <?php // include("../inc/session_check.php"); ?>

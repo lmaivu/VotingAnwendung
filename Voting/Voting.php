@@ -4,7 +4,7 @@ class Voting
 {
     public $Voting_ID;
     public $Voting_Name;
-    public $Voting_Ergebnis;
+    public $Einschreibeschlussel;
     public $Voting_Ablaufzeit;
     public $Voting_Erstellung;
 
@@ -18,7 +18,7 @@ class Voting
             //wenn User in der DB besteht, dann bekommt er automatisch eine id
 
             $this->Voting_Name = $data['Voting_Name'];
-            $this->Voting_Ergebnis = $data['Voting_Ergebnis'];
+            $this->Einschreibeschlussel = $data['Einschreibeschlussel'];
             $this->Voting_Ablaufzeit = $data['Ablaufzeit'];
             $this->Voting_Erstellung = $data['Voting_Erstellung'];
             //automatische Setzung dieser Daten
@@ -26,7 +26,7 @@ class Voting
     }
 
     public function __toString() {
-        return $this->Voting_ID." ".$this->Voting_Name." ".$this->Voting_Ergebnis." ".$this->Voting_Ablaufzeit." ".$this->Voting_Erstellung;
+        return $this->Voting_ID." ".$this->Voting_Name." ".$this->Einschreibeschlussel." ".$this->Voting_Ablaufzeit." ".$this->Voting_Erstellung;
         //�ffentliche Methode __troString() wird definiert
         //AUfgabe: Ausgabe id name usw  der Klasse
     }

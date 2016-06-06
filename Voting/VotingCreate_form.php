@@ -1,4 +1,4 @@
-????<!-- Formular, um eine Voting zu erstellen
+<!-- Formular, um eine Voting zu erstellen
 Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert werden-->
 
 <?php // include("../inc/session_check.php"); ?>
@@ -21,15 +21,30 @@ Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert we
         <div class="form-group">
             <label class="control-label col-sm-2" for="voting_name">Name:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="voting_name" id="voting_ID" placeholder="Name">
+                <input type="text" class="form-control" name="voting_name" id="Voting_ID" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Vorlesung:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="vorlesung" id="Vorlesung_ID" placeholder="Vorlesung">
             </div>
         </div>
 
         <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Einschreibeschlüssel:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="Einschreibeschlussel" id="Einschreibeschlussel" placeholder="Einschreibeschlüssel:">
+            </div>
+
+        <div class="form-group">
             <label class="control-label col-sm-2" for="name">Ablaufzeit:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="voting_ablaufzeit" id="voting_ID" placeholder="Ablaufzeit">
+                <input type="text" class="form-control" name="voting_ablaufzeit" id="Ablaufzeit" placeholder="Ablaufzeit">
             </div>
+
+
+
         </div> <!--Googeln, wie man das Datum und zeit angeben kann-->
 
 

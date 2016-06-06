@@ -14,18 +14,9 @@ include "../inc/footer.php";
 <?php
 require_once("Voting.php");
 require_once("../Mapper/VotingManager.php");
-
 require_once("../Vorlesung/Vorlesung.php");
 require_once("../Mapper/VorlesungManager.php");
-
 require_once("../VotingVorlesung/VotingVorlesungManager.php");
-
-
-//eingetragenes Voting wird mittels GET Methode übermittelt
-//neues Objekt der Klasse initiiert, um auf bestimmte Methoden zuzugreifen
-$voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
-$votingManager = new VotingManager();
-$voting = $votingManager->findById($voting_ID);
 ?>
 
 
@@ -53,6 +44,8 @@ $voting = $votingManager->findById($voting_ID);
             <thead>
             <th>Nummer</th>
             <th>Voting-Name</th>
+            <th>Ablaufzeit</th>
+            <th>Erstellungsdatum</th>
             <th> </th>
             <!--<th>Erstellungsdatum</th>
             <th>Ablaufzeit</th>-->>
@@ -63,8 +56,7 @@ $voting = $votingManager->findById($voting_ID);
                 foreach ($liste as $Voting) {
                 echo "<tr>";
                 echo "<td>$Voting->Voting_ID</td>";
-                echo "<td>$Voting->Voting_Name</td>";
-                echo "<td>$Voting->Voting_Ergebnis</td>";
+                echo "<td>$Voting->Voting_Name</td>";;
                 echo "<td>$Voting->Voting_Ablaufzeit</td>";
                 echo "<td>$Voting->Voting_Erstellung</td>";
                 ?>
@@ -84,7 +76,7 @@ $voting = $votingManager->findById($voting_ID);
 
     <a type="button" class="btn btn-primary" href="VotingCreate_form.php" role="button">Neues Voting erstellen</a>
 
-
+<?php echo "$Voting->Voting_ID"; ?>
 
 </div>
 </body>

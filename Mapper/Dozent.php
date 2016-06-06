@@ -2,13 +2,15 @@
 
 class Dozent
 {
+    public $Dozent_ID;
     public $login;
     public $vorname;
     public $nachname;
     public $password;
 
-    function __construct($data=null) { //konstruktor, überprüft ob Daten bereits bestehen?
-        if (is_array($data)) { //überprüfen ob es sich um einen array handelt
+    function __construct($data=null) { //konstruktor, ï¿½berprï¿½ft ob Daten bereits bestehen?
+        if (is_array($data)) { //ï¿½berprï¿½fen ob es sich um einen array handelt
+            if (isset($data['Dozent_ID'])) $this->Dozent_ID = $data['Dozent_ID'];
             $this->login = $data['login'];
             $this->vorname = $data ['vorname'];
             $this->nachname = $data ['nachname'];

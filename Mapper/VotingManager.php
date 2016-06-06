@@ -31,7 +31,7 @@ class VotingManager
         $this->pdo = null;
     }
 
-    public function findById($voting_ID)
+    public function findById($Voting_ID)
     {
         try {
             $stmt = $this->pdo->prepare('SELECT * FROM Voting WHERE Voting_ID = :Voting_ID');
@@ -76,9 +76,9 @@ class VotingManager
               INSERT INTO Voting
                 (Voting_Name, Voting_Ergebnis , Ablaufzeit, Voting_Erstellung)
               VALUES
-                (:Voting_Name, :Voting_Ergebnis , :Eoting_Ablaufzeit, NOW())
+                (:Voting_Name, :Voting_Ergebnis , :Voting_Ablaufzeit, NOW())
             ');
-            $stmt->bindParam(':Voting_Name', $Voting->Voting_name);
+            $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
             $stmt->bindParam(':Voting_Ergebnis', $Voting->Voting_Ergebnis);
             $stmt->bindParam(':Voting_Ablaufzeit', $Voting->Voting_Ablaufzeit);
             $stmt->execute();
@@ -103,7 +103,7 @@ class VotingManager
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
-            $stmt->bindParam(':Voting_Eame', $Voting->Voting_Name);
+            $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
             $stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
             $stmt->bindParam(':Voting_Ablaufzeit', $Voting->Voting_Ablaufzeit);
 
@@ -125,7 +125,7 @@ class VotingManager
             $stmt = $this->pdo->prepare('
               DELETE FROM Voting WHERE Voting_ID= :Voting_ID
             ');
-            $stmt->bindParam(':voting_ID', $Voting->Voting_ID);
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");

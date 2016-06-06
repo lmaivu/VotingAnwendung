@@ -76,9 +76,9 @@ class VorlesungManager
               INSERT INTO Vorlesung
                 (Vorlesung_Name)
               VALUES
-                (:vorlesung_name)
+                (:Vorlesung_Name)
             ');
-            $stmt->bindParam(':Vorlesung_name', $Vorlesung->Vorlesung_name);
+            $stmt->bindParam(':Vorlesung_Name', $Vorlesung->Vorlesung_Name);
             $stmt->execute();
             // lastinsertId() gibt die zuletzt eingef�gte Id zur�ck -> damit Update der internen Id
             $Vorlesung->Vorlesung_ID = $this->pdo->lastInsertId();
@@ -95,11 +95,11 @@ class VorlesungManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Vorlesung
-              SET Vorlesung_Name = :Vorlesung_name,
+              SET Vorlesung_Name = :Vorlesung_Name,
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Vorlesung_ID', $Vorlesung->Vorlesung_ID);
-            $stmt->bindParam(':Vorlesung_name', $Vorlesung->Vorlesung_Name);
+            $stmt->bindParam(':Vorlesung_Name', $Vorlesung->Vorlesung_Name);
 
             $stmt->execute();
         } catch (PDOException $e) {

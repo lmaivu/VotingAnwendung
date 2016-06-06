@@ -25,9 +25,9 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
 
 ?>
 
-
+<head>
 <link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
-
+</head>
 
 <!DOCTYPE html>
 <html>
@@ -61,7 +61,7 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
             <td> <a type="button" class="btn btn-info" href="VorlesungRead.php" role="button">anzeigen</a> </td>
             <td> <a type="button" class="btn btn-primary" href="VorlesungUpdate_form.php" role="button">bearbeiten</a> </td>
             <td> <a type="button" class="btn btn-primary" href="VorlesungDelete.php" role="button">l&oumlschen</a> </td>
-            <td> <a type="button" class="btn btn-primary" href="../Voting/VorlesungRead.php" role="button">Voting anzeigen</a>
+            <td> <a type="button" class="btn btn-primary" href="../Voting/VotingRead.php" role="button">Voting anzeigen</a>
                 <!--�berpr�fen!!!-->
             <?php //nicht n�tig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung l�sen</a>";
             echo "<td></td>";

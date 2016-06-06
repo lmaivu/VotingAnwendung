@@ -25,13 +25,13 @@ class VotingVorlesungManager extends Manager
         parent::__destruct();
     }
 
-    public function findAllVorlesungByNotiz(Voting $voting)
+    public function findAllVorlesungByNotiz(Voting $Voting)
     {
         try {
             $stmt = $this->pdo->prepare('
               SELECT * FROM Vorlesung, Voting_Vorlesung WHERE Vorlesung_ID = notiz_leser.leser_id AND notiz_leser.notiz_id = :id
             ');
-            $stmt->bindParam(':id', $voting->id);
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             return $stmt->fetchAll();
@@ -41,13 +41,13 @@ class VotingVorlesungManager extends Manager
         }
     }
 
-    public function findAllVotingByVorlesung(Vorlesung $vorlesung)
+    public function findAllVotingByVorlesung(Vorlesung $Vorlesung)
     {
         try {
             $stmt = $this->pdo->prepare('
               SELECT * FROM notiz, notiz_leser WHERE notiz.id = notiz_leser.notiz_id AND notiz_leser.leser_id = :id
             ');
-            $stmt->bindParam(':id', $vorlesung->id);
+            $stmt->bindParam(':Vorlesung_ID', $Vorlesung->Vorlesung_ID);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
             return $stmt->fetchAll();
@@ -57,13 +57,13 @@ class VotingVorlesungManager extends Manager
         }
     }
 
-    public function findAllVorlesungNotConnectedToVoting(Voting $voting)
+    public function findAllVorlesungNotConnectedToVoting(Voting $Voting)
     {
         try {
             $stmt = $this->pdo->prepare('
               SELECT * FROM Vorlesung WHERE leser.id NOT IN (SELECT notiz_leser.leser_id FROM notiz_leser WHERE notiz_leser.notiz_id = :id)
             ');
-            $stmt->bindParam(':id', $voting->id);
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             return $stmt->fetchAll();

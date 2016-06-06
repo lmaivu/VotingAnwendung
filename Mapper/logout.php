@@ -14,7 +14,7 @@ unset($_SESSION["password"]);
 echo "Sie haben sich erfolgreich ausgeloggt.";
 ?>
     <br>
-    <a href="../index.php">Zur&uumlck zum Startseite</a>
+    <a href="../index.php">Zur&uumlck zur Startseite</a>
 </div>
 
 </html>

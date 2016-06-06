@@ -128,13 +128,3 @@ header nav {
     font-size: 18px;
 }
 
-
-/*Startseite*/
-figure {
-    position: relative;
-    margin: 0;
-    padding:5px
-    width: 5px;
-    height: 5px;
-    float:left;
-}

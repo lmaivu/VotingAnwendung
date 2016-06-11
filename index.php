@@ -24,7 +24,7 @@ include("inc/head.php");
         </div>
 
 
-    <div class="content">
+    <div id="content">
 
         <div class="login">
         <form class="form-horizontal" role="form" action="Mapper/login_do.php" method="post">
@@ -62,12 +62,12 @@ include("inc/head.php");
                     </div>
                 </div>
         </form>
-    <p> <a href="../Dozent/DozentCreate_form.php">Registrieren </a> </p>
     </div>
 
-    </div> <!--div class =content-->
+    </div> <!--div id =content-->
 
     <div class="info">
+        <p> <a href="Dozent/DozentCreate_form.php">Registrieren </a> </p>
         <a href="Mapper/info.php"> Was steckt hinter "I will survey"? </a>
     </div>
 
@@ -76,12 +76,14 @@ include("inc/head.php");
 
 
 <!-- Inhalt Ende-->
+    <div id="footer">
+        <?php
+        include("inc/footer.php");
+
+        ?>
+    </div>
 
 </body>
 
 </html>
 
-<?php
-include("inc/footer.php");
-
-?>

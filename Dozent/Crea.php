@@ -1,14 +1,13 @@
-<!-- Datei um das Voting Hinzuf?gen Formular zu ?berpr?fen, die eingegebenen Werte werden als string umgewandelt und gespeichert,
+<?php include("../inc/session_check.php"); ?>
+    <!-- Datei um das Voting Hinzuf?gen Formular zu ?berpr?fen, die eingegebenen Werte werden als string umgewandelt und gespeichert,
 als neuer Datensatz der Klasse Voting hi-->
 
-<?php //include("../inc/session_check.php"); ?>
 
 
 <?php
 require_once("../Mapper/DozentManager.php");
 require_once("../Mapper/Dozent.php");
 
-$Dozent_ID = htmlspecialchars($_POST["Dozent_ID"], ENT_QUOTES, "UTF-8");
 $login = htmlspecialchars($_POST["login"], ENT_QUOTES, "UTF-8");
 $vorname = htmlspecialchars($_POST["vorname"], ENT_QUOTES, "UTF-8");
 $nachname = htmlspecialchars($_POST["nachname"], ENT_QUOTES, "UTF-8");

@@ -16,16 +16,7 @@ header nav {
     justify-content: flex-end;
 }
 
-/* nicht mehr verf�gbar
-.content {
-    height: 100%;
-    margin: 0;
-    padding-top: 15px;
-    text-align: center;
-    width: 100%;
-    background-color:#bfaa9a;
-    background-size: 100% auto;
-} */
+
 
 .navbar{
     padding-top: 15px;
@@ -110,11 +101,10 @@ header nav {
 
 /*footer*/
 #footer {
-    position: absolute;
-    bottom: 0;
     background-color: beige;
     height: 2em;
     width:100%;
+    margin-top: 40px;
 }
 
 /* Box f�r Loginfehler Anzeigen */

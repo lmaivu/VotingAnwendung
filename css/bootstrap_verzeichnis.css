@@ -25,6 +25,7 @@
     font-family: 'Tahoma', serif;
     font-size: medium;
     text-align: left;
+
 }
 
 .table-responsive {
@@ -35,4 +36,10 @@
     font-family: 'Tahoma', serif;
     font-size: medium;
     text-align: left;
+}
+
+#footer {
+    margin-top:100px;
+    position: absolute;
+    bottom:0;
 }

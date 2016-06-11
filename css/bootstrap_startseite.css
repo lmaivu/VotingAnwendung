@@ -1,10 +1,31 @@
 /*Startseite*/
-.menu {
+
+#main{
+
+    background-clip: padding-box;
+    background-image: url('https://mars.iuk.hdm-stuttgart.de/~lv018/background3.jpeg');
+    background-position: center; /*zentriert*/
+    background-attachment: fixed;
+    /*browserspezifische Anpassung folgen*/
+    background-repeat: no-repeat;
+    font-family: "Tahoma", sans-serif;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    color: #Cdbfa5;
+}
+#menu {
+    width:100%;
     position: relative;
     margin: 0;
-    padding:5px;
-    width:280px;
-    height:200px;
-    float:left;
-    display:inline;
+    padding:80px;
+    background-color: beige;
+    padding-bottom: 1em;
 }
+
+.row {
+    font-size: 20px;
+    color: #bfaa9a;
+
+}
+

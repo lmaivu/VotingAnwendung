@@ -17,41 +17,40 @@ include("../inc/footer.php");
 
 
 <head>
- <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/bootstrap_startseite.css" rel="stylesheet">
 </head>
 
+<body>
 <div id="main"> <!--div main-->
 
   <div id="kopfleiste">
-       Hallo <?php /**print_r( $_SESSION ['dozent']); $_SESSION ['nachname'] **/?> - Willkommen zu I will survey
+
+      <p>
+          Hallo <strong><?php echo $dozent->nachname; ?> </strong> ! <br>
+          Willkommen zu 'I will survey' </p>
   <div>
+  </div> <!--div main-->
 
-      <div class="menu">
-          <div id="eins">
-              <a href="../Vorlesung/Vorlesungsverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.jpg"
-                                                                     width="280px" height="200px">
-          </div>
-          <div id="zwei">
-              <a href="../Voting/Votingverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.jpg"
-                                                              width="280px" height="200px">
-          </div>
-          <div id="drei">
-              <a href="../Dozent/DozentCreate_form.php"> <img src="https://cdn3.iconfinder.com/data/icons/line/36/person_add-512.png"
-                                                              width="130px" height="120">
+  <div id="menu">
+      <div class="row">
+
+              <div class="col-sm-4">
+              <a href="../Vorlesung/Vorlesungsverzeichnis.php"> Vorlesungsverzeichnis  <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.jpg" width= "230px" height="200px" class="img-circle">
+              </div>
+
+          <div class="col-sm-4">
+              <a href="../Vorlesung/VorlesungCreate_form.php"> Vorlesung erstellen<img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungerstellen.jpg" width= "230px" height="200px" class="img-circle">
           </div>
 
-</div> <!--div main-->
+          <div class="col-sm-4">
+              <a href="../Voting/Votingverzeichnis.php"> Votingverzeichnis <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.jpg" width= "230px" height="200px" class="img-circle">
+          </div>
 
 
 
 
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      </div>
+
+
+</body>
 </html>

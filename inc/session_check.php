@@ -7,11 +7,11 @@ require_once("../Mapper/Manager.php");
 require_once("../Mapper/Dozent.php");
 
 session_start();
-$login = $_POST ['login'];
-if ($_SESSION ["session_steht"]<>"1") { //wenn session start nicht gleich 1 ist
+//$login = $_POST ['login'];
+if ($_SESSION ["login"]<>"1") { //wenn session start nicht gleich 1 ist
     $_SESSION = array(); //Neu erstellte session als leeres array
-    session_destroy(); //session löschen
-    echo 'Bitte zuerst einloggen, um die Seite anzuschauen'; //ÜBERPRÜFEN!
+    session_destroy(); //session lï¿½schen
+    echo 'Bitte zuerst einloggen, um die Seite anzuschauen'; //ï¿½BERPRï¿½FEN!
     header('Location: ../index.php'); //direkte Weiterleitung des Users auf login Seite
 } else {
     $dozent = $_SESSION ["dozent"];

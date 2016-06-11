@@ -1,3 +1,4 @@
+<!-- Variablen müssen noch geändert werden!!! -->
 <?php //include("../inc/session_check.php"); ?>
 
 <?php
@@ -10,13 +11,13 @@ $name = htmlspecialchars($_POST["name"], ENT_QUOTES, "UTF-8");
 $betreff = htmlspecialchars($_POST["betreff"], ENT_QUOTES, "UTF-8");
 $text = htmlspecialchars($_POST["text"], ENT_QUOTES, "UTF-8");
 
-if (!empty($voting_id) && !empty($name) && !empty($betreff) && !empty($text)) {
+if (!empty($Voting_ID) && !empty($name) && !empty($betreff) && !empty($text)) {
     $votingManager = new VotingManager();
-    $voting = $votingManager->findById($notiz_id);
-    $voting->name = $voting;
-    $voting->text = $text;
-    $votingManager->save($voting);
-    header('Location: index.php');
+    $Voting = $votingManager->findById($notiz_id);
+    $Voting->name = $Voting;
+    $Voting->text = $text;
+    $votingManager->save($Voting);
+    header('Location: ../index.php');
 } else {
     echo "Error: Bitte alle Felder ausfüllen!";
 }

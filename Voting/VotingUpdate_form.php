@@ -22,15 +22,15 @@ $voting = $votingManager->findById($voting_id);
 <?php include("../inc/navbar.php"); ?>
 
 <div class="container">
-    <h1>Voting-Eintrag <?php echo ($voting->voting_ID) ?></h1>
+    <h1>Voting-Eintrag <?php echo ($Voting->Voting_ID) ?></h1>
     <form action='VotingUpdate_do.php' method='post'>
-        <input type='hidden' name='voting_ID' value='<?php echo ($voting->voting_ID) ?>' />
+        <input type='hidden' name='Voting_ID' value='<?php echo ($Voting->Voting_ID) ?>' />
         Name des Votings:<br>
-        <input type='text' name='voting_name' value='<?php echo ($voting_name) ?>' /><br>
+        <input type='text' name='Voting_name' value='<?php echo ($Voting_Name) ?>' /><br>
         Ergebnis des Votings:<br>
-        <input type='text' name='voting_ergebnis' value='<?php echo ($voting->voting_ergebnis) ?>' /><br>
+        <input type='text' name='Voting_Ergebnis' value='<?php echo ($Voting->Voting_Ergebnis) ?>' /><br>
         Ablaufzeit des Votings:<br>
-        <input type='date' name='voting_ablaufzeit' size='40' maxlength='80' value='<?php echo ($voting->voting_ablaufzeit) ?>' /><br><br>
+        <input type='date' name='Voting_Ablaufzeit' size='40' maxlength='80' value='<?php echo ($Voting->Voting_Ablaufzeit) ?>' /><br><br>
         <input type='submit' value='Eintrag speichern' />
     </form>
 </div>

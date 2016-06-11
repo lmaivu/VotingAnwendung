@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title> I will survey - Voting </title>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
     <!--
      <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="main.css">

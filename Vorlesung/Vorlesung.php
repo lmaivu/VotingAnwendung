@@ -4,6 +4,7 @@ class Vorlesung
 {
     public $Vorlesung_ID;
     public $Vorlesung_Name;
+    public $Dozent_ID;
 
 
     function __construct($data=null) { //Construktor wird definiert mit dem Parameter $data mit dem festen Wert 0
@@ -16,15 +17,15 @@ class Vorlesung
             //wenn User in der DB besteht, dann bekommt er automatisch eine id
 
             $this->Vorlesung_Name = $data['Vorlesung_Name'];
+            $this->Dozent_ID = $data['Dozent_ID'];
             //automatische Setzung dieser Daten
         }
     }
 
     public function __toString() {
-        return $this->Vorlesung_ID." ".$this->Vorlesung_name;
+        return $this->Vorlesung_ID." ".$this->Vorlesung_Name;
         //�ffentliche Methode __troString() wird definiert
         //AUfgabe: Ausgabe id name usw  der Klasse
     }
 }
 
-echo "$Vorlesung->Vorlesung_ID";

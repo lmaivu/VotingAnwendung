@@ -47,12 +47,13 @@ class VorlesungManager
         return $n;
     }
 
-    public function findAll()
+    public function findAll($dozent)
     {
         try {
-            $stmt = $this->pdo->prepare('
-              SELECT * FROM Vorlesung
-            ');
+            $stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Dozent_ID= :dozent');
+            /**$stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung, Dozent WHERE Vorlesung.Dozent_ID= Dozent.Dozent_ID');**/
+            /**$stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung, Dozent WHERE Vorlesung.Dozent_ID= :dozent'); **/
+            $stmt->bindParam(':dozent', $dozent);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             return $stmt->fetchAll();
@@ -74,11 +75,12 @@ class VorlesungManager
         try {
             $stmt = $this->pdo->prepare('
               INSERT INTO Vorlesung
-                (Vorlesung_Name)
+                (Vorlesung_Name, Dozent_ID)
               VALUES
-                (:Vorlesung_Name)
+                (:Vorlesung_Name, :Dozent_ID)
             ');
             $stmt->bindParam(':Vorlesung_Name', $Vorlesung->Vorlesung_Name);
+            $stmt->bindParam(':Dozent_ID', $Vorlesung->Dozent_ID);
             $stmt->execute();
             // lastinsertId() gibt die zuletzt eingef�gte Id zur�ck -> damit Update der internen Id
             $Vorlesung->Vorlesung_ID = $this->pdo->lastInsertId();

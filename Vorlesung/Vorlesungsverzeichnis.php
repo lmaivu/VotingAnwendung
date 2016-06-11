@@ -4,8 +4,8 @@ Darstellung der Daten in Tabellenform-->
 <?php
 
 include "../inc/head.php";
-/*include "../inc/navbar.php";
-/*include "../inc/footer.php";*/
+include "../inc/navbar.php";
+include "../inc/footer.php";
 
 ?>
 
@@ -19,10 +19,6 @@ require_once("../Mapper/VorlesungManager.php");
 require_once("../Mapper/VotingManager.php");
 
 require_once("../VotingVorlesung/VotingVorlesungManager.php");
-
-
-
-
 ?>
 
 <head>
@@ -38,12 +34,12 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
 
 <div class="container">
     <div class="jumbotron">
-        <h1>Vorlesungsverzeichnis</h1>
+        <h1>Vorlesungs-Verzeichnis</h1>
     </div>
 
     <?php
-    $vorlesungManager = new VorlesungManager();
-    $liste = $vorlesungManager->findAll();
+    $VorlesungManager = new VorlesungManager();
+    $liste = $VorlesungManager->findAll($dozent->Dozent_ID);
     if (count($liste) > 0) { ?>
     <table class="table table-hover">
         <thead>
@@ -58,15 +54,18 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
             echo "<td>$Vorlesung->Vorlesung_ID</td>";
             echo "<td>$Vorlesung->Vorlesung_Name</td>";
              ?>
-            <td> <a type="button" class="btn btn-info" href="VorlesungRead.php" role="button">anzeigen</a> </td>
-            <td> <a type="button" class="btn btn-primary" href="VorlesungUpdate_form.php" role="button">bearbeiten</a> </td>
-            <td> <a type="button" class="btn btn-primary" href="VorlesungDelete.php" role="button">l&oumlschen</a> </td>
-            <td> <a type="button" class="btn btn-primary" href="../Voting/VotingRead.php" role="button">Voting anzeigen</a>
+            <!--<td> <a type="button" class="btn btn-info" href="VorlesungRead.php" role="button">anzeigen</a> </td>-->
+        <td> <a type="button" class="btn btn-info" href="VorlesungRead.php?Vorlesung_ID=$Vorlesung->Dozent_ID" role="button">anzeigen</a> </td>
+            <td> <a type="button" class="btn btn-primary" href="VorlesungUpdate_form.php?Vorlesung_ID=$Vorlesung->Dozent_ID" role="button">bearbeiten</a> </td>
+            <td> <a type="button" class="btn btn-primary" href="VorlesungDelete.php?Vorlesung_ID=$Vorlesung->Dozent_ID" role="button">l&oumlschen</a> </td>
+            <td> <a type="button" class="btn btn-primary" href="../Voting/VotingRead.php?Vorlesung_ID=$Vorlesung->Dozent_ID" role="button">Voting anzeigen</a>
                 <!--�berpr�fen!!!-->
             <?php //nicht n�tig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung l�sen</a>";
             echo "<td></td>";
             echo "</tr>";
         } }
+            else
+            echo "Es sind noch keine Vorlesungen vorhanden."
         ?>
         </tbody>
     </table>

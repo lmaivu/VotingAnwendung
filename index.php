@@ -60,10 +60,9 @@ include("inc/head.php");
                     <div class="col-sm-offset-4 col-sm-4">
                         <button type="submit" class="btn btn-default">Login</button>
                     </div>
-
                 </div>
         </form>
-
+    <p> <a href="../Dozent/DozentCreate_form.php">Registrieren </a> </p>
     </div>
 
     </div> <!--div class =content-->

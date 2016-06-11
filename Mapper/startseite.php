@@ -10,7 +10,6 @@ require_once ("DozentManager.php");
 <?php
 include("../inc/head.php");
 include("../inc/navbar.php");
-include("../inc/footer.php");
 
 ?>
 
@@ -45,11 +44,12 @@ include("../inc/footer.php");
           <div class="col-sm-4">
               <a href="../Voting/Votingverzeichnis.php"> Votingverzeichnis <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.jpg" width= "230px" height="200px" class="img-circle">
           </div>
+      </div> <!-- div menu-->
 
+      <div id="footer">
+          <?php include("../inc/footer.php"); ?>
+    </div>
 
-
-
-      </div>
 
 
 </body>

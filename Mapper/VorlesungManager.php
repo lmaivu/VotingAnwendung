@@ -1,34 +1,25 @@
 <!-- VotingManager zum Aufbau der DB-Verbindung
 mit folgenden Funktionen: findbyID, findAll, CRUD applikationen -->
 <?php
-
+require_once("Manager.php");
 require_once("../Vorlesung/Vorlesung.php");
+require_once("Dozent.php");
+require_once("DozentManager.php");
 require_once("../Mapper/Userdata.php");
 
-class VorlesungManager
+class VorlesungManager extends Manager
 {
-    private $pdo;
+    protected $pdo;
 
     public function __construct($connection = null)
     {
-        try {
-            $this->pdo = $connection;
-            if ($this->pdo === null) {
-                $this->pdo = new PDO(
-                    UserData::$dsn,
-                    UserData::$dbuser,
-                    UserData::$dbpass
-                );
-            }
-        } catch (PDOException $e) {
-            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
-            die();
+        parent::__construct($connection);
         }
-    }
+
 
     public function __destruct()
     {
-        $this->pdo = null;
+        parent::__destruct();
     }
 
     public function findById($Vorlesung_ID)
@@ -50,10 +41,10 @@ class VorlesungManager
     public function findAll($dozent)
     {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Dozent_ID= :dozent');
+            $stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Dozent_ID= Dozent_ID');
             /**$stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung, Dozent WHERE Vorlesung.Dozent_ID= Dozent.Dozent_ID');**/
             /**$stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung, Dozent WHERE Vorlesung.Dozent_ID= :dozent'); **/
-            $stmt->bindParam(':dozent', $dozent);
+            $stmt->bindParam(':Dozent_ID', $dozent->Dozent_ID);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             return $stmt->fetchAll();

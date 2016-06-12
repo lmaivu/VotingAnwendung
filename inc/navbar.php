@@ -17,7 +17,7 @@
     <!-- Menü-Items -->
     <div class="collapse navbar-collapse" id="mainNavBar">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="https://mars.iuk.hdm-stuttgart.de/~lv018/startseite.php">Startseite</a></li>
+            <li class="active"><a href="../Mapper/startseite.php">Startseite</a></li>
             <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Votingverzeichnis.php">Votings</a></li>
             <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesung/Vorlesungsverzeichnis.php">Vorlesungen</a></li>
         </ul>

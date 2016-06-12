@@ -25,8 +25,8 @@ include("../inc/navbar.php");
   <div id="kopfleiste">
 
       <p>
-          Hallo <strong><?php echo $dozent->nachname; ?> </strong> ! <br>
-          Willkommen zu 'I will survey' </p>
+          Hallo <strong><?php echo $dozent->vorname, '&nbsp;',$dozent->nachname; ?> </strong> ! <br>
+          Willkommen zu 'I will survey'! </p>
   <div>
   </div> <!--div main-->
 

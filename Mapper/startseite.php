@@ -20,6 +20,7 @@ include("../inc/navbar.php");
 </head>
 
 <body>
+
 <div id="main"> <!--div main-->
 
   <div id="kopfleiste">

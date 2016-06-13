@@ -89,7 +89,7 @@ class VorlesungManager extends Manager
             $stmt = $this->pdo->prepare('
               UPDATE Vorlesung
               SET Vorlesung_Name = :Vorlesung_Name,
-              WHERE Voting_ID = :Voting_ID
+              WHERE Vorlesung_ID = :Vorlesung_ID
             ');
             $stmt->bindParam(':Vorlesung_ID', $Vorlesung->Vorlesung_ID);
             $stmt->bindParam(':Vorlesung_Name', $Vorlesung->Vorlesung_Name);

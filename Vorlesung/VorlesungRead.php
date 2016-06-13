@@ -20,8 +20,8 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 
 <div class="container">
     <div class="jumbotron" style=background:whitesmoke>
-        <h1><?php echo $Vorlesung->Vorlesung_Name?></h1><br />
-        <?php echo "<a href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_IV' class='btn btn-default' role='button'><span class='glyphicon glyphicon-stats'></span> Voting anlegen</a>" ?>
+        <h1><?php echo $Vorlesung->Vorlesung_Name ?></h1><br />
+        <?php echo "<a href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID' class='btn btn-default' role='button'><span class='glyphicon glyphicon-stats'></span> Voting anlegen</a>" ?>
     </div>
 </div>
 
@@ -44,19 +44,19 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
         require_once("../Voting/Voting.php");
         require_once("../Mapper/VotingManager.php");
         $VotingManager = new VotingManager();
-        $liste = $VotingManager->findAll($vorlesung->id);
+        $liste = $VotingManager->findAll($Voting->Voting_ID); //kein Parameter eig???
         foreach ($liste as $Voting) {
             echo "<tr>";
-            echo "<td>$Voting->ID</td>";
+            echo "<td>$Voting->Voting_ID</td>";
             echo "<td>$Voting->frage</td>";
             echo "<td>$Voting->a</td>";
             echo "<td>$Voting->b</td>";
             echo "<td>$Voting->c</td>";
             echo "<td>$Voting->d</td>";
             echo "<td>
-                        <a href='QR_Code.php?voting_id=$Voting->ID' class='btn btn-primary btn-sm'>QR-Code</a>
-                        <a href='VotingResult.php?voting_id=$Voting->id' class='btn btn-success btn-sm'>anzeigen</a>
-                        <a href='VotingDelete_do.php?voting_id=$Voting->id' class='btn btn-danger btn-sm'>löschen</a>
+                        <a href='QR_Code.php?voting_id=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
+                        <a href='VotingResult.php?voting_id=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>
+                        <a href='VotingDelete_do.php?voting_id=$Voting->Voting_ID' class='btn btn-danger btn-sm'>löschen</a>
                       </td>";
             echo "</tr>";
         }

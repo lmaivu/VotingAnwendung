@@ -63,15 +63,20 @@ header nav {
 
 */
 
+#standard {
+    font-size: 24px;
+}
+
 #kopfleiste.h1 {
     font-family: 'Tahoma', Helvetica, sans-serif;
     font-size:40px;
     color: #Cdbfa5;
     float: left
-    text-shadow: darkgrey 0.1em 0.1em 0.2em;
 }
 
-
+h1 {
+    text-shadow: 0.1em 0.1em 0.2em darkgrey;
+}
 /* Login Formular */
 
 .form-group {

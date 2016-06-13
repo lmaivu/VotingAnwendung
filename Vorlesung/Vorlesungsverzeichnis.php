@@ -1,6 +1,7 @@
 <!-- erstellte Votingdaten werden hier mithilfe von GET �bermittelt
 Darstellung der Daten in Tabellenform-->
 
+
 <?php
 
 include "../inc/head.php";
@@ -54,7 +55,7 @@ require_once("../Mapper/VotingManager.php");
                 echo "<td>
                     <a href='VorlesungRead.php?Vorlesung_ID=$Vorlesung->Dozent_ID' type='button' class='btn btn-info' role='button'>anzeigen</a>
                     <a href='VorlesungUpdate_form.php?Vorlesung_ID=$Vorlesung->Dozent_ID' type='button' class='btn btn-primary' role='button'>bearbeiten</a>
-                    <a href='VorlesungDelete.php?Vorlesung_ID=$Vorlesung->Dozent_ID' type='button'' class='btn btn-primary' role='button'>l&oumlschen</a>
+                    <a href='VorlesungDelete.php?Vorlesung_ID=$Vorlesung->Dozent_ID' type='button' class='btn btn-primary' role='button'>l&oumlschen</a>
                     <a href='../Voting/VotingRead.php?Vorlesung_ID=$Vorlesung->Dozent_ID' type='button' class='btn btn-primary'  role='button'>Voting anzeigen</a>
 
             </td>";

@@ -3,7 +3,7 @@ Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert we
 
 <?php
 include_once("../inc/session_check.php");
-
+require_once("../Mapper/VorlesungManager.php");
 ?>
 
 
@@ -40,6 +40,27 @@ include_once("../inc/session_check.php");
                 <input type="text" class="form-control" name="vorlesung" id="Vorlesung_ID" placeholder="Vorlesung">
             </div>
         </div>
+
+
+<!-- Dropdown - Menü für Vorlesungen -->
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Vorlesung:</label>
+            <div class="col-sm-8">
+
+                // SQL-Query erzeugen
+                $sql = "SELECT id,name FROM dropdown ORDER BY inhalt";
+                $result = mysql_query($sql);
+
+                // für jeden Eintrag ein Option-Tag erstellen
+                while ($row = mysql_fetch_array($result)) {
+                echo '<option value="'.$row['id'].'"'.($_POST['stadt'] == $row['id'] ? " selected": "").'>'.$row['name'].'</option>';
+                }
+            </div>
+
+<!-- Ende Dropdown-Menü -->
+
+
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Einschreibeschlüssel:</label>

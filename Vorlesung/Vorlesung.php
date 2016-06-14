@@ -10,12 +10,12 @@ class Vorlesung
     function __construct($data=null) { //Construktor wird definiert mit dem Parameter $data mit dem festen Wert 0
         //Wert als assoziativer array,
         if (is_array($data)) { //vordefiniert von PDO, �berpr�ft ob &data ein array ist
-            if (isset($data['Vorlesung_ID'])) $this->Vorlesung_ID = $data['Vorlesung_ID'];
+            if (isset($data['Vorlesung_ID']))
             //�berpr�fung, ob id vorhanden ist
             //wenn bei data eine ID �bergeben wurde, Aufruf des Attributs id
             //bekommt den Wert id des Parameters $data
             //wenn User in der DB besteht, dann bekommt er automatisch eine id
-
+            $this->Vorlesung_ID = $data['Vorlesung_ID'];
             $this->Vorlesung_Name = $data['Vorlesung_Name'];
             $this->Dozent_ID = $data['Dozent_ID'];
             //automatische Setzung dieser Daten

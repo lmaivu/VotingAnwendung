@@ -15,7 +15,7 @@ class Dozent
             $this->login = $data['login'];
             $this->vorname = $data ['vorname'];
             $this->nachname = $data ['nachname'];
-            $this->password = $data['password'];
+            $this->hash = $data['hash'];
         }
         //return $this->$data;
     }

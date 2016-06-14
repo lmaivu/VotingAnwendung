@@ -41,10 +41,10 @@ class VorlesungManager extends Manager
     public function findAll($dozent)
     {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Dozent_ID= Dozent_ID');
-            /**$stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung, Dozent WHERE Vorlesung.Dozent_ID= Dozent.Dozent_ID');**/
+            //**$stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Dozent_ID= Dozent_ID'); // Doppelpunkt ausprobieren
+            $stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung WHERE Dozent_ID= :Dozent');
             /**$stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung, Dozent WHERE Vorlesung.Dozent_ID= :dozent'); **/
-            $stmt->bindParam(':Dozent_ID', $dozent->Dozent_ID);
+            $stmt->bindParam(':Dozent', $dozent->Dozent_ID);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             return $stmt->fetchAll();

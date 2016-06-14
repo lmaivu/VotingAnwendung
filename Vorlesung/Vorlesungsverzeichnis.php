@@ -9,7 +9,7 @@ include "../inc/navbar.php";
 
 ?>
 
-<?php //include("../inc/session_check.php"); ?>
+<?php include("../inc/session_check.php"); ?>
 
 <?php
 require_once("Vorlesung.php");

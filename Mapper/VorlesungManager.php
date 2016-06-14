@@ -102,7 +102,7 @@ class VorlesungManager extends Manager
         return $Vorlesung;
     }
 
-    public function delete($Vorlesung)
+    public function delete(Vorlesung $Vorlesung)
     {
         if (!isset($Vorlesung->Vorlesung_ID)) {
             $Vorlesung = null;

@@ -20,13 +20,13 @@ if (!empty($login) && !empty($vorname) && !empty($nachname) && !empty($password)
         "login" => $login,
         "vorname" => $vorname,
         "nachname" => $nachname,
-        "password" => $password,
+        "hash" => password_hash($password, PASSWORD_DEFAULT)
 
     ];
     $dozent = new Dozent($dozentdaten);
     $DozentManager = new DozentManager();
     $DozentManager->create($dozent);
 
-    header('Location: ../Mapper/startseite.php');
+    header('Location: ../index.php');
 } else {
     echo "Error: Bitte alle Felder ausf&uumlllen!<br/>"; }

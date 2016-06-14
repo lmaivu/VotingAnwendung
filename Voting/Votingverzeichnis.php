@@ -9,7 +9,7 @@ include "../inc/footer.php";
 
 ?>
 
-<?php //include("../inc/session_check.php"); ?>
+<?php include("../inc/session_check.php"); ?>
 
 <?php
 require_once("Voting.php");
@@ -48,7 +48,7 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
             <th>Erstellungsdatum</th>
             <th> </th>
             <!--<th>Erstellungsdatum</th>
-            <th>Ablaufzeit</th>-->>
+            <th>Ablaufzeit</th>-->
                 <th></th>
                 </thead>
                 <tbody>
@@ -74,9 +74,8 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
             </table>
             <br>
 
-    <a type="button" class="btn btn-primary" href="VotingCreate_form.php" role="button">Neues Voting erstellen</a>
 
-<?php echo "$Voting->Voting_ID"; ?>
+<?php //echo "$Voting->Voting_ID"; ?>
 
 </div>
 </body>

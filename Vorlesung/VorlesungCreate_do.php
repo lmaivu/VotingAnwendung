@@ -7,11 +7,13 @@ require_once("Vorlesung.php");
 $Vorlesung_ID = htmlspecialchars($_POST["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
 $Vorlesung_Name = htmlspecialchars($_POST["Vorlesung_Name"], ENT_QUOTES, "UTF-8");
 $Dozent_ID = htmlspecialchars($_POST["Dozent_ID"], ENT_QUOTES, "UTF-8");
+$Dozent_ID = htmlspecialchars($_POST["Dozent_ID"], ENT_QUOTES, "UTF-8");
 
 if (!empty($Vorlesung_Name)  ) {
     $vorlesungdaten = [
         "Vorlesung_Name" => $Vorlesung_Name,
         "Dozent_ID" => $Dozent_ID,
+        "hash"
 
     ];
     $Vorlesung = new Vorlesung($vorlesungdaten);

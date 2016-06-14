@@ -13,7 +13,7 @@
 <div class="container">
     <h2>Neuer Dozent</h2>
 
-    <form class="form-horizontal" role="form" action="DozentCreate_do.php" method="post">
+    <form class="form-horizontal" role="form" action="DozentCreate_Do.php" method="post">
         <div class="form-group">
             <label for="login" class="col-sm-2 control-label">E-Mail Adresse</label>
             <div class="col-sm-4">

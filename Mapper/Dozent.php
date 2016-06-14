@@ -6,7 +6,7 @@ class Dozent
     public $login;
     public $vorname;
     public $nachname;
-    public $password;
+    public $hash;
 
     function __construct($data=null) { //konstruktor, �berpr�ft ob Daten bereits bestehen?
         if (is_array($data)) { //�berpr�fen ob es sich um einen array handelt

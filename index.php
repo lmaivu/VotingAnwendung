@@ -50,7 +50,7 @@ include("inc/head.php");
                 </span>
                 </div>
                 <div class="col-sm-3">
-                    <input class="form-control" type="password" name='password' placeholder="Passwort"/>
+                    <input class="form-control" type="password" name='hash' placeholder="Passwort"/>
 
                 </div>
 

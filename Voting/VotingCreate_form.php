@@ -28,7 +28,7 @@ require_once("../Mapper/VorlesungManager.php");
         <div class="form-group">
             <label class="control-label col-sm-2" for="voting_name">Name:</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="voting_name" id="Voting_ID" placeholder="Name">
+                <input type="text" class="form-control" name="Voting_Name" id="Voting_Name" placeholder="Name">
             </div>
         </div>
 
@@ -45,7 +45,7 @@ require_once("../Mapper/VorlesungManager.php");
             <label class="control-label col-sm-2" for="name">Ablaufzeit:</label>
             <div class="col-sm-8">
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" placeholder="Ablaufzeit">
+                    <input type='text' class="form-control" name="Ablaufzeit" id="Ablaufzeit" placeholder="Ablaufzeit">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -72,7 +72,8 @@ require_once("../Mapper/VorlesungManager.php");
     <h2>Erstellen Sie hier Frage und Antworten!</h2>
 
     <p>Formulieren Sie eine Frage und die möglichen Antworten<br>
-    Wählen Sie anschließend aus, ob die jeweilige Antwort richtig oder falsch ist.
+    Wählen Sie anschließend aus, ob die jeweilige Antwort richtig oder falsch ist.<br>
+    Geben Sie bitte mindestens zwei Antwortmöglichkeiten an.
     </p>
 
     <form class="form-horizontal" role="form" action="VotingCreate_do.php" method="post">

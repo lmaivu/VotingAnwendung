@@ -122,7 +122,7 @@ require_once("../Mapper/VorlesungManager.php");
         <div class="form-group">
             <label class="control-label col-sm-5"</label>
             <div class="col-sm-6">
-                <input type="hidden" value="<?php echo htmlspecialchars($Vorlesung_ID);?>" class="form-control" name="Vorlesung_ID" id="Vorlesung_ID" readonly>
+                <input type="hidden" value="<?php echo htmlspecialchars($Vorlesung->Vorlesung_ID);?>" class="form-control" name="Vorlesung_ID" id="Vorlesung_ID" readonly>
             </div>
         </div>
 

@@ -8,16 +8,16 @@ require_once("Dozent.php");
 
 
 $login = htmlspecialchars($_POST["login"], ENT_QUOTES, "UTF-8");
-$password = htmlspecialchars($_POST["password"], ENT_QUOTES, "UTF-8");
+$hash = htmlspecialchars($_POST["hash"], ENT_QUOTES, "UTF-8");
 /*$hash=password_hash($password, PASSWORD_DEFAULT);//PW hashen
 $hash = htmlspecialchars($_POST["password"], ENT_QUOTES, "UTF-8"); //hash*/
 
 
-if (!empty($login) && !empty($password)) {
+if (!empty($login) && !empty($hash)) {
     // Wenn Logindaten und Passwort �bergeben wurden
     $DozentManager= new DozentManager();
     //dann wird ein neues Objekt der Klasse instanziiert
-    $dozent= $DozentManager->findByLogin($login, $password);
+    $dozent= $DozentManager->findByLogin($login, $hash);
     //dann werden die Login und PW Daten mithilfe der Methode findByLogin geholt
     if ($dozent==null) {
         header('Location: FalseLogin.php'); //weiterleiten an FalseLogin Seite

@@ -17,19 +17,18 @@ class DozentManager extends Manager
         parent::__destruct();
     }
 
-    public function findByLogin($login, $password)
+    public function findByLogin($login, $hash)
     {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login AND password= :password');
+            $stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login');
             $stmt->bindParam(':login', $login);
-            $stmt->bindParam(':password', $password);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Dozent');
             $dozent = $stmt->fetch();
 
 
 
-            if (password_verify($password, $dozent->hash)) {
+            if (password_verify($hash, $dozent->hash)) {
             return $dozent;
             } else {
             return null;
@@ -87,7 +86,7 @@ VALUES
 UPDATE Dozent
 SET vorname = :vorname,
 nachname = :nachname,
-password = :password
+hash = :hash
 WHERE login = :login
 ');
             $stmt->bindParam(':vorname', $dozent->vorname);

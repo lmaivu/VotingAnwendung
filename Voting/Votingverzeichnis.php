@@ -37,8 +37,8 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
     </div>
 
     <?php
-    $votingManager = new VotingManager();
-    $liste = $votingManager->findAll ();
+    $VotingManager = new VotingManager();
+    $liste = $VotingManager->findAll ();
     if (count($liste) > 0) { ?>
         <table class="table table-hover">
             <thead>
@@ -55,15 +55,16 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
                 <?php
                 foreach ($liste as $Voting) {
                 echo "<tr>";
-                echo "<td>$Voting->Voting_ID</td>";
+                echo "<td>"; $Voting_ID=$Voting->Voting_ID; echo" $Voting_ID </td>";;
                 echo "<td>$Voting->Voting_Name</td>";;
                 echo "<td>$Voting->Voting_Ablaufzeit</td>";
                 echo "<td>$Voting->Voting_Erstellung</td>";
-                ?>
-                <td> <a type="button" class="btn btn-info" href="VotingRead.php" role="button">anzeigen</a> </td>
-                <td> <a type="button" class="btn btn-primary" href="VotingUpdate_form.php" role="button">bearbeiten</a> </td>
-                <td> <a type="button" class="btn btn-primary" href="VotingDelete.php" role="button">l&oumlschen</a> </td>
-                <td> <a type="button" class="btn btn-primary" href="../Vorlesung/VorlesungRead.php" role="button">Vorlesung anzeigen</a>
+
+                echo "<td> <a type='button' class='btn btn-info' href='VotingRead.php?Voting_ID=$Voting_ID' role='button'>anzeigen</a> </td>";
+                echo "<td> <a type='button' class='btn btn-primary' href='VotingUpdate_form.php?Voting_ID=$Voting_ID' role='button'>bearbeiten</a> </td>";
+                echo "<td> <a type='button' class='btn btn-primary' href='VotingDelete.php?Voting_ID=$Voting_ID' role='button'>l&oumlschen</a> </td>";
+                echo "<td> <a type='button' class='btn btn-primary' href='../Vorlesung/VorlesungRead.php?Voting_ID=$Voting_ID' role='button'>Vorlesung anzeigen</a>";
+                    ?>
                     <!--�berpr�fen!!!-->
                     <?php //nicht n�tig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung l�sen</a>";
                     echo "<td></td>";

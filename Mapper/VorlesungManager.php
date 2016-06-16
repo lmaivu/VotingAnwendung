@@ -55,7 +55,7 @@ class VorlesungManager extends Manager
 
     }
 
-    public function save(Vorlesung $Vorlesung)
+    public function save(Vorlesung $Vorlesung) //testen ob man nur die Varibale $Vorlesung nehmen soll
     {
         // wenn ID gesetzt, dann update...
         if (isset($Vorlesung->Vorlesung_ID)) {
@@ -104,10 +104,10 @@ class VorlesungManager extends Manager
 
     public function delete(Vorlesung $Vorlesung)
     {
-        if (!isset($Vorlesung->Vorlesung_ID)) {
+        /*if (!isset($Vorlesung->Vorlesung_ID)) {
             $Vorlesung = null;
             return $Vorlesung;
-        }
+        }*/
         try {
             $stmt = $this->pdo->prepare('
               DELETE FROM Vorlesung WHERE Vorlesung_ID= :Vorlesung_ID

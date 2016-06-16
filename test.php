@@ -5,23 +5,18 @@
 
 <?php
 require_once("Mapper/VorlesungManager.php");
+require_once("Mapper/Vorlesung.php");
+$a= 24;
+
+$Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
 
 
 $VorlesungManager = new VorlesungManager();
-$row = $VorlesungManager->findAll($dozent); ?>
+$row = $VorlesungManager->findById($a);
+print_r($row);
+?>
 
 
-<form action="../index.php">
-    <label>Künstler(in):
-        <select name="top5" size="5">
-            <option>Heino</option>
-            <option>Michael Jackson</option>
-            <option>Tom Waits</option>
-            <option>Nina Hagen</option>
-            <option>Marianne Rosenberg</option>
-        </select>
-    </label>
-</form>
 
 
 

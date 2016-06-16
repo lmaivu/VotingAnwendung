@@ -7,18 +7,22 @@ als neuer Datensatz der Klasse Voting-->
 require_once("../Mapper/VotingManager.php");
 require_once("Voting.php");
 
-$Voting_ID = htmlspecialchars($_POST["voting_ID"], ENT_QUOTES, "UTF-8");
-$Voting_name = htmlspecialchars($_POST["voting_name"], ENT_QUOTES, "UTF-8");
-$Vorlesung = htmlspecialchars($_POST["vorlesung"], ENT_QUOTES, "UTF-8");
-$Voting_ablaufzeit = htmlspecialchars($_POST["voting_ablaufzeit"], ENT_QUOTES, "UTF-8");
-$Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
+$frage = htmlspecialchars($_POST["frage"], ENT_QUOTES, "UTF-8");
+$a = htmlspecialchars($_POST["a"], ENT_QUOTES, "UTF-8");
+$b = htmlspecialchars($_POST["b"], ENT_QUOTES, "UTF-8");
+$c = htmlspecialchars($_POST["c"], ENT_QUOTES, "UTF-8");
+$d = htmlspecialchars($_POST["d"], ENT_QUOTES, "UTF-8");
+$Vorlesung_ID = htmlspecialchars($_POST["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
 
-if (!empty($Voting_name) && !empty($Voting_ablaufzeit) && !empty($Vorlesung)&& !empty($Einschreibeschlussel)) {
+
+if (!empty($frage) && !empty($a) && !empty($b)&& !empty($c) && !empty($d) && !empty($Vorlesung_ID)) {
     $votingdaten = [
-        "Voting_Name" => $Voting_name,
-        "Einschreibeschlussel" => $Einschreibeschlussel,
-        "Vorlesung"=> $Vorlesung,
-        "Ablaufzeit" => $Voting_ablaufzeit,
+        "frage" => $frage,
+        "a"=> $a,
+        "b" => $b,
+        "c" => $c,
+        "d"=> $d,
+        "Vorlesung_ID"=> $Vorlesung_ID,
 
     ];
     $Voting = new Voting($votingdaten);

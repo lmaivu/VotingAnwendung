@@ -52,7 +52,7 @@ require_once("../Mapper/VorlesungManager.php");
                 </div>
             </div>
 
-            <script type="text/javascript">
+            <script type="text/javascript"> //Link zu javascript fehlt
                 $(function () {
                     $('#datetimepicker1').dateTime('show');
                 });

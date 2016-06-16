@@ -3,7 +3,7 @@ mit folgenden Funktionen: findbyID, findAll, CRUD applikationen -->
 <?php
 
 require_once("../Voting/Voting.php");
-require_once("../Mapper/Userdata.php");
+require_once("../Mapper/Manager.php");
 
 class VotingManager
 {
@@ -47,12 +47,13 @@ class VotingManager
         return $n;
     }
 
-    public function findAll()
+    public function findAll($Vorlesung)
     {
         try {
             $stmt = $this->pdo->prepare('
-              SELECT * FROM Voting
+              SELECT * FROM Voting WHERE Vorlesung_ID = :Vorlesung_ID
             ');
+            $stmt->bindParam(':Vorlesung', $Vorlesung);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
             return $stmt->fetchAll();
@@ -74,13 +75,20 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               INSERT INTO Voting
-                (Voting_Name, Voting_Ergebnis , Ablaufzeit, Voting_Erstellung)
+                (Voting_Name, Einschreibeschlussel, Ablaufzeit, Voting_Erstellung, Vorlesung_ID, frage, a, b, c, d)
               VALUES
-                (:Voting_Name, :Voting_Ergebnis , :Voting_Ablaufzeit, NOW())
+                (:Voting_Name, :Voting_Einschreibeschlussel , :Voting_Ablaufzeit, NOW(), :Vorlesung_ID, :frage, :a, :b, :c, :d)
             ');
             $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
-            $stmt->bindParam(':Voting_Ergebnis', $Voting->Voting_Ergebnis);
-            $stmt->bindParam(':Voting_Ablaufzeit', $Voting->Voting_Ablaufzeit);
+            $stmt->bindParam(':Einschreibeschlussel', $Voting->Einschreibeschlussel);
+            $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);
+            $stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
+            $stmt->bindParam(':frage', $Voting->frage);
+            $stmt->bindParam(':a', $Voting->a);
+            $stmt->bindParam(':b', $Voting->b);
+            $stmt->bindParam(':c', $Voting->c);
+            $stmt->bindParam(':d', $Voting->d);
+            $stmt->bindParam(':Voting_ID', $Voting->Vorlesung_ID);
             $stmt->execute();
             // lastinsertId() gibt die zuletzt eingef�gte Id zur�ck -> damit Update der internen Id
             $Voting->Voting_ID = $this->pdo->lastInsertId();
@@ -91,21 +99,25 @@ class VotingManager
         return $Voting;
     }
 
-    private function update(Voting $Voting)
+    private function update(Voting $Voting) //Sollen wir wirklich Voting bearbeiten lassen?
     {
         echo ("update!");
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
               SET Voting_Name = :Voting_Name,
-                  Voting_Ergebnis = :Voting_Ergebnis,
-                  Ablaufzeit = :Voting_Ablaufzeit
+                  Einschreibeschlussel = :Einschreibeschlussel,
+                  Ablaufzeit = :Ablaufzeit,
+                  Voting_Erstellung = :Voting_Erstellung,
+                  Vorlesung_ID = :Vorlesung_ID
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
+            $stmt->bindParam(':Einschreibeschlussel', $Voting->Einschreibeschlussel);
+            $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);
             $stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
-            $stmt->bindParam(':Voting_Ablaufzeit', $Voting->Voting_Ablaufzeit);
+            $stmt->bindParam(':Voting_ID', $Voting->Vorlesung_ID);
 
             $stmt->execute();
         } catch (PDOException $e) {
@@ -134,4 +146,19 @@ class VotingManager
         $Voting = null;
         return $Voting;
     }
-}
+
+
+
+public function getVoting($Vorlesung_ID) //nochmal überprüfen ob Vorlesung_ID oder Voting_ID
+{
+    try {
+        $stmt = $this->pdo->prepare('SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Vorlesung_ID = :Vorlesung_ID');
+        $stmt->bindParam(':Vorlesung_ID', $Vorlesung_ID);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
+        return $stmt->fetch();
+    } catch (PDOException $e) {
+        echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+        die();
+    }
+} }

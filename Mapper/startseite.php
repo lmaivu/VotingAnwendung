@@ -20,7 +20,7 @@ include("../inc/navbar.php");
 </head>
 
 <body>
-
+<?php $Dozent_ID = (int) htmlspecialchars($_POST ["Dozent_ID"], ENT_QUOTES, "UTF-8"); //wird leider noch null übergeben?>
 <div id="main"> <!--div main-->
 
   <div id="kopfleiste">

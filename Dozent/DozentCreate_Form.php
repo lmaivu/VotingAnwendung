@@ -8,7 +8,8 @@
 
 <body>
 
-<?php include("../inc/navbar.php"); ?>
+<?php include("../inc/navbar.php")
+; ?>
 
 <div class="container">
     <h2>Neuer Dozent</h2>
@@ -48,6 +49,15 @@
                 <button type="submit" class="btn btn-default">Fertig</button>
             </div>
         </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-5"> </label>
+            <div class="col-sm-6">
+                <input type="hidden" value="<?php echo htmlspecialchars($dozent->Dozent_ID); ?>" class="form-control" name="Dozent_ID" id="Dozent_ID" readonly>
+
+
+            </div> <!--Überprüfen ob das klappt-->
+
     </form>
 
 </div>

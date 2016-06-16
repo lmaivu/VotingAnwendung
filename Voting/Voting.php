@@ -8,14 +8,14 @@ class Voting
     public $Ablaufzeit;
     public $Voting_Erstellung;
     public $Vorlesung_ID; //überprüfen ob erforderlich
-    public $frage;
-    public $a;
+    public $Frage;
+    public $Antwort_A;
     public $a_Student;
-    public $b;
+    public $Antwort_B;
     public $b_Student;
-    public $c;
+    public $Antwort_C;
     public $c_Student;
-    public $d;
+    public $Antwort_D;
     public $d_Student;
 
 
@@ -34,14 +34,14 @@ class Voting
             $this->Ablaufzeit = $data['Ablaufzeit'];
             $this->Voting_Erstellung = $data['Voting_Erstellung'];
             $this->Vorlesung_ID = $data['Vorlesung_ID'];
-            $this->frage = $data['frage'];
-            $this->a = $data['a'];
+            $this->Frage = $data['Frage'];
+            $this->Antwort_A = $data['Antwort_A'];
             $this->a_Student = $data['a_Student'];
-            $this->b = $data['b'];
+            $this->Antwort_B = $data['Antwort_B'];
             $this->b_Student = $data['a_Student'];
-            $this->c = $data['c'];
+            $this->Antwort_C = $data['Antwort_C'];
             $this->c_Student = $data['a_Student'];
-            $this->d = $data['d'];
+            $this->Antwort_D = $data['Antwort_D'];
             $this->d_Student = $data['a_Student'];
             //automatische Setzung dieser Daten
         }

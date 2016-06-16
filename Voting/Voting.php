@@ -7,7 +7,7 @@ class Voting
     public $Einschreibeschlussel;
     public $Ablaufzeit;
     public $Voting_Erstellung;
-    public $Vorlesung_ID; //überprüfen ob erforderlich
+    public $Vorlesung_ID;
     public $Frage;
     public $Antwort_A;
     public $a_Student;

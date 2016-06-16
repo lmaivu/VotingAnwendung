@@ -6,7 +6,8 @@ require_once("../Mapper/VorlesungManager.php");
 require_once("Vorlesung.php");
 
 $Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
-$Vorlesung_Name = (int)htmlspecialchars($_GET["Vorlesung_Name"], ENT_QUOTES, "UTF-8"); //nötig???
+echo "$Vorlesung->Vorlesung_ID";
+$Vorlesung_Name = htmlspecialchars($_GET["Vorlesung_Name"], ENT_QUOTES, "UTF-8"); //nötig???
 $VorlesungManager = new VorlesungManager();
 $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 echo "$Vorlesung"; //testen ob das funktioniert!

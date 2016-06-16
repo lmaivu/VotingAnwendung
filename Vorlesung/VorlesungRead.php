@@ -3,8 +3,11 @@ include("../inc/session_check.php");
 
 require_once("../Vorlesung/Vorlesung.php");
 require_once("../Mapper/VorlesungManager.php");
+require_once ("../Voting/Voting.php");
+require_once("../Mapper/VotingManager.php");
 
 $Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
+$Vorlesung_Name = htmlspecialchars($_GET["Vorlesung_Name"], ENT_QUOTES, "UTF-8");
 $VorlesungManager = new VorlesungManager();
 $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 ?>
@@ -44,15 +47,15 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
         require_once("../Voting/Voting.php");
         require_once("../Mapper/VotingManager.php");
         $VotingManager = new VotingManager();
-        $liste = $VotingManager->findAll($Voting->Voting_ID); //kein Parameter eig???
+        $liste = $VotingManager->findAll($Vorlesung); //kein Parameter eig???
         foreach ($liste as $Voting) {
             echo "<tr>";
             echo "<td>$Voting->Voting_ID</td>";
-            echo "<td>$Voting->frage</td>";
-            echo "<td>$Voting->a</td>";
-            echo "<td>$Voting->b</td>";
-            echo "<td>$Voting->c</td>";
-            echo "<td>$Voting->d</td>";
+            echo "<td>$Voting->Frage</td>";
+            echo "<td>$Voting->Antwort_A</td>";
+            echo "<td>$Voting->Antwort_B</td>";
+            echo "<td>$Voting->Antwort_C</td>";
+            echo "<td>$Voting->Antwort_D</td>";
             echo "<td>
                         <a href='QR_Code.php?voting_id=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
                         <a href='VotingResult.php?voting_id=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>

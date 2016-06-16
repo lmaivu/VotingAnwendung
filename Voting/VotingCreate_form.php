@@ -4,6 +4,9 @@ Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert we
 <?php
 include_once("../inc/session_check.php");
 require_once("../Mapper/VorlesungManager.php");
+require_once("../Mapper/VotingManager.php");
+require_once ("../Voting/Voting.php");
+require_once ("../Vorlesung/Vorlesung.php");
 ?>
 
 
@@ -17,7 +20,9 @@ require_once("../Mapper/VorlesungManager.php");
 
 <body>
 
-<?php include("../inc/navbar.php"); ?>
+<?php include("../inc/navbar.php");
+$Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
+?>
 
 <div class="container">
 
@@ -28,7 +33,7 @@ require_once("../Mapper/VorlesungManager.php");
         <div class="form-group">
             <label class="control-label col-sm-2" for="voting_name">Name:</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="Voting_Name" id="Voting_Name" placeholder="Name">
+                <input type="text" class="form-control" name="Voting_Name" id="Voting_Name" placeholder="Voting-Name">
             </div>
         </div>
 
@@ -60,14 +65,14 @@ require_once("../Mapper/VorlesungManager.php");
         </div>
 
 
-    </form>
+    <!--</form>
 
 </div>
 
 
 <!-- Erstellen von Frage-->
 
-<div class="container">
+<!-- <div class="container"> -->
 
     <h2>Erstellen Sie hier Frage und Antworten!</h2>
 
@@ -76,7 +81,7 @@ require_once("../Mapper/VorlesungManager.php");
     Geben Sie bitte mindestens zwei Antwortmöglichkeiten an.
     </p>
 
-    <form class="form-horizontal" role="form" action="VotingCreate_do.php" method="post">
+    <!--<form class="form-horizontal" role="form" action="VotingCreate_do.php" method="post">-->
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Frage:</label>
@@ -93,7 +98,7 @@ require_once("../Mapper/VorlesungManager.php");
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="name">Antowrt B:</label>
+            <label class="control-label col-sm-2" for="name">Antwort B:</label>
             <div class="col-sm-8">
                 <input required type="text" class="form-control" name="Antwort_B" id="Antwort_B" placeholder="Antwort B">
             </div>

@@ -51,8 +51,8 @@ class VotingManager
     {
         try {
             $stmt = $this->pdo->prepare('
-              SELECT * FROM Voting WHERE Vorlesung_ID = :Vorlesung_ID
-            ');
+              SELECT * FROM Voting WHERE Vorlesung_ID = :Vorlesung
+            '); //oder Where Vorlesung_ID= :Vorlesung_ID
             $stmt->bindParam(':Vorlesung', $Vorlesung);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
@@ -75,19 +75,19 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               INSERT INTO Voting
-                (Voting_Name, Einschreibeschlussel, Ablaufzeit, Voting_Erstellung, Vorlesung_ID, frage, a, b, c, d)
+                (Voting_Name, Einschreibeschlussel, Ablaufzeit, Voting_Erstellung, Vorlesung_ID, Frage, Antwort_A, Antwort_B, Antwort_C, Antwort_D)
               VALUES
-                (:Voting_Name, :Voting_Einschreibeschlussel , :Voting_Ablaufzeit, NOW(), :Vorlesung_ID, :frage, :a, :b, :c, :d)
+                (:Voting_Name, :Einschreibeschlussel , :Ablaufzeit, NOW(), :Vorlesung_ID, :Frage, :Antwort_A, :Antwort_B, :Antwort_C, :Antwort_D)
             ');
             $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
             $stmt->bindParam(':Einschreibeschlussel', $Voting->Einschreibeschlussel);
             $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);
             $stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
-            $stmt->bindParam(':frage', $Voting->frage);
-            $stmt->bindParam(':a', $Voting->a);
-            $stmt->bindParam(':b', $Voting->b);
-            $stmt->bindParam(':c', $Voting->c);
-            $stmt->bindParam(':d', $Voting->d);
+            $stmt->bindParam(':Frage', $Voting->Frage);
+            $stmt->bindParam(':Antwort_A', $Voting->Antwort_A);
+            $stmt->bindParam(':Antwort_B', $Voting->Antwort_A);
+            $stmt->bindParam(':Antwort_C', $Voting->Antwort_C);
+            $stmt->bindParam(':Antwort_D', $Voting->Antwort_D);
             $stmt->bindParam(':Voting_ID', $Voting->Vorlesung_ID);
             $stmt->execute();
             // lastinsertId() gibt die zuletzt eingef�gte Id zur�ck -> damit Update der internen Id
@@ -108,16 +108,14 @@ class VotingManager
               SET Voting_Name = :Voting_Name,
                   Einschreibeschlussel = :Einschreibeschlussel,
                   Ablaufzeit = :Ablaufzeit,
-                  Voting_Erstellung = :Voting_Erstellung,
                   Vorlesung_ID = :Vorlesung_ID
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
             $stmt->bindParam(':Einschreibeschlussel', $Voting->Einschreibeschlussel);
-            $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);
-            $stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
-            $stmt->bindParam(':Voting_ID', $Voting->Vorlesung_ID);
+            $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);;
+            $stmt->bindParam(':Vorlesung_ID', $Voting->Vorlesung_ID);
 
             $stmt->execute();
         } catch (PDOException $e) {

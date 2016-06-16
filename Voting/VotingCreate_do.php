@@ -21,7 +21,8 @@ $Antwort_B = htmlspecialchars($_POST["Antwort_B"], ENT_QUOTES, "UTF-8");
 $Antwort_C = htmlspecialchars($_POST["Antwort_C"], ENT_QUOTES, "UTF-8");
 $Antwort_D = htmlspecialchars($_POST["Antwort_D"], ENT_QUOTES, "UTF-8");
 
-if (!empty($Voting_Name) && !empty($Ablaufzeit) && !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel) && !empty($Frage) && !empty($Antwort_A) && !empty($Antwort_B)) {
+if (!empty($Voting_Name) && !empty($Ablaufzeit) //&& !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel) && !empty($Frage) && !empty($Antwort_A) && !empty($Antwort_B) && !empty($Antwort_C) && !empty($Antwort_D)
+) {
     $votingdaten = [
         "Voting_ID" => $Voting_ID,
         "Voting_Name" => $Voting_Name,
@@ -39,7 +40,8 @@ if (!empty($Voting_Name) && !empty($Ablaufzeit) && !empty($Vorlesung_ID)&& !empt
     $Voting = new Voting($votingdaten);
     $VotingManager = new VotingManager();
     $VotingManager->save($Voting);
-    header('Location: ../Voting/Votingverzeichnis.php');
+    //header('Location: ../Voting/Votingverzeichnis.php');
+    header('Location: ../Vorlesung/VorlesungRead.php');
 } else {
     echo "Achtung! Bitte alle Felder ausf&uumlllen!<br/>";
 }

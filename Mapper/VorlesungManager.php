@@ -56,6 +56,7 @@ class VorlesungManager extends Manager
     }
 
     public function save(Vorlesung $Vorlesung) //testen ob man nur die Varibale $Vorlesung nehmen soll
+
     {
         // wenn ID gesetzt, dann update...
         if (isset($Vorlesung->Vorlesung_ID)) {

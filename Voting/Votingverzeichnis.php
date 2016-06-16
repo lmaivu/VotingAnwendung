@@ -38,7 +38,7 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
 
     <?php
     $VotingManager = new VotingManager();
-    $liste = $VotingManager->findAll ();
+    $liste = $VotingManager->findAll ($Vorlesung);
     if (count($liste) > 0) { ?>
         <table class="table table-hover">
             <thead>

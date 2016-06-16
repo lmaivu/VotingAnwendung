@@ -22,8 +22,8 @@
                      </a>
                 </li>
                 <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/startseite.php">Startseite</a></li>
-                <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Votingverzeichnis.php">Votings</a></li>
                 <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesung/Vorlesungsverzeichnis.php">Vorlesungen</a></li>
+                <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/Kontakt.php">Kontakt</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

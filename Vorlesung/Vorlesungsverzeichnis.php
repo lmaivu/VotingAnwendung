@@ -38,13 +38,13 @@ require_once("../Mapper/VotingManager.php");
     <div id="container">
         <?php
         $VorlesungManager = new VorlesungManager();
-        $liste = $VorlesungManager->findAll($dozent); //$liste = $VorlesungManager->findAll($dozent->Dozent_ID)
+        $liste = $VorlesungManager->findAll($dozent);
         if (count($liste) > 0) { ?>
         <table class="table table-hover">
             <thead>
-            <th>Nummer</th>
-            <th>Vorlesung-Name</th>
-            <th></th>
+            <th class="col-md-1"> Nummer</th>
+            <th class="col-md-2">Vorlesung-Name</th>
+            <th class="col-md-4">Optionen</th>
             </thead>
             <tbody>
             <?php
@@ -55,9 +55,8 @@ require_once("../Mapper/VotingManager.php");
                 echo "<td>
 
                     <a href='VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-info' role='button'>anzeigen</a>
-                    <a href='VorlesungUpdate_form.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>bearbeiten</a>
+                    <!--<a href='VorlesungUpdate_form.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>bearbeiten</a> -->
                     <a href='VorlesungDelete.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>l&oumlschen</a>
-                   <!--<a href='VorlesungDelete.php' type='button' class='btn btn-primary' role='button'>l&oumlschen</a> -->
                     <a href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary'  role='button'>Voting erstellen</a>
 
 
@@ -73,6 +72,8 @@ require_once("../Mapper/VotingManager.php");
         <br>
 
         <a type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
+        <br>
+        <br>
 
 
     </div> <!--container-->

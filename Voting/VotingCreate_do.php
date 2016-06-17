@@ -9,23 +9,27 @@ require_once("Voting.php");
 
 
 
-$Voting_ID = htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
+//$Voting_ID = (int) htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
+//echo "$Voting_ID";
 $Voting_Name = htmlspecialchars($_POST["Voting_Name"], ENT_QUOTES, "UTF-8");
 $Vorlesung_ID = htmlspecialchars($_POST["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
 $Ablaufzeit = htmlspecialchars($_POST["Ablaufzeit"], ENT_QUOTES, "UTF-8");
 $Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
+$Voting_Erstellung = htmlspecialchars($_POST["Voting_Erstellung"], ENT_QUOTES, "UTF-8");
 
 $Frage = htmlspecialchars($_POST["Frage"], ENT_QUOTES, "UTF-8");
 $Antwort_A = htmlspecialchars($_POST["Antwort_A"], ENT_QUOTES, "UTF-8");
 $Antwort_B = htmlspecialchars($_POST["Antwort_B"], ENT_QUOTES, "UTF-8");
 $Antwort_C = htmlspecialchars($_POST["Antwort_C"], ENT_QUOTES, "UTF-8");
 $Antwort_D = htmlspecialchars($_POST["Antwort_D"], ENT_QUOTES, "UTF-8");
+echo "$Frage";
 
-if (!empty($Voting_Name) && !empty($Ablaufzeit) //&& !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel) && !empty($Frage) && !empty($Antwort_A) && !empty($Antwort_B) && !empty($Antwort_C) && !empty($Antwort_D)
+if (!empty($Voting_Name) && !empty($Ablaufzeit) && !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel) && !empty($Frage) && !empty($Antwort_A) && !empty($Antwort_B) && !empty($Antwort_C) && !empty($Antwort_D)
 ) {
     $votingdaten = [
-        "Voting_ID" => $Voting_ID,
+
         "Voting_Name" => $Voting_Name,
+        "Voting_Erstellung" => $Voting_Erstellung,
         "Vorlesung_ID" => $Vorlesung_ID,
         "Einschreibeschlussel" => $Einschreibeschlussel,
         "Ablaufzeit" => $Ablaufzeit,
@@ -40,8 +44,10 @@ if (!empty($Voting_Name) && !empty($Ablaufzeit) //&& !empty($Vorlesung_ID)&& !em
     $Voting = new Voting($votingdaten);
     $VotingManager = new VotingManager();
     $VotingManager->save($Voting);
-    //header('Location: ../Voting/Votingverzeichnis.php');
-    header('Location: ../Vorlesung/VorlesungRead.php');
+
+    //<a href='../Vorlesung/VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID'> </a>
+    header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
 } else {
     echo "Achtung! Bitte alle Felder ausf&uumlllen!<br/>";
 }
+?>

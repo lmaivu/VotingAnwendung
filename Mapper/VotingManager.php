@@ -67,7 +67,7 @@ class VotingManager
     public function save(Voting $Voting)
     {
         // wenn ID gesetzt, dann update...
-        if (isset($Voting->Voting_ID)) {
+        if (isset($Voting->Voting_ID)) { //Oder Vorlesung_ID
             $this->update($Voting);
             return $Voting;
         }
@@ -75,20 +75,20 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               INSERT INTO Voting
-                (Voting_Name, Einschreibeschlussel, Ablaufzeit, Voting_Erstellung, Vorlesung_ID, Frage, Antwort_A, Antwort_B, Antwort_C, Antwort_D)
+                (Voting_Name, Einschreibeschlussel, Ablaufzeit, Vorlesung_ID, Frage, Antwort_A, Antwort_B, Antwort_C, Antwort_D)
               VALUES
-                (:Voting_Name, :Einschreibeschlussel , :Ablaufzeit, NOW(), :Vorlesung_ID, :Frage, :Antwort_A, :Antwort_B, :Antwort_C, :Antwort_D)
+                (:Voting_Name, :Einschreibeschlussel , :Ablaufzeit, :Vorlesung_ID, :Frage, :Antwort_A, :Antwort_B, :Antwort_C, :Antwort_D)
             ');
             $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
             $stmt->bindParam(':Einschreibeschlussel', $Voting->Einschreibeschlussel);
             $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);
-            $stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
+            //$stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
             $stmt->bindParam(':Frage', $Voting->Frage);
             $stmt->bindParam(':Antwort_A', $Voting->Antwort_A);
             $stmt->bindParam(':Antwort_B', $Voting->Antwort_A);
             $stmt->bindParam(':Antwort_C', $Voting->Antwort_C);
             $stmt->bindParam(':Antwort_D', $Voting->Antwort_D);
-            $stmt->bindParam(':Voting_ID', $Voting->Vorlesung_ID);
+            $stmt->bindParam(':Vorlesung_ID', $Voting->Vorlesung_ID);
             $stmt->execute();
             // lastinsertId() gibt die zuletzt eingef�gte Id zur�ck -> damit Update der internen Id
             $Voting->Voting_ID = $this->pdo->lastInsertId();
@@ -116,6 +116,7 @@ class VotingManager
             $stmt->bindParam(':Einschreibeschlussel', $Voting->Einschreibeschlussel);
             $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);;
             $stmt->bindParam(':Vorlesung_ID', $Voting->Vorlesung_ID);
+
 
             $stmt->execute();
         } catch (PDOException $e) {
@@ -147,6 +148,7 @@ class VotingManager
 
 
 
+
 public function getVoting($Vorlesung_ID) //nochmal überprüfen ob Vorlesung_ID oder Voting_ID
 {
     try {
@@ -160,3 +162,4 @@ public function getVoting($Vorlesung_ID) //nochmal überprüfen ob Vorlesung_ID 
         die();
     }
 } }
+

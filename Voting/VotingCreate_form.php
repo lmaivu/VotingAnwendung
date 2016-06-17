@@ -22,6 +22,15 @@ require_once ("../Vorlesung/Vorlesung.php");
 
 <?php include("../inc/navbar.php");
 $Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
+date_default_timezone_set('UTC+2');
+date_default_timezone_set("Europe/Berlin");
+$timestamp = time();
+$Vorlesung_Erstellung = date("Y-m-d H:i:s", $timestamp);
+echo "$Vorlesung_Erstellung";
+
+
+//echo $Vorlesung_ID;
+
 ?>
 
 <div class="container">
@@ -62,7 +71,7 @@ $Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8"
                     $('#datetimepicker1').dateTime('show');
                 });
             </script>
-        </div>
+        </div> <!--form-group-->
 
 
     <!--</form>
@@ -120,17 +129,25 @@ $Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8"
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
-                <button type="submit" class="btn btn-default">hinzuf&uuml;gen</button>
+                <button type="submit" class="btn btn-default">Voting anlegen</button>
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-sm-5"</label>
             <div class="col-sm-6">
-                <input type="hidden" value="<?php echo htmlspecialchars($Vorlesung->Vorlesung_ID);?>" class="form-control" name="Vorlesung_ID" id="Vorlesung_ID" readonly>
+                <input type="hidden" value="<?php echo $Vorlesung_ID;?>" class="form-control" name="Vorlesung_ID" id="Vorlesung_ID" readonly>
             </div>
         </div>
 
+        <div class="form-group">
+            <label class="control-label col-sm-5"</label>
+            <div class="col-sm-6">
+                <input type="hidden" value="<?php echo $Vorlesung_Erstellung;?>" class="form-control" name="Vorlesung_Erstellung" id="Vorlesung_Erstellung" readonly>
+            </div>
+        </div>
+
+</div> <!--<div class="container"> -->
     </form>
 </body>
 </html>

@@ -7,9 +7,11 @@ require_once ("../Voting/Voting.php");
 require_once("../Mapper/VotingManager.php");
 
 $Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
+$Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $Vorlesung_Name = htmlspecialchars($_GET["Vorlesung_Name"], ENT_QUOTES, "UTF-8");
 $VorlesungManager = new VorlesungManager();
 $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
+echo "$Vorlesung_ID";
 ?>
 
 <!DOCTYPE html>
@@ -57,9 +59,9 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
             echo "<td>$Voting->Antwort_C</td>";
             echo "<td>$Voting->Antwort_D</td>";
             echo "<td>
-                        <a href='QR_Code.php?voting_id=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
-                        <a href='VotingResult.php?voting_id=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>
-                        <a href='VotingDelete_do.php?voting_id=$Voting->Voting_ID' class='btn btn-danger btn-sm'>löschen</a>
+                        <a href='QR_Code.php?Voting_ID=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
+                        <a href='VotingResult.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>
+                        <a href='../Voting/VotingDelete.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>löschen</a>
                       </td>";
             echo "</tr>";
         }

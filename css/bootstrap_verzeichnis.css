@@ -1,6 +1,22 @@
+.kopfleiste {
+
+    background-clip: padding-box;
+    background-color: #Cdbfa5;
+    background-position: center; /*zentriert*/
+    background-attachment: fixed;
+    /*browserspezifische Anpassung folgen*/
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+
 .btn-primary {
-    background: #bfaa9a;
+    background: #Cdbfa5;
     color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
@@ -8,8 +24,9 @@
 }
 
 .btn-info {
-    background: #778899;
+    background: #Cdbfa5;
     color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .btn-info:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
@@ -17,25 +34,28 @@
 }
 
 .table-responsive {
-    height: 300px;
-    width: 600px;
+    height: auto;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .main {
-    font-family: 'Tahoma', serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: medium;
     text-align: left;
-
+    background-color: #Cdbfa5;
 }
 
-.table-responsive {
-
-}
 
 .row {
-    font-family: 'Tahoma', serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: medium;
     text-align: left;
+    background-color: #ebedf2;
+}
+
+#tabelle {
+    text-align: center;
 }
 
 #footer {

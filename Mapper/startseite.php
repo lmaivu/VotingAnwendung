@@ -10,9 +10,7 @@ require_once ("DozentManager.php");
 <?php
 include("../inc/head.php");
 include("../inc/navbar.php");
-
 ?>
-
 
 
 <head>
@@ -20,16 +18,17 @@ include("../inc/navbar.php");
 </head>
 
 <body>
-<?php $Dozent_ID = (int) htmlspecialchars($_POST ["Dozent_ID"], ENT_QUOTES, "UTF-8"); //wird leider noch null übergeben?>
-<div id="kopfleiste"> <!--div main-->
+<?php $Dozent_ID = (int) htmlspecialchars($_POST ["Dozent_ID"], ENT_QUOTES, "UTF-8"); ?>
+
+<div id="kopfleiste"> <!--div kopfleiste-->
 
   <div id="kopfleiste">
       <p style="font-family: 'Open Sans', sans-serif"> Hallo <strong><?php echo $dozent->vorname, '&nbsp;',$dozent->nachname; ?> </strong>, <br>
           Willkommen zu <em>I will survey</em> !</p>
   </div>
-</div>  <!--div main-->
+</div>  <!--div kopfleiste-->
 
-  <div id="menu">
+<div id="menu">
       <div class="row">
 
               <div class="col-sm-4">
@@ -44,7 +43,7 @@ include("../inc/navbar.php");
               <a style ="color: #000000" href="../Voting/Votingverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.png" width= "300px" height="300px" class="img-circle">
           </div>
       </div> <!-- div menu-->
-  </div>
+</div>
 
 <div>
     <?php include "../inc/footer.php"; ?>

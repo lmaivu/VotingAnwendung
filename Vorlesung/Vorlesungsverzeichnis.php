@@ -1,50 +1,50 @@
-<!-- erstellte Votingdaten werden hier mithilfe von GET �bermittelt
+<!-- erstellte Votingdaten werden hier mithilfe von GET uebermittelt
 Darstellung der Daten in Tabellenform-->
 
-
+<!-- eingebettete Dateien -->
 <?php
 
 include "../inc/head.php";
 include "../inc/navbar.php";
 
-?>
+include("../inc/session_check.php");
 
-<?php include("../inc/session_check.php"); ?>
-
-<?php
 require_once("Vorlesung.php");
 require_once("../Mapper/VorlesungManager.php");
 
 require_once("../Mapper/VotingManager.php");
 ?>
+<!-- eingebettete Dateien Ende -->
+
 
 <head>
 <link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
 </head>
 
+
+
 <!DOCTYPE html>
 <html>
-
-
 <body>
 
 
 <div id="kopfleiste">
     <div class="jumbotron">
-        <h1>Vorlesungs-Verzeichnis</h1>
+        <h1>Vorlesungsverzeichnis</h1>
     </div>
+</div>
 
-
-    <div id="container">
+    <div id="Tabelle">
+        <div class="container">
         <?php
         $VorlesungManager = new VorlesungManager();
         $liste = $VorlesungManager->findAll($dozent);
         if (count($liste) > 0) { ?>
-        <table class="table table-hover">
-            <thead>
-            <th class="col-md-1"> Nummer</th>
-            <th class="col-md-2">Vorlesung-Name</th>
-            <th class="col-md-4">Optionen</th>
+        <table class="table table-hover table-responsive">
+            <thead class="row">
+            <th class="col-sm-2"> Nummer</th>
+            <th class="col-sm-4">Vorlesung-Name</th>
+            <th class="col-sm-6">Optionen</th>
             </thead>
             <tbody>
             <?php
@@ -74,13 +74,17 @@ require_once("../Mapper/VotingManager.php");
         <a type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
         <br>
         <br>
+        </div>
 
 
     </div> <!--container-->
-</div>
-    <div>
+
+<!-- footer -->
+<div>
     <?php include "../inc/footer.php"; ?>
 </div>
+
+<!-- footer Ende -->
 
 </body>
 

@@ -1,5 +1,5 @@
 body {
-    font-family: Georgia, serif;
+    font-family: 'Open Sans', sans-serif;
     height: 100%;
     margin: 0;
     text-align: center;
@@ -51,7 +51,7 @@ header nav {
     -webkit-background-size: 100% auto;
     -khtml-background-size: 100% auto;
     background-repeat: no-repeat;
-    font-family: "Tahoma", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 40px;
     padding: 200px;
     margin: 0;
@@ -71,7 +71,7 @@ header nav {
 }
 
 #kopfleiste.h1 {
-    font-family: 'Tahoma', Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size:40px;
     color: #Cdbfa5;
     float: left

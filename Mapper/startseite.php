@@ -21,37 +21,34 @@ include("../inc/navbar.php");
 
 <body>
 <?php $Dozent_ID = (int) htmlspecialchars($_POST ["Dozent_ID"], ENT_QUOTES, "UTF-8"); //wird leider noch null übergeben?>
-<div id="main"> <!--div main-->
+<div id="kopfleiste"> <!--div main-->
 
   <div id="kopfleiste">
-
-      <p>
-          Hallo <strong><?php echo $dozent->vorname, '&nbsp;',$dozent->nachname; ?> </strong> ! <br>
-          Willkommen zu 'I will survey'! </p>
-  <div>
-  </div> <!--div main-->
+      <p style="font-family: 'Open Sans', sans-serif"> Hallo <strong><?php echo $dozent->vorname, '&nbsp;',$dozent->nachname; ?> </strong>, <br>
+          Willkommen zu <em>I will survey</em> !</p>
+  </div>
+</div>  <!--div main-->
 
   <div id="menu">
       <div class="row">
 
               <div class="col-sm-4">
-              <a href="../Vorlesung/Vorlesungsverzeichnis.php"> Vorlesungsverzeichnis  <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.jpg" width= "230px" height="200px" class="img-circle">
+              <a style ="color: #000000" href="../Vorlesung/Vorlesungsverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.png" width= "300px" height="300px" class="img-circle">
               </div>
 
           <div class="col-sm-4">
-              <a href="../Vorlesung/VorlesungCreate_form.php"> Vorlesung erstellen<img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungerstellen.jpg" width= "230px" height="200px" class="img-circle">
+              <a style ="color: #000000" href="../Vorlesung/VorlesungCreate_form.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungerstellen.png" width= "300px" height="300px" class="img-circle">
           </div>
 
           <div class="col-sm-4">
-              <a href="../Voting/Votingverzeichnis.php"> Votingverzeichnis <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.jpg" width= "230px" height="200px" class="img-circle">
+              <a style ="color: #000000" href="../Voting/Votingverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.png" width= "300px" height="300px" class="img-circle">
           </div>
       </div> <!-- div menu-->
+  </div>
 
-      <div id="footer">
-          <?php include("../inc/footer.php"); ?>
-    </div>
-
-
+<div>
+    <?php include "../inc/footer.php"; ?>
+</div>
 
 </body>
 </html>

@@ -28,6 +28,8 @@ header nav {
 
     /*letter-spacing: 3px;*/
 }
+
+
 .navbar-brand {
     font-family: 'Trebuchet MS', Georgia, sans-serif;
     font-size: 27px;
@@ -107,7 +109,7 @@ h1 {
 
 /*footer*/
 #footer {
-    background-color: beige;
+    background-color: #ebedf2;
     height: 2em;
     width:100%;
     margin-top: 40px;
@@ -121,5 +123,6 @@ h1 {
     color: antiquewhite;
     font-size: 18px;
 }
+
 
 /*Startseite*/

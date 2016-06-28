@@ -1,85 +1,91 @@
-<!-- erstellte Votingdaten werden hier mithilfe von GET �bermittelt
+<!-- erstellte Votingdaten werden hier mithilfe von GET uebermittelt
 Darstellung der Daten in Tabellenform-->
 
+<!-- eingebettete Dateien -->
 <?php
 
 include "../inc/head.php";
-/*include "../inc/navbar.php";
-/*include "../inc/footer.php";*/
+include "../inc/navbar.php";
 
-?>
+include("../inc/session_check.php");
 
-<?php //include("../inc/session_check.php"); ?>
-
-<?php
 require_once("Vorlesung.php");
 require_once("../Mapper/VorlesungManager.php");
 
-//require_once("../Voting/Voting.php");
 require_once("../Mapper/VotingManager.php");
-
-require_once("../VotingVorlesung/VotingVorlesungManager.php");
-
-
-
-
 ?>
+<!-- eingebettete Dateien Ende -->
+
 
 <head>
 <link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
 </head>
 
+
+
 <!DOCTYPE html>
 <html>
-
-
 <body>
 
 
-<div class="container">
+<div id="kopfleiste">
     <div class="jumbotron">
         <h1>Vorlesungsverzeichnis</h1>
     </div>
-
-    <?php
-    $vorlesungManager = new VorlesungManager();
-    $liste = $vorlesungManager->findAll();
-    if (count($liste) > 0) { ?>
-    <table class="table table-hover">
-        <thead>
-        <th>Nummer</th>
-        <th>Vorlesung-Name</th>
-        <th></th>
-        </thead>
-        <tbody>
-        <?php
-        foreach ($liste as $Vorlesung) {
-            echo "<tr>";
-            echo "<td>$Vorlesung->Vorlesung_ID</td>";
-            echo "<td>$Vorlesung->Vorlesung_Name</td>";
-             ?>
-            <td> <a type="button" class="btn btn-info" href="VorlesungRead.php" role="button">anzeigen</a> </td>
-            <td> <a type="button" class="btn btn-primary" href="VorlesungUpdate_form.php" role="button">bearbeiten</a> </td>
-            <td> <a type="button" class="btn btn-primary" href="VorlesungDelete.php" role="button">l&oumlschen</a> </td>
-            <td> <a type="button" class="btn btn-primary" href="../Voting/VotingRead.php" role="button">Voting anzeigen</a>
-                <!--�berpr�fen!!!-->
-            <?php //nicht n�tig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung l�sen</a>";
-            echo "<td></td>";
-            echo "</tr>";
-        } }
-        ?>
-        </tbody>
-    </table>
-    <br>
-
-    <a type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
-
-
-
-
 </div>
+
+    <div id="Tabelle">
+        <div class="container">
+        <?php
+        $VorlesungManager = new VorlesungManager();
+        $liste = $VorlesungManager->findAll($dozent);
+        if (count($liste) > 0) { ?>
+        <table class="table table-hover table-responsive">
+            <thead class="row">
+            <th class="col-sm-2"> Nummer</th>
+            <th class="col-sm-4">Vorlesung-Name</th>
+            <th class="col-sm-6">Optionen</th>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($liste as $Vorlesung) {
+                echo "<tr>";
+                echo "<td>"; $Vorlesung_ID=$Vorlesung->Vorlesung_ID; echo" $Vorlesung_ID </td>";
+                echo "<td>$Vorlesung->Vorlesung_Name</td>";
+                echo "<td>
+
+                    <a href='VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-info' role='button'>anzeigen</a>
+                    <!--<a href='VorlesungUpdate_form.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>bearbeiten</a> -->
+                    <a href='VorlesungDelete.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>l&oumlschen</a>
+                    <a href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary'  role='button'>Voting erstellen</a>
+
+
+            </td>";
+                echo "<td></td>";
+                echo "</tr>";
+            } }
+            else
+                echo "Es sind noch keine Vorlesungen vorhanden."
+            ?>
+            </tbody>
+        </table>
+        <br>
+
+        <a type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
+        <br>
+        <br>
+        </div>
+
+
+    </div> <!--container-->
+
+<!-- footer -->
+<div>
+    <?php include "../inc/footer.php"; ?>
+</div>
+
+<!-- footer Ende -->
 
 </body>
 
 </html>
-

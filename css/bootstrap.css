@@ -1,5 +1,5 @@
 body {
-    font-family: Georgia, serif;
+    font-family: 'Open Sans', sans-serif;
     height: 100%;
     margin: 0;
     text-align: center;
@@ -16,16 +16,7 @@ header nav {
     justify-content: flex-end;
 }
 
-/* nicht mehr verf�gbar
-.content {
-    height: 100%;
-    margin: 0;
-    padding-top: 15px;
-    text-align: center;
-    width: 100%;
-    background-color:#bfaa9a;
-    background-size: 100% auto;
-} */
+
 
 .navbar{
     padding-top: 15px;
@@ -37,6 +28,8 @@ header nav {
 
     /*letter-spacing: 3px;*/
 }
+
+
 .navbar-brand {
     font-family: 'Trebuchet MS', Georgia, sans-serif;
     font-size: 27px;
@@ -50,7 +43,6 @@ header nav {
 #main{
 
     background-clip: padding-box;
-    /*background-image: url('http://erhvn.mn/wp-content/uploads/2016/01/photo-1450101499163-c8848c66ca85.jpg'); */
     background-image: url('https://mars.iuk.hdm-stuttgart.de/~lv018/background3.jpeg');
     background-position: center; /*zentriert*/
     background-attachment: fixed;
@@ -59,11 +51,12 @@ header nav {
     -webkit-background-size: 100% auto;
     -khtml-background-size: 100% auto;
     background-repeat: no-repeat;
-    font-family: "Tahoma", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 40px;
     padding: 200px;
     margin: 0;
     color: #Cdbfa5;
+    padding-bottom: 2em;
 }
 /*
 #kopfleiste {
@@ -72,15 +65,21 @@ header nav {
 
 */
 
+#standard {
+    font-size: 24px;
+    background-color: antiquewhite;
+}
+
 #kopfleiste.h1 {
-    font-family: 'Tahoma', Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size:40px;
     color: #Cdbfa5;
     float: left
-    text-shadow: darkgrey 0.1em 0.1em 0.2em;
 }
 
-
+h1 {
+    text-shadow: 0.1em 0.1em 0.2em darkgrey;
+}
 /* Login Formular */
 
 .form-group {
@@ -109,14 +108,11 @@ header nav {
 }
 
 /*footer*/
-.row {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-family:'Tahoma', Helvetica, sans-serif;
+#footer {
+    background-color: #ebedf2;
+    height: 2em;
+    width:100%;
+    margin-top: 40px;
 }
 
 /* Box f�r Loginfehler Anzeigen */
@@ -128,3 +124,5 @@ header nav {
     font-size: 18px;
 }
 
+
+/*Startseite*/

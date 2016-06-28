@@ -17,23 +17,22 @@ class DozentManager extends Manager
         parent::__destruct();
     }
 
-    public function findByLogin($login, $password)
+    public function findByLogin($login, $hash)
     {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login AND password= :password');
+            $stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login');
             $stmt->bindParam(':login', $login);
-            $stmt->bindParam(':password', $password);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Dozent');
             $dozent = $stmt->fetch();
 
 
+
+            if (password_verify($hash, $dozent->hash)) {
             return $dozent;
-// if (password_verify($password, $dozent->hash)) {
-//return $dozent;
-//} else {
-//return null;
-//}
+            } else {
+            return null;
+            }
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
@@ -44,7 +43,7 @@ class DozentManager extends Manager
     public function findName($vorname, $nachname)
     {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login AND password= :password');
+            $stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE login = :login AND hash= :hash');
             $stmt->bindParam(':vorname', $vorname);
             $stmt->bindParam(':nachname', $nachname);
             $stmt->execute();
@@ -64,14 +63,14 @@ class DozentManager extends Manager
         try {
             $stmt = $this->pdo->prepare('
 INSERT INTO Dozent
-(login, vorname, nachname, password)
+(login, vorname, nachname, hash)
 VALUES
-(:login, :vorname , :nachname, :password)
+(:login, :vorname , :nachname, :hash)
 ');
             $stmt->bindParam(':login', $dozent->login);
             $stmt->bindParam(':vorname', $dozent->vorname);
             $stmt->bindParam(':nachname', $dozent->nachname);
-            $stmt->bindParam(':password', $dozent->password);
+            $stmt->bindParam(':hash', $dozent->hash);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
@@ -87,12 +86,12 @@ VALUES
 UPDATE Dozent
 SET vorname = :vorname,
 nachname = :nachname,
-password = :password
+hash = :hash
 WHERE login = :login
 ');
             $stmt->bindParam(':vorname', $dozent->vorname);
             $stmt->bindParam(':nachname', $dozent->nachname);
-            $stmt->bindParam(':password', $dozent->password);
+            $stmt->bindParam(':hash', $dozent->hash);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");

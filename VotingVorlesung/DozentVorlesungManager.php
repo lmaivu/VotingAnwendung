@@ -89,7 +89,7 @@ class VotingVorlesungManager extends Manager
         }
     }
 
-    public function createVotingVorlesung(Voting $voting, Vorlesung $vorlesung)
+    public function createVotingVorlesung(Voting $Voting, Vorlesung $Vorlesung)
     {
         try {
             $stmt = $this->pdo->prepare('

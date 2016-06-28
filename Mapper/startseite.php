@@ -10,48 +10,44 @@ require_once ("DozentManager.php");
 <?php
 include("../inc/head.php");
 include("../inc/navbar.php");
-include("../inc/footer.php");
-
 ?>
 
 
-
 <head>
- <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/bootstrap_startseite.css" rel="stylesheet">
 </head>
 
-<div id="main"> <!--div main-->
+<body>
+<?php $Dozent_ID = (int) htmlspecialchars($_POST ["Dozent_ID"], ENT_QUOTES, "UTF-8"); ?>
+
+<div id="kopfleiste"> <!--div kopfleiste-->
 
   <div id="kopfleiste">
-       Hallo <?php /**print_r( $_SESSION ['dozent']); $_SESSION ['nachname'] **/?> - Willkommen zu I will survey
-  <div>
+      <p style="font-family: 'Open Sans', sans-serif"> Hallo <strong><?php echo $dozent->vorname, '&nbsp;',$dozent->nachname; ?> </strong>, <br>
+          Willkommen zu <em>I will survey</em> !</p>
+  </div>
+</div>  <!--div kopfleiste-->
 
-      <div class="menu">
-          <div id="eins">
-              <a href="../Vorlesung/Vorlesungsverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.jpg"
-                                                                     width="280px" height="200px">
+<div id="menu">
+      <div class="row">
+
+              <div class="col-sm-4">
+              <a style ="color: #000000" href="../Vorlesung/Vorlesungsverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.png" width= "300px" height="300px" class="img-circle">
+              </div>
+
+          <div class="col-sm-4">
+              <a style ="color: #000000" href="../Vorlesung/VorlesungCreate_form.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungerstellen.png" width= "300px" height="300px" class="img-circle">
           </div>
-          <div id="zwei">
-              <a href="../Voting/Votingverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.jpg"
-                                                              width="280px" height="200px">
+
+          <div class="col-sm-4">
+              <a style ="color: #000000" href="../Voting/Votingverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.png" width= "300px" height="300px" class="img-circle">
           </div>
-          <div id="drei">
-              <a href="../Dozent/DozentCreate_form.php"> <img src="https://cdn3.iconfinder.com/data/icons/line/36/person_add-512.png"
-                                                              width="130px" height="120">
-          </div>
+      </div> <!-- div menu-->
+</div>
 
-</div> <!--div main-->
+<div>
+    <?php include "../inc/footer.php"; ?>
+</div>
 
-
-
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+</body>
 </html>

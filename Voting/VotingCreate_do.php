@@ -1,30 +1,53 @@
 <!-- Datei um das Voting Hinzuf�gen Formular zu �berpr�fen, die eingegebenen Werte werden als string umgewandelt und gespeichert,
 als neuer Datensatz der Klasse Voting-->
 
-<?php //include("../inc/session_check.php"); ?>
+<?php include("../inc/session_check.php"); ?>
 
 <?php
 require_once("../Mapper/VotingManager.php");
 require_once("Voting.php");
 
-$Voting_ID = htmlspecialchars($_POST["voting_ID"], ENT_QUOTES, "UTF-8");
-$Voting_name = htmlspecialchars($_POST["voting_name"], ENT_QUOTES, "UTF-8");
-$Vorlesung = htmlspecialchars($_POST["vorlesung"], ENT_QUOTES, "UTF-8");
-$Voting_ablaufzeit = htmlspecialchars($_POST["voting_ablaufzeit"], ENT_QUOTES, "UTF-8");
-$Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
 
-if (!empty($Voting_name) && !empty($Voting_ablaufzeit) && !empty($Vorlesung)&& !empty($Einschreibeschlussel)) {
+
+//$Voting_ID = (int) htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
+//echo "$Voting_ID";
+$Voting_Name = htmlspecialchars($_POST["Voting_Name"], ENT_QUOTES, "UTF-8");
+$Vorlesung_ID = htmlspecialchars($_POST["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
+$Ablaufzeit = htmlspecialchars($_POST["Ablaufzeit"], ENT_QUOTES, "UTF-8");
+$Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
+$Voting_Erstellung = htmlspecialchars($_POST["Voting_Erstellung"], ENT_QUOTES, "UTF-8");
+
+$Frage = htmlspecialchars($_POST["Frage"], ENT_QUOTES, "UTF-8");
+$Antwort_A = htmlspecialchars($_POST["Antwort_A"], ENT_QUOTES, "UTF-8");
+$Antwort_B = htmlspecialchars($_POST["Antwort_B"], ENT_QUOTES, "UTF-8");
+$Antwort_C = htmlspecialchars($_POST["Antwort_C"], ENT_QUOTES, "UTF-8");
+$Antwort_D = htmlspecialchars($_POST["Antwort_D"], ENT_QUOTES, "UTF-8");
+echo "$Frage";
+
+if (!empty($Voting_Name) && !empty($Ablaufzeit) && !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel) && !empty($Frage) && !empty($Antwort_A) && !empty($Antwort_B)
+) {
     $votingdaten = [
-        "Voting_Name" => $Voting_name,
+
+        "Voting_Name" => $Voting_Name,
+        "Voting_Erstellung" => $Voting_Erstellung,
+        "Vorlesung_ID" => $Vorlesung_ID,
         "Einschreibeschlussel" => $Einschreibeschlussel,
-        "Vorlesung"=> $Vorlesung,
-        "Ablaufzeit" => $Voting_ablaufzeit,
+        "Ablaufzeit" => $Ablaufzeit,
+        "Frage" => $Frage,
+        "Antwort_A" => $Antwort_A,
+        "Antwort_B" => $Antwort_B,
+        "Antwort_C" => $Antwort_C,
+        "Antwort_D" => $Antwort_D,
+
 
     ];
     $Voting = new Voting($votingdaten);
     $VotingManager = new VotingManager();
     $VotingManager->save($Voting);
-    header('Location: ../Voting/Votingverzeichnis.php');
+
+    //<a href='../Vorlesung/VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID'> </a>
+    header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
 } else {
-    echo "Error: Bitte alle Felder ausf&uumlllen!<br/>";
+    echo "Achtung! Bitte alle Felder ausf&uumlllen!<br/>";
 }
+?>

@@ -1,34 +1,25 @@
 <!-- VotingManager zum Aufbau der DB-Verbindung
 mit folgenden Funktionen: findbyID, findAll, CRUD applikationen -->
 <?php
-
+require_once("Manager.php");
 require_once("../Vorlesung/Vorlesung.php");
+require_once("Dozent.php");
+require_once("DozentManager.php");
 require_once("../Mapper/Userdata.php");
 
-class VorlesungManager
+class VorlesungManager extends Manager
 {
-    private $pdo;
+    protected $pdo;
 
     public function __construct($connection = null)
     {
-        try {
-            $this->pdo = $connection;
-            if ($this->pdo === null) {
-                $this->pdo = new PDO(
-                    UserData::$dsn,
-                    UserData::$dbuser,
-                    UserData::$dbpass
-                );
-            }
-        } catch (PDOException $e) {
-            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
-            die();
+        parent::__construct($connection);
         }
-    }
+
 
     public function __destruct()
     {
-        $this->pdo = null;
+        parent::__destruct();
     }
 
     public function findById($Vorlesung_ID)
@@ -47,12 +38,13 @@ class VorlesungManager
         return $n;
     }
 
-    public function findAll()
+    public function findAll($dozent)
     {
         try {
-            $stmt = $this->pdo->prepare('
-              SELECT * FROM Vorlesung
-            ');
+            //**$stmt = $this->pdo->prepare('SELECT * FROM Vorlesung WHERE Dozent_ID= Dozent_ID'); // Doppelpunkt ausprobieren
+            $stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung WHERE Dozent_ID= :Dozent');
+            /**$stmt = $this->pdo->prepare('SELECT Vorlesung_ID, Vorlesung_Name FROM Vorlesung, Dozent WHERE Vorlesung.Dozent_ID= :dozent'); **/
+            $stmt->bindParam(':Dozent', $dozent->Dozent_ID);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Vorlesung');
             return $stmt->fetchAll();
@@ -63,7 +55,8 @@ class VorlesungManager
 
     }
 
-    public function save(Vorlesung $Vorlesung)
+    public function save(Vorlesung $Vorlesung) //testen ob man nur die Varibale $Vorlesung nehmen soll
+
     {
         // wenn ID gesetzt, dann update...
         if (isset($Vorlesung->Vorlesung_ID)) {
@@ -74,11 +67,12 @@ class VorlesungManager
         try {
             $stmt = $this->pdo->prepare('
               INSERT INTO Vorlesung
-                (Vorlesung_Name)
+                (Vorlesung_Name, Dozent_ID)
               VALUES
-                (:Vorlesung_Name)
+                (:Vorlesung_Name, :Dozent_ID)
             ');
             $stmt->bindParam(':Vorlesung_Name', $Vorlesung->Vorlesung_Name);
+            $stmt->bindParam(':Dozent_ID', $Vorlesung->Dozent_ID);
             $stmt->execute();
             // lastinsertId() gibt die zuletzt eingef�gte Id zur�ck -> damit Update der internen Id
             $Vorlesung->Vorlesung_ID = $this->pdo->lastInsertId();
@@ -96,7 +90,7 @@ class VorlesungManager
             $stmt = $this->pdo->prepare('
               UPDATE Vorlesung
               SET Vorlesung_Name = :Vorlesung_Name,
-              WHERE Voting_ID = :Voting_ID
+              WHERE Vorlesung_ID = :Vorlesung_ID
             ');
             $stmt->bindParam(':Vorlesung_ID', $Vorlesung->Vorlesung_ID);
             $stmt->bindParam(':Vorlesung_Name', $Vorlesung->Vorlesung_Name);
@@ -111,10 +105,10 @@ class VorlesungManager
 
     public function delete(Vorlesung $Vorlesung)
     {
-        if (!isset($Vorlesung->Vorlesung_ID)) {
+        /*if (!isset($Vorlesung->Vorlesung_ID)) {
             $Vorlesung = null;
             return $Vorlesung;
-        }
+        }*/
         try {
             $stmt = $this->pdo->prepare('
               DELETE FROM Vorlesung WHERE Vorlesung_ID= :Vorlesung_ID

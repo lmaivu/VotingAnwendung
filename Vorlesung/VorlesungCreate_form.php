@@ -1,7 +1,7 @@
 <!-- Formular, um eine Voting zu erstellen
 Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert werden-->
 
-<?php // include("../inc/session_check.php"); ?>
+<?php include("../inc/session_check.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@ Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert we
 
 <div class="container">
 
-    <h2>Neuer Vorlesung-Eintrag</h2>
+    <h2>Vorlesung erstellen</h2>
 
     <form class="form-horizontal" role="form" action="VorlesungCreate_do.php" method="post">
 
@@ -37,6 +37,8 @@ Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert we
             <label class="control-label col-sm-5"> </label>
             <div class="col-sm-6">
                 <input type="hidden" value="<?php echo htmlspecialchars($dozent->Dozent_ID); ?>" class="form-control" name="Dozent_ID" id="Dozent_ID" readonly>
+
+
             </div>
         </div>
     </form>

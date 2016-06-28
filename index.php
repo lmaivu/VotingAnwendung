@@ -24,7 +24,7 @@ include("inc/head.php");
         </div>
 
 
-    <div class="content">
+    <div id="content">
 
         <div class="login">
         <form class="form-horizontal" role="form" action="Mapper/login_do.php" method="post">
@@ -50,7 +50,7 @@ include("inc/head.php");
                 </span>
                 </div>
                 <div class="col-sm-3">
-                    <input class="form-control" type="password" name='password' placeholder="Passwort"/>
+                    <input class="form-control" type="password" name='hash' placeholder="Passwort"/>
 
                 </div>
 
@@ -60,13 +60,11 @@ include("inc/head.php");
                     <div class="col-sm-offset-4 col-sm-4">
                         <button type="submit" class="btn btn-default">Login</button>
                     </div>
-
                 </div>
         </form>
-
     </div>
 
-    </div> <!--div class =content-->
+    </div> <!--div id =content-->
 
     <div class="info">
         <a href="Mapper/info.php"> Was steckt hinter "I will survey"? </a>
@@ -77,12 +75,14 @@ include("inc/head.php");
 
 
 <!-- Inhalt Ende-->
+    <div id="footer">
+        <?php
+        include("inc/footer.php");
+
+        ?>
+    </div>
 
 </body>
 
 </html>
 
-<?php
-include("inc/footer.php");
-
-?>

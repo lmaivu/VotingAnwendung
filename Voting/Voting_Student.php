@@ -12,7 +12,7 @@ $VotingManager = new VotingManager();
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
 if (isset ($_COOKIE["voted"] )) {
     echo "Du hast erfolgreich Ihre Voting-Stimme abgegeben."; ?>
-    <a href="#"> Hier kannst Sie Ihr Ergebnis anschauen. </a>
+    <a href="#"> Hier können Sie Ihr Ergebnis anschauen. </a>
     <?php
 }
     elseif (!isset ($_COOKIE["voted"] )) {

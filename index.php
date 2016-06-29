@@ -72,6 +72,9 @@ include("inc/head.php");
 
 </div> <!--div main schlie�en -->
 
+<div
+</div>
+
 
 
 <!-- Inhalt Ende-->

@@ -5,11 +5,11 @@
 
 <head>
     <title>Charts mit JQuery / HTML5 Canvas</title>
-    <link rel="stylesheet" type="text/css" href="../jqueryMai/jqPlot/dist/jquery.jqplot.css"> </link>
-    <script src="../jqueryMai/jquery-1.6.2.min.js" type="text/javascript"></script>
-    <script src="../jqueryMai/jqPlot/dist/plugins/jquery.jqplot.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="../jqueryMai/jqPlot/dist/jquery.js"></script>
-    <script type="text/javascript" src="jquery.flot.js"></script>
+    <!--<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script type="text/javascript" src="../jqPlot/jquery.min.js"></script>
+    <script type="text/javascript" src="../jquery.jqplot.min.js"></script>
+    <link rel="stylesheet" type="text/css" hrf="../jquery.jqplot.min.css" />
 </head>
 <?php
 
@@ -34,19 +34,8 @@ $Antwort_D =$liste ['d_Student'];
 $count = $Antwort_A+ $Antwort_B+ $Antwort_C+ $Antwort_D;
 
 ?>
-<script type="text/javascript">
 
-    $(document).ready(function() {
-        $.jqplot('chart', [ [ [1,2], [2,4], [3,9] ] ]);
-    });
-</script>
 <body>
-
-
-<h1>Voting: <?php echo $Voting->Frage ?></h1><br />
-<?php
-$getVoting = "SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Voting_ID=$Voting->Voting_ID";
-
 
 
 $Voting = new Voting($votingdaten);

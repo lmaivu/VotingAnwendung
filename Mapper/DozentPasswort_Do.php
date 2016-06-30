@@ -13,11 +13,25 @@ $hash = password_hash($hash, PASSWORD_DEFAULT);
 
 $dozent = new Dozent($dozentdaten);
 $DozentManager = new DozentManager();
-$DozentManager->updatePassword($dozent); ?>
+$DozentManager->updatePassword($dozent);
 
-<p> Sie haben Ihr Passwort erfolgreich geändert. <br>
-    Zum Fortfahren melden Sie sich bitte erneut an.<br>
-</p>
+if (!empty($hash)  ) {
+    $daten = [
+        "hash" => $hash,
+        "Dozent_ID" => $Dozent_ID,
+
+    ];
+    $Dozent = new Dozent($daten);
+    $DozentManager = new DozentManager();
+    $DozentManager->savePassword($Dozent);
+    echo "Sie haben Ihr Passwort erfolgreich ge&aumlndert. </br>
+    Zum Fortfahren melden Sie sich bitte erneut an.";
+} else {
+    echo " Bitte alle Felder ausf&uumlllen!<br/>";}
+?>
+
+
+
 <a href= "../index.php"> Anmeldeseite </a>
 
 

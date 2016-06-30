@@ -8,7 +8,7 @@
 
 <body>
 
-<?php include("../inc/navbar.php")
+<?php include("../inc/navbar_Administrator.php")
 ; ?>
 
 <div class="container">

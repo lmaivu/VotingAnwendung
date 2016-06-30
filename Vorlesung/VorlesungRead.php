@@ -59,14 +59,16 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
             echo "<td>$Voting->Antwort_C</td>";
             echo "<td>$Voting->Antwort_D</td>";
             echo "<td>
-                        <a href='QR_Code.php?Voting_ID=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
-                        <a href='VotingResult.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>
+                        <a href='../qr_code/php/qr_voting.php?Voting_ID=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
+                        <a href='../Voting/Result.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>
                         <a href='../Voting/VotingDelete.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>löschen</a>
+
                       </td>";
             echo "</tr>";
         }
         ?>
         </tbody>
+        <?php echo "<a href='../Voting/Voting_Studies_Test.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>Studi-Seite</a>" ?>
 </div>
 
 </body>

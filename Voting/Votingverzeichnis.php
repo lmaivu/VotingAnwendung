@@ -66,6 +66,7 @@ require_once("../Mapper/VorlesungManager.php");
                 //echo "<td> <a type='button' class='btn btn-primary' href='VotingUpdate_form.php?Voting_ID=$Voting_ID' role='button'>bearbeiten</a> </td>";
                 echo "<td> <a type='button' class='btn btn-primary' href='VotingDelete.php?Voting_ID=$Voting_ID' role='button'>l&oumlschen</a> </td>";
                 echo "<td> <a type='button' class='btn btn-primary' href='../Vorlesung/VorlesungRead.php?Voting_ID=$Voting_ID' role='button'>Vorlesung anzeigen</a>";
+
                     ?>
                     <!--�berpr�fen!!!-->
                     <?php //nicht n�tig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung l�sen</a>";

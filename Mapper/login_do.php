@@ -28,9 +28,12 @@ if (!empty($login) && !empty($hash)) {
         $_SESSION ["dozent"] = $dozent;
         $_SESSION ["login"] =1;
 
-
+        if ($login == "Administrator") {
+            header ('Location: startseite_Administrator.php');
+        }
+        else {
         header('Location: startseite.php');
-        die();
+        die(); }
         //wenn die Userdaten nicht gleich null sind, wird eine Session gestartet und dem Login wird eine 1 �bergeben,
         //es folgt eine Uleitung auf startseite.php
     }

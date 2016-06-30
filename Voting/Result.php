@@ -9,7 +9,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
     <script type="text/javascript" src="../jqPlot/jquery.min.js"></script>
     <script type="text/javascript" src="../jquery.jqplot.min.js"></script>
-    <link rel="stylesheet" type="text/css" hrf="../jquery.jqplot.min.css" />
+    <link rel="stylesheet" type="text/css" href="../jquery.jqplot.min.css" />
 </head>
 <?php
 
@@ -37,7 +37,7 @@ $count = $Antwort_A+ $Antwort_B+ $Antwort_C+ $Antwort_D;
 
 <body>
 
-
+<?php
 $Voting = new Voting($votingdaten);
 $VotingManager = new VotingManager();
 $VotingManager->save($Voting); ?>
@@ -45,7 +45,9 @@ $VotingManager->save($Voting); ?>
 
 
 <div>
-    <div id="chart" style="height: 400px; width: 400px"></div>
+    <div id="chart" style="height: 400px; width: 400px">
+
+    </div>
 
 
 

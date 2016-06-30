@@ -23,6 +23,7 @@ elseif ( $_COOKIE["voted"] == $Voting->Voting_ID) {
     die();
 
 }
+$Vorlesung_ID=5;
 ?>
 
 <div>
@@ -43,7 +44,7 @@ elseif ( $_COOKIE["voted"] == $Voting->Voting_ID) {
                     </div>
                 </td>
                 <td style="width:100px;font-weight:bold">
-                    <?php echo $answer['Votes'] ?>
+                    <?php echo $answer['Votes']; ?>
                     Stimmen
                 </td>
             </tr>

@@ -67,13 +67,13 @@ include("inc/head.php");
     </div> <!--div id =content-->
 
     <div class="info">
+        <a href="Dozent/DozentCreate_Form.php"> Registrieren </a> <br>
         <a href="Mapper/info.php"> Was steckt hinter "I will survey"? </a>
     </div>
 
 </div> <!--div main schlie�en -->
 
-<div
-</div>
+
 
 
 

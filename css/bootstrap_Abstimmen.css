@@ -1,0 +1,52 @@
+.pollResultBar{padding: 2px 0;}
+.resultBar{    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    border-color: #A4A4A4 #BBBBBB #D5D5D5;
+    border-style: solid;
+    border-width: 1px;
+    padding-bottom: 6px;
+    padding-top: 3px;
+    position: relative;
+}
+.resultBar .shaded{
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #D8DFEA;
+    border-color: #93A4C7;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+    height: 100%;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+}
+
+.resultBar .label{
+    color: #3B5998;
+    line-height: 13px;
+    overflow: hidden;
+    position: relative;
+    top: 1px;
+}
+/*Button*/
+.btn{ background-color: #5B74A8;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border:1px solid;
+    color:white;
+    font-weight:bold;
+    padding:5px;
+    cursor:pointer;
+    border-color: #29447E #29447E #1A356E;
+}
+
+.btn:active{
+    background:#4f6aa3;
+}

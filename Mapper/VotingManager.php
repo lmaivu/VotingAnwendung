@@ -63,6 +63,22 @@ class VotingManager
         }
 
     }
+    public function findbyDozent($Dozent) //hierfür müsste man bei Vorlesung erst noch einen Dozenten anlegen
+    {
+        try {
+            $stmt = $this->pdo->prepare('
+              SELECT * FROM Voting WHERE Dozent_ID = :Dozent
+            '); //oder Where Vorlesung_ID= :Vorlesung_ID
+            $stmt->bindParam(':Dozent', $Dozent);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
+            return $stmt->fetchAll();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+
+    }
 
     public function save(Voting $Voting)
     {
@@ -152,8 +168,8 @@ class VotingManager
 public function getVoting($Vorlesung_ID) //nochmal überprüfen ob Vorlesung_ID oder Voting_ID
 {
     try {
-        $stmt = $this->pdo->prepare('SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Vorlesung_ID = :Vorlesung_ID');
-        $stmt->bindParam(':Vorlesung_ID', $Vorlesung_ID);
+        $stmt = $this->pdo->prepare('SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Voting_ID = :Voting_ID');
+        $stmt->bindParam(':Voting_ID', $Voting_ID);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
         return $stmt->fetch();

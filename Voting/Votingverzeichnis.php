@@ -16,7 +16,7 @@ require_once("Voting.php");
 require_once("../Mapper/VotingManager.php");
 require_once("../Vorlesung/Vorlesung.php");
 require_once("../Mapper/VorlesungManager.php");
-require_once("../VotingVorlesung/VotingVorlesungManager.php");
+
 ?>
 
 
@@ -38,7 +38,9 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
 
     <?php
     $VotingManager = new VotingManager();
+    $VorlesungManager = new VorlesungManager();
     $liste = $VotingManager->findAll ($Vorlesung);
+
     if (count($liste) > 0) { ?>
         <table class="table table-hover">
             <thead>
@@ -61,9 +63,10 @@ require_once("../VotingVorlesung/VotingVorlesungManager.php");
                 echo "<td>$Voting->Voting_Erstellung</td>";
 
                 echo "<td> <a type='button' class='btn btn-info' href='VotingRead.php?Voting_ID=$Voting_ID' role='button'>anzeigen</a> </td>";
-                echo "<td> <a type='button' class='btn btn-primary' href='VotingUpdate_form.php?Voting_ID=$Voting_ID' role='button'>bearbeiten</a> </td>";
+                //echo "<td> <a type='button' class='btn btn-primary' href='VotingUpdate_form.php?Voting_ID=$Voting_ID' role='button'>bearbeiten</a> </td>";
                 echo "<td> <a type='button' class='btn btn-primary' href='VotingDelete.php?Voting_ID=$Voting_ID' role='button'>l&oumlschen</a> </td>";
                 echo "<td> <a type='button' class='btn btn-primary' href='../Vorlesung/VorlesungRead.php?Voting_ID=$Voting_ID' role='button'>Vorlesung anzeigen</a>";
+
                     ?>
                     <!--�berpr�fen!!!-->
                     <?php //nicht n�tig echo "<td><a href='LeserUnconnect_do.php?notiz_id=$notiz->id&leser_id=$leser->id' class='btn btn-info btn-danger btn-xs' >Verbindung l�sen</a>";

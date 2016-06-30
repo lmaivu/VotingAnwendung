@@ -96,6 +96,53 @@ WHERE login = :login
         return $dozent;
     }
 
+
+    public function savePassword(Dozent $dozent) //neues Passwort speichern
+
+    {
+        // wenn ID gesetzt, dann update...
+        if (isset($dozent->Dozent_ID)) {
+            $this->update($dozent);
+            return $dozent;
+        }
+        // ...sonst Anlage eines neuen Datensatzes
+        try {
+            $stmt = $this->pdo->prepare('
+              INSERT INTO Dozent
+                (hash)
+              VALUES
+                (:hash)
+            ');
+            $stmt->bindParam(':hash', $dozent->hash);;
+            $stmt->execute();
+            // lastinsertId() gibt die zuletzt eingef�gte Id zur�ck -> damit Update der internen Id
+            $dozent->Dozent_ID = $this->pdo->lastInsertId();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        return $dozent;
+    }
+
+    private function update(Dozent $dozent)
+    {
+        echo ("update!");
+        try {
+            $stmt = $this->pdo->prepare('
+              UPDATE Dozent
+              SET hash = :hash,
+              WHERE Dozent_ID = :Dozent_ID
+            ');
+            $stmt->bindParam(':hash', $dozent->hash);
+
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        return $dozent;
+    }
+
     public function delete(Dozent $dozent)
     {
         try {

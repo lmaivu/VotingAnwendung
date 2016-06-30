@@ -24,14 +24,14 @@ if (!empty($hash)  ) {
     $Dozent = new Dozent($daten);
     $DozentManager = new DozentManager();
     $DozentManager->savePassword($Dozent);
-    header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
+    echo "Sie haben Ihr Passwort erfolgreich ge&aumlndert. </br>
+    Zum Fortfahren melden Sie sich bitte erneut an.";
 } else {
-    echo "Error: Bitte alle Felder ausf&uumlllen!<br/>";}
+    echo " Bitte alle Felder ausf&uumlllen!<br/>";}
 ?>
 
-<p> Sie haben Ihr Passwort erfolgreich geändert. <br>
-    Zum Fortfahren melden Sie sich bitte erneut an.<br>
-</p>
+
+
 <a href= "../index.php"> Anmeldeseite </a>
 
 

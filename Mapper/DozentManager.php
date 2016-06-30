@@ -88,6 +88,7 @@ SET hash = :hash
 WHERE login = :login
 ');
             $stmt->bindParam(':hash', $dozent->hash);
+            $stmt->bindParam(':login', $dozent->login);
             $stmt->execute();
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
@@ -126,14 +127,14 @@ WHERE login = :login
 
     private function update(Dozent $dozent)
     {
-        echo ("update!");
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Dozent
               SET hash = :hash,
-              WHERE Dozent_ID = :Dozent_ID
+              WHERE login = :login
             ');
             $stmt->bindParam(':hash', $dozent->hash);
+            $stmt->bindParam(':login', $dozent->login);
 
             $stmt->execute();
         } catch (PDOException $e) {

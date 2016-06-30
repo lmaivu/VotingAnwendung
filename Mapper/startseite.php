@@ -28,6 +28,7 @@ include("../inc/navbar.php");
   </div>
 </div>  <!--div kopfleiste-->
 
+
 <div id="menu">
       <div class="row">
 
@@ -44,6 +45,8 @@ include("../inc/navbar.php");
           </div>
       </div> <!-- div menu-->
 </div>
+
+<a href='../Mapper/DozentPasswort_Form.php' class='btn btn-primary btn-sm'>Passwort ändern</a>
 
 <div>
     <?php include "../inc/footer.php"; ?>

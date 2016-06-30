@@ -1,6 +1,3 @@
-<?php
-include("../inc/head.php");
-?>
 
 
 <nav class="navbar navbar-default">
@@ -21,7 +18,7 @@ include("../inc/head.php");
         <div class="collapse navbar-collapse" id="mainNavBar">
             <ul class="nav navbar-nav">
                 <li>
-                     <a class="navbar-brand">
+                     <a class="navbar-brand" style="width: auto; height: auto; position: relative">
                         <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Logo_Navbar.png">
                      </a>
                 </li>

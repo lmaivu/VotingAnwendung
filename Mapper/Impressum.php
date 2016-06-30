@@ -1,33 +1,28 @@
-<head>
-    <meta charset="UTF-8">
-    <title> I will survey - Voting </title>
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <!--
-     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    -->
-    <?php include "../inc/navbar.php"; ?>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <!-- JQuery einbinden -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>﻿
-</head>
+<link href="../css/bootstrap_statisch.css" rel="stylesheet">
+
+<?php
+include("../inc/navbar.php");
+include("../inc/session_check.php");
+?>
+
+<link href="../css/bootstrap_statisch.css" rel="stylesheet">
+
+
+<!DOCTYPE html>
+<html>
 
 <body>
 
-<link rel="stylesheet" href="../css/bootstrap_statisch.css">
+    <div id="main">
+        <h1 id="title"> Impressum </h1>
 
-<div class="main">
-    <h1 id="title"> Impressum </h1>
+       <h3 id="title2"> Gestaltung & Verwaltung der Website </h3>
+        <h4> Mai Vu<br>
+            Lukas Neuffer<br>
+         Lena Bogunovic<br>
+        </h4>
 
-    <h3 id="title2"> Gestaltung & Verwaltung der Website </h3>
-    <h4> Mai Vu<br>
-        Lukas Neuffer<br>
-        Lena Bogunovic<br>
-    </h4>
-
-</div>
+    </div>
 
 <!---
 
@@ -38,9 +33,9 @@ Lena Bogunovic<br/><h2>Kontakt</h2>Telefon: 0711 892310<br/>E-Mail: <a href="mai
 
 
 -->
-
-
-<div class="footer">
-    <p> &copy iwillsurvey.de </p>
+<div>
     <?php include "../inc/footer.php"; ?>
 </div>
+
+</body>
+</html>

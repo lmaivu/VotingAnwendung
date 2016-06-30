@@ -79,18 +79,14 @@ VALUES
         return $dozent;
     }
 
-    private function update(Dozent $dozent)
+    public function updatePassword(Dozent $dozent)
     {
         try {
             $stmt = $this->pdo->prepare('
 UPDATE Dozent
-SET vorname = :vorname,
-nachname = :nachname,
-hash = :hash
+SET hash = :hash
 WHERE login = :login
 ');
-            $stmt->bindParam(':vorname', $dozent->vorname);
-            $stmt->bindParam(':nachname', $dozent->nachname);
             $stmt->bindParam(':hash', $dozent->hash);
             $stmt->execute();
         } catch (PDOException $e) {

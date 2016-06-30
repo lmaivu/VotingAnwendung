@@ -30,7 +30,8 @@ if (!empty($login) && !empty($vorname) && !empty($nachname) && !empty($password)
     ];
     $dozent = new Dozent($dozentdaten);
     $DozentManager = new DozentManager();
-    $DozentManager->create($dozent);
+    $DozentManager->create
+    ($dozent);
     echo "Sie haben sich erfolgreich registriert. Zum Fortfahren melden Sie sich an."; ?> <br>
     <a href= "../index.php"> Anmeldeseite </a>
 <?php

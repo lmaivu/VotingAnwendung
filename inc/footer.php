@@ -1,11 +1,11 @@
-
+<!-- Footer wird auf jeder Seite eingebunden -->
 
 <footer id="footer">
 
-    <div class="container">
+    <div class="container" style="background-color: #ebedf2">
         <div class="row">
             <div>
-                <p class="pull-left" style="font-size:11px; margin-top: 10px;">
+                <p class="pull-left" style="font-family: 'Open Sans', sans-serif; font-size:11px; margin-top: 10px;">
                     © by MaLeLu - 2016
                 </p>
             </div>

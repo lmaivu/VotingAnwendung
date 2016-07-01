@@ -4,7 +4,7 @@ Darstellung der Daten in Tabellenform-->
 <?php
 
 include "../inc/head.php";
-include "../inc/navbar.php";
+//include "../inc/navbar.php";
 include "../inc/footer.php";
 
 ?>
@@ -27,7 +27,6 @@ require_once("../Mapper/VorlesungManager.php");
 <html>
 
 
-
 <body>
 
 
@@ -40,6 +39,7 @@ require_once("../Mapper/VorlesungManager.php");
     $VotingManager = new VotingManager();
     $VorlesungManager = new VorlesungManager();
     $liste = $VotingManager->findAll ($Vorlesung);
+    print_r( $liste);
 
     if (count($liste) > 0) { ?>
         <table class="table table-hover">

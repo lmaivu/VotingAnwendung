@@ -130,6 +130,7 @@ VALUES
             $stmt = $this->pdo->prepare('
               UPDATE Dozent
               SET hash = :hash,
+              Dozent_ID = :Dozent_ID,
               WHERE Dozent_ID = :Dozent_ID
             ');
             $stmt->bindParam(':hash', $dozent->hash);

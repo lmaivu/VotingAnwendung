@@ -12,6 +12,8 @@ require_once("Dozent.php");
 <body>
 
 <?php include("../inc/navbar.php");
+$Dozent_ID = (int)htmlspecialchars($_GET["Dozent_ID"], ENT_QUOTES, "UTF-8");
+echo "$Dozent_ID";
 $DozentManager = new DozentManager();
 $dozent = $DozentManager->findById($Dozent_ID);?>
 

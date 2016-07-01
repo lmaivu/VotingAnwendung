@@ -17,12 +17,17 @@ echo "$Dozent_ID";
 if ($hash == $hash2 && !empty($hash) && !empty($hash2)) {
     $hash = password_hash($hash, PASSWORD_DEFAULT);
     $hash2 = password_hash($hash2, PASSWORD_DEFAULT);
+
     $DozentManager = new DozentManager();
     $dozent = $DozentManager->findById($Dozent_ID);
+
     $dozent->hash = $hash;
     $dozent->Dozent_ID = $Dozent_ID;
+
     $DozentManager->savePassword($dozent);
-    header('Location: startseite.php');
+    //header('Location: startseite.php');
+    echo "Sie haben Ihr Passwort erfolgreich geändert. Melden Sie sich bitte erneut an";
+    echo "<a href= ../index.php> Zur&uumlck zur Anmeldeseite </a> ";
 }
 else {
     echo "Bitte alle Felder ausfüllen oder die Passwörter stimmen nicht überein.";

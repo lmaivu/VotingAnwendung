@@ -63,13 +63,15 @@ class VotingManager
         }
 
     }
-    public function findbyDozent($Dozent) //hierfür müsste man bei Vorlesung erst noch einen Dozenten anlegen
+
+
+    public function findbyDozent($dozent) //hierfür müsste man bei Vorlesung erst noch einen Dozenten anlegen
     {
         try {
             $stmt = $this->pdo->prepare('
               SELECT * FROM Voting WHERE Dozent_ID = :Dozent
             '); //oder Where Vorlesung_ID= :Vorlesung_ID
-            $stmt->bindParam(':Dozent', $Dozent);
+            $stmt->bindParam(':Dozent', $dozent);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
             return $stmt->fetchAll();

@@ -22,6 +22,8 @@ require_once ("../Vorlesung/Vorlesung.php");
 
 <?php include("../inc/navbar.php");
 $Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
+$Dozent_ID = (int)htmlspecialchars($_GET["Dozent_ID"], ENT_QUOTES, "UTF-8");
+echo "$Dozent->Dozent_ID";
 date_default_timezone_set('UTC+2');
 date_default_timezone_set("Europe/Berlin");
 $timestamp = time();
@@ -144,6 +146,13 @@ echo "$Vorlesung_Erstellung";
             <label class="control-label col-sm-5"</label>
             <div class="col-sm-6">
                 <input type="hidden" value="<?php echo $Vorlesung_Erstellung;?>" class="form-control" name="Vorlesung_Erstellung" id="Vorlesung_Erstellung" readonly>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-5"</label>
+            <div class="col-sm-6">
+                <input type="hidden" value="<?php echo $Dozent->Dozent_ID;?>" class="form-control" name="Dozent_ID" id="Dozent_ID" readonly>
             </div>
         </div>
 

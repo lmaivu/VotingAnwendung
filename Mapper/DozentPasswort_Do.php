@@ -6,33 +6,49 @@ require_once("Dozent.php");
 
 $hash = htmlspecialchars($_POST["hash"], ENT_QUOTES, "UTF-8");
 $hash2 = htmlspecialchars($_POST["hash2"], ENT_QUOTES, "UTF-8");
-$Dozent_ID = htmlspecialchars($_POST["Dozent_ID"], ENT_QUOTES, "UTF-8");
+$Dozent_ID = (int) htmlspecialchars($_POST["Dozent_ID"], ENT_QUOTES, "UTF-8");
+
+echo "$hash";
+echo "$hash2";
+echo "$Dozent_ID";
 
 
-$hash = password_hash($hash, PASSWORD_DEFAULT);
 
-$dozent = new Dozent($dozentdaten);
-$DozentManager = new DozentManager();
-$DozentManager->updatePassword($dozent);
-
-if (!empty($hash)  ) {
-    $daten = [
+if ($hash == $hash2 && !empty($hash) && !empty($hash2)) {
+    $hash = password_hash($hash, PASSWORD_DEFAULT);
+    $hash2 = password_hash($hash2, PASSWORD_DEFAULT);
+    $DozentManager = new DozentManager();
+    $dozent = $DozentManager->findById($Dozent_ID);
+    $dozent->hash = $hash;
+    $dozent->Dozent_ID = $Dozent_ID;
+    $DozentManager->savePassword($dozent);
+    header('Location: startseite.php');
+}
+else {
+    echo "Bitte alle Felder ausfüllen oder die Passwörter stimmen nicht überein.";
+}
+/**
+$daten = [
         "hash" => $hash,
+        "hash2" => $hash2,
         "Dozent_ID" => $Dozent_ID,
 
     ];
-    $Dozent = new Dozent($daten);
+    $dozent = new Dozent($daten);
     $DozentManager = new DozentManager();
-    $DozentManager->savePassword($Dozent);
+    $DozentManager->savePassword($dozent);
     echo "Sie haben Ihr Passwort erfolgreich ge&aumlndert. </br>
     Zum Fortfahren melden Sie sich bitte erneut an.";
 } else {
-    echo " Bitte alle Felder ausf&uumlllen!<br/>";}
-?>
+    echo " Bitte alle Felder ausf&uumlllen!<br/> Erneut Versuchen.";}?>
+<!--<a href= "DozentPasswort_Form.php"> Passwort &aumlndern </a> -->
+
+<br>
+
+<a href= "../index.php"> Zur&uumlck zur Anmeldeseite </a> **/
 
 
 
-<a href= "../index.php"> Anmeldeseite </a>
 
 
 

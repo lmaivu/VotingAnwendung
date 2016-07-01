@@ -18,7 +18,8 @@ include("../inc/navbar.php");
 </head>
 
 <body>
-<?php $Dozent_ID = (int) htmlspecialchars($_POST ["Dozent_ID"], ENT_QUOTES, "UTF-8"); ?>
+<?php $Dozent_ID = $dozent->Dozent_ID;
+echo "$Dozent_ID";?>
 
 <div id="kopfleiste"> <!--div kopfleiste-->
 
@@ -46,7 +47,7 @@ include("../inc/navbar.php");
       </div> <!-- div menu-->
 </div>
 
-<a href='../Mapper/DozentPasswort_Form.php' class='btn btn-primary btn-sm'>Passwort ändern</a>
+<a href='../Mapper/DozentPasswort_Form.php?Dozent_ID=$Dozent_ID' class='btn btn-primary btn-sm'>Passwort ändern</a>
 
 <div>
     <?php include "../inc/footer.php"; ?>

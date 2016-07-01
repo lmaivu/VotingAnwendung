@@ -28,7 +28,8 @@ $liste1 = $VotingManager->findById($Voting_ID);
 <div id="kopfleiste">
     <div class="jumbotron">
         <h1>Voting: <br>
-            <?php echo $liste1->Voting_Name;?> </h1>
+            <?php echo $liste1->Voting_Name;?>
+        </h1>
     </div>
 </div>
 
@@ -41,10 +42,12 @@ $liste1 = $VotingManager->findById($Voting_ID);
 
             <tbody>
             <?php
-            foreach($liste1 as $Voting) : ?>
+            foreach($liste1 as $Voting) :
+                echo "Antwort_A";?>
+
                 <tr>
                     <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="hallo<?php //echo $Voting->Antwort_A; ?>" name="Antwort_A">
+                        <input type="radio" value="<?php echo $Voting->Antwort_A; ?>" name="Antwort_A">
                         <input type="radio" value="<?php echo $Voting->Antwort_B; ?>" name="Antwort_B">
                         <?php if(isset($Voting->Antwort_C)) { ?>
                             <input type="radio" value="<?php echo $Voting->Antwort_C; ?>" name="Antwort_C">

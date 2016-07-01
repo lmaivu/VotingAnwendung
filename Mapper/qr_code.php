@@ -20,3 +20,6 @@ ob_end_clean();
 QRcode::png($codeText);
 
 ?>
+
+c
+

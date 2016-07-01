@@ -1,5 +1,7 @@
 <?php
 include("../inc/session_check.php");
+require_once ("DozentManager.php");
+require_once("Dozent.php");
 ?>
 
 
@@ -9,7 +11,11 @@ include("../inc/session_check.php");
 
 <body>
 
-<?php include("../inc/navbar.php"); ?>
+<?php include("../inc/navbar.php");
+$Dozent_ID = (int)htmlspecialchars($_GET["Dozent_ID"], ENT_QUOTES, "UTF-8");
+echo "$Dozent_ID";
+$DozentManager = new DozentManager();
+$dozent = $DozentManager->findById($Dozent_ID);?>
 
 <div class="container">
 
@@ -40,7 +46,7 @@ include("../inc/session_check.php");
         <div class="form-group">
             <label class="control-label col-sm-5"</label>
             <div class="col-sm-6">
-                <input type="hidden" value="<?php echo htmlspecialchars($Dozent->Dozent_ID); ?>" class="form-control" name="Dozent_ID" id="Dozent_ID" readonly>
+                <input type="hidden" value="<?php echo htmlspecialchars($dozent->Dozent_ID); ?>" class="form-control" name="Dozent_ID" id="Dozent_ID" readonly>
             </div>
         </div>
 

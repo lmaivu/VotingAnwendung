@@ -39,6 +39,8 @@ require_once("../Mapper/VotingManager.php");
         <?php
         $VorlesungManager = new VorlesungManager();
         $liste = $VorlesungManager->findAll($dozent);
+        $Dozent_ID= $liste->Dozent_ID;
+        echo "int ($Dozent_ID)";
         if (count($liste) > 0) { ?>
         <table class="table table-hover table-responsive">
             <thead class="row">
@@ -57,7 +59,7 @@ require_once("../Mapper/VotingManager.php");
                     <a href='VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-info' role='button'>anzeigen</a>
                     <!--<a href='VorlesungUpdate_form.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>bearbeiten</a> -->
                     <a href='VorlesungDelete.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>l&oumlschen</a>
-                    <a href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary'  role='button'>Voting erstellen</a>
+                    <a href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' type='button' class='btn btn-primary'  role='button'>Voting erstellen</a>
 
 
             </td>";

@@ -18,7 +18,7 @@ include("../inc/navbar.php");
 </head>
 
 <body>
-<?php $Dozent_ID = (int) htmlspecialchars($_POST ["Dozent_ID"], ENT_QUOTES, "UTF-8"); ?>
+<?php $Dozent_ID = $dozent->Dozent_ID; ?>
 
 <div id="kopfleiste"> <!--div kopfleiste-->
 
@@ -33,7 +33,7 @@ include("../inc/navbar.php");
       <div class="row">
 
               <div class="col-sm-4">
-              <a style ="color: #000000" href="../Vorlesung/Vorlesungsverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.png" width= "300px" height="300px" class="img-circle">
+                  <a style ="color: #000000"  href="../Vorlesung/Vorlesungsverzeichnis.php?Dozent_ID=$Dozent_ID"?> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.png" width= "300px" height="300px" class="img-circle">
               </div>
 
           <div class="col-sm-4">
@@ -41,13 +41,15 @@ include("../inc/navbar.php");
           </div>
 
           <div class="col-sm-4">
-              <a style ="color: #000000" href="../Voting/Votingverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.png" width= "300px" height="300px" class="img-circle">
+              <a style ="color: #000000" href="../Voting/Votingverzeichnis.php?Dozent_ID=$Dozent_ID"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.png" width= "300px" height="300px" class="img-circle">
           </div>
       </div> <!-- div menu-->
 </div>
 
-<a href='../Mapper/DozentPasswort_Form.php' class='btn btn-primary btn-sm'>Passwort ändern</a>
+<?php
 
+echo "<a href='../Mapper/DozentPasswort_Form.php?Dozent_ID=$Dozent_ID' class='btn btn-primary btn-sm'>Passwort ändern</a>"
+?>
 <div>
     <?php include "../inc/footer.php"; ?>
 </div>

@@ -167,7 +167,7 @@ class VotingManager
 
 
 
-public function getVoting($Vorlesung_ID) //nochmal überprüfen ob Vorlesung_ID oder Voting_ID
+public function countVote($Vorlesung_ID) //nochmal überprüfen ob Vorlesung_ID oder Voting_ID
 {
     try {
         $stmt = $this->pdo->prepare('SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Voting_ID = :Voting_ID');

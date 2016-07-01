@@ -17,6 +17,21 @@ class DozentManager extends Manager
         parent::__destruct();
     }
 
+    public function findById($Dozent_ID)
+    {
+        try {
+            $stmt = $this->pdo->prepare('SELECT * FROM Dozent WHERE Dozent_ID = :Dozent_ID');
+            $stmt->bindParam(':Dozent_ID', $Dozent_ID);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Dozent');
+            $n = $stmt->fetch();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        if (!$n) $n = null;
+        return $n;
+    }
     public function findByLogin($login, $hash)
     {
         try {

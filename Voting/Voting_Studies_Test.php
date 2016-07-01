@@ -47,10 +47,10 @@ $liste1->a_Student = 35;
             <tbody>
                 <tr>
                     <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $liste1->Antwort_A; ?>" name="Antwort_A">
+                        <input type="radio" value="<?php echo $liste1->a_Student; ?>" name="a_Student">
                     </td>
                     <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->a_Student" ?>%" class="shaded"></div>
+                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Antwort_A" ?>%" class="shaded"></div>
                             <div class="label"><strong>A.<?php echo htmlspecialchars($liste1->Antwort_A) ?></strong></div>
                         </div>
                     </td>
@@ -59,7 +59,7 @@ $liste1->a_Student = 35;
 
                 <tr>
                     <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $liste1->Antwort_B; ?>" name="Antwort_B">
+                        <input type="radio" value="<?php echo $liste1->b_Student; ?>" name="b_Student">
                     </td>
 
                     <td class="pollResultsBar" align="left">
@@ -72,7 +72,7 @@ $liste1->a_Student = 35;
                 <tr>
                     <?php if(isset($liste1->Antwort_C)) { ?>
                     <td class="pollRadioBtn" style="width:20px;">
-                            <input type="radio" value="<?php echo $liste1->Antwort_C; ?>" name="Antwort_C">
+                            <input type="radio" value="<?php echo $liste1->c_Student; ?>" name="c_Student">
 
                     </td>
 
@@ -88,7 +88,7 @@ $liste1->a_Student = 35;
                 <tr>
                     <?php if(isset($liste1->Antwort_D)) { ?>
                     <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $liste1->Antwort_D; ?>" name="Antwort_D">
+                        <input type="radio" value="<?php echo $liste1->d_Student; ?>" name="d_Student">
 
                     </td>
 

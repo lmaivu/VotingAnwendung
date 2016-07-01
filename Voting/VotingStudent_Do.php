@@ -15,18 +15,33 @@ $Voting = $VotingManager->findById($Voting_ID);
 
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
 if (isset ($_COOKIE["voted"] )) {
-    echo "Sie haben erfolgreich Ihre Voting-Stimme abgegeben."; ?>
+    echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen."; ?>
     <a href="#"> Hier können Sie das Ergebnis anschauen. </a>
     <?php
+}
+    elseif (isset($_POST['Antwort_A'])){
+        $a_Student = "UPDATE Voting SET a_Student=a_Student+1 WHERE Voting_ID=$Voting_ID";
+
+    }
+    elseif(isset($_POST['Antwort_B'])){
+    $b_Student = "UPDATE Voting SET b_Student=b_Student+1 WHERE Voting_ID=$Voting_ID";
+
+}
+
+    elseif (isset($_POST['Antwort_C'])){
+    $c_Student = "UPDATE Voting SET c_Student=c_Student+1 WHERE Voting_ID=$Voting_ID";
+
+}
+
+    elseif(isset($_POST['Antwort_D'])){
+    $d_Student = "UPDATE Voting SET d_Student=d_Student+1 WHERE Voting_ID=$Voting_ID";
+
 }
     elseif (!isset ($_COOKIE["voted"] )) {
         echo "Fehler beim Abstimmen. Probiere Sie es erneut!";}
 
-elseif ( $_COOKIE["voted"] == $Voting->Voting_ID) {
-    echo "Sie haben bereits Ihre Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.";
-    die();
 
-}
+
 $Voting = $VotingManager->countVote($Voting_ID);
 
 

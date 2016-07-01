@@ -21,5 +21,4 @@ QRcode::png($codeText);
 
 ?>
 
-c
 

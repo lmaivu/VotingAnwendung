@@ -13,23 +13,30 @@
     <script src="js/bootstrap.min.js"></script>﻿
 </head>
 
+<!DOCTYPE html>
+<html>
+
 <body>
 
 <?php include "../inc/navbar.php"; ?>
 
-<link rel="stylesheet" href="../css/bootstrap_statisch.css">
+    <link href="../css/bootstrap_statisch.css" rel="stylesheet"/>
 
-<div class="main">
+<div id="box">
     <h1 id="title"> Kontakt </h1>
-    <h4> HdM Stuttgart<br>
+    <h4><strong>Hochschule der Medien Stuttgart</strong><br>
         Nobelstra&szlige 10<br>
         70569 Stuttgart<br>
         Telefon: 0711 892310<br>
     </h4>
 </div>
 
-<div class="footer">
-    <p> &copy iwillsurvey.de </p>
+
+
+<div>
     <?php include "../inc/footer.php"; ?>
 </div>
+
+</body>
+</html>
 

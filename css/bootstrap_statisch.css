@@ -4,7 +4,10 @@ body {
     text-align: left;
     width: 100%;
     margin: 0;
+    padding: 0;
+    padding-top: 0;
 }
+
 
 /*header und navbar*/
 header.row {
@@ -19,10 +22,11 @@ header nav {
 }
 
 .navbar{
-    padding-top: 15px;
-    padding-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
     border-radius: 0;
     margin-bottom: 0;
+    margin-top: 0;
     font-size: 17px;
     font-family: 'Open Sans', sans-serif;
 
@@ -35,26 +39,27 @@ header nav {
 
 }
 .navbar-nav li a:hover {
-    color: cornflowerblue !important;
+    color: #534532 !important;
 
 }
 
 
 
-#main{
+#box{
 
     background-clip: padding-box;
-    background-color: #Cdbfa5;
+    background-color: white;
     -o-background-size: 100% auto;
     -webkit-background-size: 100% auto;
     -khtml-background-size: 100% auto;
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     font-size: 40px;
-    padding: 200px;
-    color: #Cdbfa5;
-    padding-bottom: 2em;
-    margin-left: 15%;
+    line-height: 10pt;
+    padding: 60px;
+    color: black;
+    padding-bottom: 60px;
+    margin-left: 0;
 }
 /*
 #kopfleiste {
@@ -68,12 +73,7 @@ header nav {
     background-color: antiquewhite;
 }
 
-#kopfleiste.h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-size:40px;
-    color: #Cdbfa5;
-    float: left
-}
+
 
 h1 {
     text-shadow: 0.1em 0.1em 0.2em darkgrey;
@@ -84,7 +84,7 @@ h1 {
 #title {
     font-family: 'Open Sans', sans-serif;
     color: #000000;
-    font-size: 40px;
+    font-size: 50px;
     text-align: left;
 }
 
@@ -101,9 +101,10 @@ h1 {
 /*footer*/
 #footer {
     background-color: #ebedf2;
-    height: 2em;
+    height: 40px;
     width:100%;
-    margin-top: 40px;
+    margin: 0px;
+    padding-left: 0;
 }
 
 /* Box f�r Loginfehler Anzeigen */

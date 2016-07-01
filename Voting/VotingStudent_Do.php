@@ -19,16 +19,16 @@ if (isset ($_COOKIE["voted"] )) {
     <a href="#"> Hier können Sie das Ergebnis anschauen. </a>
     <?php
 }
-    elseif (isset($_POST['Antwort_A'])){
+    elseif (isset($_POST['a_Student'])){
         $a_Student = "UPDATE Voting SET a_Student=a_Student+1 WHERE Voting_ID=$Voting_ID";
 
     }
-    elseif(isset($_POST['Antwort_B'])){
+    elseif(isset($_POST['b_Student'])){
     $b_Student = "UPDATE Voting SET b_Student=b_Student+1 WHERE Voting_ID=$Voting_ID";
 
 }
 
-    elseif (isset($_POST['Antwort_C'])){
+    elseif (isset($_POST['c_Student'])){
     $c_Student = "UPDATE Voting SET c_Student=c_Student+1 WHERE Voting_ID=$Voting_ID";
 
 }

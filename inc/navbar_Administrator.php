@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/startseite_Administrator.php">Startseite</a></li>
-                <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/Contact.php">Kontakt</a></li>
+                <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/Contact_Administrator.php">Kontakt</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

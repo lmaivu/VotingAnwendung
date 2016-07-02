@@ -12,7 +12,7 @@
             <div>
                 <ul class="nav nav-pills pull-right" style="font-size:11px; margin-top: 2px;">
                     <li><a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/Contact_Administrator.php">Kontakt</a></li>
-                    <li><a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/Impressum_Adminstrator.php">Impressum</a></li>
+                    <li><a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/Impressum_Administrator.php">Impressum</a></li>
                 </ul>
             </div>
         </div>

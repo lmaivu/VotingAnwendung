@@ -18,7 +18,8 @@
 
 <body>
 <div>
-    <?php include "../inc/navbar.php"; ?>
+    <?php include "../inc/navbar.php";
+    include "../inc/sticky_footer.php"; ?>
 </div>
 
 <link href="../css/bootstrap_statisch.css" rel="stylesheet"/>
@@ -52,9 +53,6 @@
 
 </div>
 
-<div id="footer">
-    <?php include "../inc/footer.php"; ?>
-</div>
 
 </body>
 </html>

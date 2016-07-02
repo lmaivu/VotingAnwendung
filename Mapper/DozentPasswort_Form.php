@@ -12,6 +12,7 @@ require_once("Dozent.php");
 <body>
 
 <?php include("../inc/navbar.php");
+include "../inc/sticky_footer.php";
 $Dozent_ID = (int)htmlspecialchars($_GET["Dozent_ID"], ENT_QUOTES, "UTF-8");
 echo "$Dozent_ID";
 $DozentManager = new DozentManager();

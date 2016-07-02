@@ -1,9 +1,18 @@
 /*Startseite*/
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
 #kopfleiste{
 
     background-clip: padding-box;
-    background-color: #ebedf2;
+    background-color: transparent;
     background-position: center; /*zentriert*/
     background-attachment: fixed;
     /*browserspezifische Anpassung folgen*/
@@ -20,8 +29,8 @@
     position: relative;
     margin: 0;
     padding:80px;
-    background-color: #ebedf2;
-    color: #534532;
+    background-color: transparent;
+    color: transparent;
     font-family: 'Open Sans', sans-serif;
     padding-bottom: 1em;
 }
@@ -29,6 +38,6 @@
 .row {
     font-size: 20px;
     color: #bfaa9a;
-
 }
+
 

@@ -25,21 +25,21 @@ $dozent = $DozentManager->findById($Dozent_ID);?>
 
         <div class="form-group">
             <label for="password" class="control-label col-sm-2">Neues Passwort:</label>
-            <div class="col-sm-4">
+            <div class="col-sm-8">
                 <input type="password" class="form-control" name="hash" id="hash">
             </div>
         </div>
 
         <div class="form-group">
             <label for="password2" class="control-label col-sm-2">Neues Passwort wiederholen:</label>
-            <div class="col-sm-4">
+            <div class="col-sm-8">
                 <input type="password" class="form-control" name="hash2" id="hash2">
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-4">
-                <button type="submit" class="btn btn-default">best&aumltigen</button>
+            <div class="col-sm-offset-2 col-sm-8">
+                <button type="submit" class="btn btn-default">best&aumltigen!</button>
             </div>
         </div>
 

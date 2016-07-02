@@ -1,3 +1,5 @@
+<!-- Kontakt-Seite mit integrierter Navbar_Administrator & Footer_Administrator-->
+
 <head>
     <meta charset="UTF-8">
     <title> I will survey - Voting </title>
@@ -18,7 +20,7 @@
 
 <body>
 <div>
-    <?php include "../inc/navbar.php"; ?>
+    <?php include "../inc/navbar_Administrator.php"; ?>
 </div>
 
 <link href="../css/bootstrap_statisch.css" rel="stylesheet"/>
@@ -53,7 +55,7 @@
 </div>
 
 <div id="footer">
-    <?php include "../inc/footer.php"; ?>
+    <?php include "../inc/footer_Administrator.php"; ?>
 </div>
 
 </body>

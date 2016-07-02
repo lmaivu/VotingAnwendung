@@ -3,7 +3,7 @@
 
 <?php
 include("inc/head.php");
-include ("inc/footer.php")
+include ("inc/footer.php");
 
 ?>
 

@@ -21,7 +21,7 @@
                         <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Logo_Navbar.png">
                     </a>
                 </li>
-                <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/startseite.php">Startseite</a></li>
+                <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/startseite_Administrator.php">Startseite</a></li>
                 <li> <a href="https://mars.iuk.hdm-stuttgart.de/~lv018/Mapper/Contact.php">Kontakt</a></li>
             </ul>
 

@@ -34,15 +34,15 @@ echo "$Dozent_ID";?>
       <div class="row">
 
               <div class="col-sm-4">
-              <a style ="color: #000000" href="../Vorlesung/Vorlesungsverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.png" width= "300px" height="300px" class="img-circle">
+              <a class="img-responsive" style ="color: #000000" href="../Vorlesung/Vorlesungsverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungbild.png" width= "300px" height="300px" class="img-circle">
               </div>
 
           <div class="col-sm-4">
-              <a style ="color: #000000" href="../Vorlesung/VorlesungCreate_form.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungerstellen.png" width= "300px" height="300px" class="img-circle">
+              <a class="img-responsive" style ="color: #000000" href="../Vorlesung/VorlesungCreate_form.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Vorlesungerstellen.png" width= "300px" height="300px" class="img-circle">
           </div>
 
           <div class="col-sm-4">
-              <a style ="color: #000000" href="../Voting/Votingverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.png" width= "300px" height="300px" class="img-circle">
+              <a class="img-responsive" style ="color: #000000" href="../Voting/Votingverzeichnis.php"> <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Votingbild.png" width= "300px" height="300px" class="img-circle">
           </div>
       </div> <!-- div menu-->
 </div>

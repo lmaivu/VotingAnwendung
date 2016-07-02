@@ -10,7 +10,10 @@ Werte werden an Voting Create do weitergeben, damit sie in der DB gespeichert we
 
 <body>
 
-<?php include("../inc/navbar.php"); ?>
+<?php
+include("../inc/navbar.php");
+include "../inc/sticky_footer.php";
+?>
 
 <div class="container">
 

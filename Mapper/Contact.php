@@ -18,7 +18,10 @@
 
 <body>
 
-<?php include "../inc/navbar.php"; ?>
+<?php
+include "../inc/navbar.php";
+include "../inc/sticky_footer.php";
+?>
 
     <link href="../css/bootstrap_statisch.css" rel="stylesheet"/>
 

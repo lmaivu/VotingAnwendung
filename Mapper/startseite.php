@@ -10,6 +10,7 @@ require_once ("DozentManager.php");
 <?php
 include("../inc/head.php");
 include("../inc/navbar.php");
+include "../inc/sticky_footer.php";
 ?>
 
 
@@ -50,9 +51,7 @@ include("../inc/navbar.php");
 
 echo "<a href='../Mapper/DozentPasswort_Form.php?Dozent_ID=$Dozent_ID' class='btn btn-primary btn-sm'>Passwort ändern</a>"
 ?>
-<div>
-    <?php include "../inc/sticky_footer.php"; ?>
-</div>
+
 
 </body>
 </html>

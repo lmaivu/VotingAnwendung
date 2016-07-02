@@ -23,11 +23,13 @@ $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8"); //f
 $VotingManager = new VotingManager();
 $liste1 = $VotingManager->findById($Voting_ID);
 $a_Student=$liste1->a_Student;
-echo $a_Student;
-$b_Student=(int) $liste1->b_Student;
+echo $a_Student + "<br>";
+$b_Student= $liste1->b_Student;
 $c_Student=(int) $liste1->c_Student;
 $d_Student=(int) $liste1->d_Student;
-
+echo "$b_Student";
+echo "$c_Student";
+echo "$d_Student";
 ?>
 
 <div id="kopfleiste">
@@ -51,7 +53,7 @@ $d_Student=(int) $liste1->d_Student;
                         <input type="radio" value="<?php echo $a_Student; ?>" name="a_Student">
                     </td>
                     <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Antwort_A" ?>%" class="shaded"></div>
+                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_a" ?>%" class="shaded"></div>
                             <div class="label"><strong>A.<?php echo htmlspecialchars($liste1->Antwort_A) ?></strong></div>
                         </div>
                     </td>
@@ -64,7 +66,7 @@ $d_Student=(int) $liste1->d_Student;
                     </td>
 
                     <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo "$liste1->b_Student" ?>%" class="shaded"></div>
+                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_b" ?>%" class="shaded"></div>
                             <div class="label"><strong>B. <?php echo htmlspecialchars($liste1->Antwort_B) ?></strong></div>
                         </div>
                     </td>
@@ -78,7 +80,7 @@ $d_Student=(int) $liste1->d_Student;
                     </td>
 
                     <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo "$liste1->c_Student" ?>%" class="shaded"></div>
+                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_c" ?>%" class="shaded"></div>
                             <div class="label"><strong>C.<?php echo htmlspecialchars($liste1->Antwort_C) ?></strong></div>
                         </div>
                      </td>
@@ -94,7 +96,7 @@ $d_Student=(int) $liste1->d_Student;
                     </td>
 
                     <td class="pollResultsBar" align="left">
-                            <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo "$liste1->d_Student" ?>%" class="shaded"></div>
+                            <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $liste1->Prozent_d ?>%" class="shaded"></div>
                                 <div class="label"><strong>D.<?php echo htmlspecialchars($liste1->Antwort_D) ?></strong></div>
                             </div>
                     </td>

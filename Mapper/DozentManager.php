@@ -129,8 +129,7 @@ VALUES
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Dozent
-              SET hash = :hash,
-              Dozent_ID = :Dozent_ID,
+              SET hash = :hash
               WHERE Dozent_ID = :Dozent_ID
             ');
             $stmt->bindParam(':hash', $dozent->hash);

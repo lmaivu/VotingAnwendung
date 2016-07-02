@@ -248,7 +248,7 @@ public function countVote($Voting_ID) //nochmal überprüfen ob Vorlesung_ID ode
 {
     try {
         $stmt = $this->pdo->prepare('SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Voting_ID = :Voting_ID');
-        //$stmt->bindParam(':Voting_ID', $Voting_ID);
+        $stmt->bindParam(':Voting_ID', $Voting_ID);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
         return $stmt->fetch();

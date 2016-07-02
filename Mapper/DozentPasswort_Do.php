@@ -24,8 +24,11 @@ if ($hash == $hash2 && !empty($hash) && !empty($hash2)) {
     $dozent->hash = $hash;
     $dozent->Dozent_ID = $Dozent_ID;
 
-    $DozentManager->savePassword($dozent);
+    echo "<br>Neuer Dozent: " . $dozent->hash . "<br>" . $dozent->Dozent_ID . "<br>";
+
+    $DozentManager->update($dozent);
     //header('Location: startseite.php');
+    echo "<br>Neuer Pasword-Hash: " . $hash;
     echo "Sie haben Ihr Passwort erfolgreich geändert. Melden Sie sich bitte erneut an";
     echo "<a href= ../index.php> Zur&uumlck zur Anmeldeseite </a> ";
 }

@@ -144,6 +144,86 @@ class VotingManager
         return $Voting;
     }
 
+    public function updateA (Voting $Voting)
+    {
+        try {
+            $stmt = $this->pdo->prepare('
+              UPDATE Voting
+              SET a_Student = :a_Student+1,
+              WHERE Voting_ID = :Voting_ID
+            ');
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
+            $stmt->bindParam(':a_Student', $Voting->a_Student);
+;
+
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        return $Voting;
+    }
+
+    public function updateB (Voting $Voting)
+    {
+        try {
+            $stmt = $this->pdo->prepare('
+              UPDATE Voting
+              SET b_Student = :b_Student+1,
+              WHERE Voting_ID = :Voting_ID
+            ');
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
+            $stmt->bindParam(':b_Student', $Voting->b_Student);
+            ;
+
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        return $Voting;
+    }
+
+    public function updateC (Voting $Voting)
+    {
+        try {
+            $stmt = $this->pdo->prepare('
+              UPDATE Voting
+              SET c_Student = :c_Student+1,
+              WHERE Voting_ID = :Voting_ID
+            ');
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
+            $stmt->bindParam(':c_Student', $Voting->c_Student);
+            ;
+
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        return $Voting;
+    }
+
+    public function updateD (Voting $Voting)
+    {
+        try {
+            $stmt = $this->pdo->prepare('
+              UPDATE Voting
+              SET d_Student = :d_Student+1,
+              WHERE Voting_ID = :Voting_ID
+            ');
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
+            $stmt->bindParam(':d_Student', $Voting->d_Student);
+            ;
+
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        return $Voting;
+    }
+
     public function delete(Voting $Voting)
     {
         if (!isset($Voting->Voting_ID)) {
@@ -167,7 +247,7 @@ class VotingManager
 
 
 
-public function countVote($Vorlesung_ID) //nochmal überprüfen ob Vorlesung_ID oder Voting_ID
+public function countVote($Voting_ID) //nochmal überprüfen ob Vorlesung_ID oder Voting_ID
 {
     try {
         $stmt = $this->pdo->prepare('SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Voting_ID = :Voting_ID');

@@ -2,15 +2,13 @@
 include "../inc/head.php";
 include "../inc/navbar.php";
 
-//include("../inc/session_check.php");
 require_once "Voting.php";
 require_once "../Vorlesung/Vorlesung.php";
 require_once "../Mapper/VorlesungManager.php";
 require_once "../Mapper/VotingManager.php";
-//include("../inc/cookie.php");
+include("../inc/cookie.php");
 
 ?>
-
 <head>
     <link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
     <link rel="stylesheet" href="../css/bootstrap_Abstimmen.css">
@@ -20,7 +18,6 @@ require_once "../Mapper/VotingManager.php";
 
 <?php
 $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8"); //funktioniert noch nicht, deshalb die Zuweisung unten
-$Voting_ID = 16;
 $VotingManager = new VotingManager();
 $liste1 = $VotingManager->findById($Voting_ID);
 $liste1->a_Student = 35;
@@ -40,7 +37,7 @@ $liste1->a_Student = 35;
 <div>
     <div colspan="2" class="pollTitle">Frage: <?php echo $liste1->Frage;?></div>
 
-    <form action="" method="post">
+    <form action="VotingStudent_Do.php" method="post">
         <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
 
 

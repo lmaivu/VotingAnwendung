@@ -13,7 +13,13 @@
         <h4> <em>I will survey </em> ist eine Voting-Plattform, auf der Sie als Dozent<br>
             Umfragen erstellen und live im Vorlesungssaal durchführen können.<br>
             Unsere Website bietet die Möglichkeit, ihre Votings in den passenden Vorlesungen abzulegen<br>
-            und
+            und diese via QR-Code für alle ihre Studenten zugänglich zu machen.<br>
+             <br>
+            <strong>Sie möchten ein Teil dieser Plattform werden?</strong><br>
+            Dann senden Sie eine Mail mit ihrem Namen, ihrer Hochschule oder Univerität und ihrer E-Mail Adresse<br>
+            an: <em>registrierung@iwillsurvey.com</em><br>
+             <br>
+
         </h4>
     </div>
 

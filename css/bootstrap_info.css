@@ -37,6 +37,7 @@ h4 {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 17px;
+    font-stretch: expanded;
     color: black;
     position: center;
 }

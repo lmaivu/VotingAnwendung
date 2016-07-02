@@ -12,7 +12,7 @@ body {
 #kopfleiste{
 
     background-clip: padding-box;
-    background-color: #ebedf2;
+    background-color: transparent;
     background-position: center; /*zentriert*/
     background-attachment: fixed;
     /*browserspezifische Anpassung folgen*/
@@ -30,7 +30,7 @@ body {
     margin: 0;
     padding:80px;
     background-color: transparent;
-    color: #534532;
+    color: transparent;
     font-family: 'Open Sans', sans-serif;
     padding-bottom: 1em;
 }

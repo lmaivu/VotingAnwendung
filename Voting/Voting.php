@@ -18,6 +18,7 @@ class Voting
     public $Antwort_D;
     public $d_Student;
     public $Stimmen_Gesamt;
+    public $Dozent_ID;
 
 
     function __construct($data=null) { //Konstruktor wird definiert mit dem Parameter $data mit dem festen Wert 0
@@ -39,12 +40,13 @@ class Voting
             $this->Antwort_A = $data['Antwort_A'];
             $this->a_Student = $data['a_Student'];
             $this->Antwort_B = $data['Antwort_B'];
-            $this->b_Student = $data['a_Student'];
+            $this->b_Student = $data['b_Student'];
             $this->Antwort_C = $data['Antwort_C'];
-            $this->c_Student = $data['a_Student'];
+            $this->c_Student = $data['c_Student'];
             $this->Antwort_D = $data['Antwort_D'];
-            $this->d_Student = $data['a_Student'];
+            $this->d_Student = $data['d_Student'];
             $this->Stimmen_Gesamt = $data['Stimmen_Gesamt'];
+            $this->Dozent_ID = $data['Dozent_ID'];
             //automatische Setzung dieser Daten
         }
     }

@@ -15,15 +15,12 @@ $VotingManager->delete($Voting);
 echo "$Voting";
 if(isset ($Voting))
 {
-    ?>
-    <script>alert("Löschen war erfolgreich!");</script>
-    <?php
+    echo ("Löschen war erfolgreich!");
 }
 else
 {
-    ?>
-    <script>alert("Fehler beim Löschen!");</script>
-    <?php
+    echo ("Fehler beim Löschen!");
+
 }
 ?>
 <br>

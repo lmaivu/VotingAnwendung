@@ -23,13 +23,12 @@ header nav {
 
 .navbar{
     padding-top: 15px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     border-radius: 0;
     margin-bottom: 0;
     font-size: 17px;
     font-family:'Trebuchet MS', Georgia, sans-serif;
 
-    /*letter-spacing: 3px;*/
 }
 
 
@@ -49,7 +48,6 @@ header nav {
     background-image: url('https://mars.iuk.hdm-stuttgart.de/~lv018/background3.jpeg');
     background-position: center; /*zentriert*/
     background-attachment: fixed;
-    /*browserspezifische Anpassung folgen*/
     -o-background-size: 100% auto;
     -webkit-background-size: 100% auto;
     -khtml-background-size: 100% auto;
@@ -98,7 +96,7 @@ h1 {
     min-width: 200px;
     max-width: 400px;
     padding: 40px;
-} /*ver�ndern?*/
+}
 
 .info {
     position: relative;
@@ -120,7 +118,7 @@ h1 {
     margin-top: 40px;
 }
 
-/* Box f�r Loginfehler Anzeigen */
+/* Box für Loginfehler Anzeigen */
 .LoginFehler {
     margin:0;
     padding: 5px;

@@ -64,5 +64,9 @@
 
 </div>
 
+<div>
+    <?php include "../inc/footer_Administrator.php"; ?>
+</div>
+
 </body>
 </html>

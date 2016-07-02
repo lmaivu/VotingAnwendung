@@ -149,13 +149,14 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET a_Student =(:a_Student+1)
+              SET a_Student =:a_Student+1
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':a_Student', $Voting->a_Student);
 
             $stmt->execute();
+            //$stmt->execute(array('a_Student' => ':a_Student+1'));
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();
@@ -173,7 +174,6 @@ class VotingManager
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':b_Student', $Voting->b_Student);
-            ;
 
             $stmt->execute();
         } catch (PDOException $e) {
@@ -193,7 +193,6 @@ class VotingManager
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':c_Student', $Voting->c_Student);
-            ;
 
             $stmt->execute();
         } catch (PDOException $e) {
@@ -213,7 +212,6 @@ class VotingManager
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':d_Student', $Voting->d_Student);
-            ;
 
             $stmt->execute();
         } catch (PDOException $e) {
@@ -250,7 +248,7 @@ public function countVote($Voting_ID) //nochmal überprüfen ob Vorlesung_ID ode
 {
     try {
         $stmt = $this->pdo->prepare('SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Voting_ID = :Voting_ID');
-        $stmt->bindParam(':Voting_ID', $Voting_ID);
+        //$stmt->bindParam(':Voting_ID', $Voting_ID);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
         return $stmt->fetch();

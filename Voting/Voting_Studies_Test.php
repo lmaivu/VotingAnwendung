@@ -1,6 +1,6 @@
 <?php
 include "../inc/head.php";
-include "../inc/navbar.php";
+
 
 require_once "Voting.php";
 require_once "../Vorlesung/Vorlesung.php";
@@ -9,6 +9,7 @@ require_once "../Mapper/VotingManager.php";
 include("../inc/cookie.php");
 
 ?>
+
 <head>
     <link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
     <link rel="stylesheet" href="../css/bootstrap_Abstimmen.css">
@@ -17,12 +18,15 @@ include("../inc/cookie.php");
 <body>
 
 <?php
-$Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8"); //funktioniert noch nicht, deshalb die Zuweisung unten
+
+$Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8"); //funktioniert noch nicht, muss �ber QR Code �bergeben werden
 $VotingManager = new VotingManager();
 $liste1 = $VotingManager->findById($Voting_ID);
-$liste1->a_Student = 35;
-
-
+$a_Student=$liste1->a_Student;
+echo $a_Student;
+$b_Student=(int) $liste1->b_Student;
+$c_Student=(int) $liste1->c_Student;
+$d_Student=(int) $liste1->d_Student;
 
 ?>
 
@@ -44,7 +48,7 @@ $liste1->a_Student = 35;
             <tbody>
                 <tr>
                     <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $liste1->a_Student; ?>" name="a_Student">
+                        <input type="radio" value="<?php echo $a_Student; ?>" name="a_Student">
                     </td>
                     <td class="pollResultsBar" align="left">
                         <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Antwort_A" ?>%" class="shaded"></div>
@@ -56,7 +60,7 @@ $liste1->a_Student = 35;
 
                 <tr>
                     <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $liste1->b_Student; ?>" name="b_Student">
+                        <input type="radio" value="<?php echo $b_Student; ?>" name="b_Student">
                     </td>
 
                     <td class="pollResultsBar" align="left">
@@ -69,7 +73,7 @@ $liste1->a_Student = 35;
                 <tr>
                     <?php if(isset($liste1->Antwort_C)) { ?>
                     <td class="pollRadioBtn" style="width:20px;">
-                            <input type="radio" value="<?php echo $liste1->c_Student; ?>" name="c_Student">
+                            <input type="radio" value="<?php echo $c_Student; ?>" name="c_Student">
 
                     </td>
 
@@ -85,7 +89,7 @@ $liste1->a_Student = 35;
                 <tr>
                     <?php if(isset($liste1->Antwort_D)) { ?>
                     <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $liste1->d_Student; ?>" name="d_Student">
+                        <input type="radio" value="<?php echo $d_Student; ?>" name="d_Student">
 
                     </td>
 
@@ -96,6 +100,8 @@ $liste1->a_Student = 35;
                     </td>
                         <?php } ?>
                 </tr>
+
+
 
                 <tr>
                         <input type="hidden" value="<?php echo $liste1->Voting_ID; ?>" name="Voting_ID">

@@ -6,7 +6,7 @@ include("inc/head.php");
 ?>
 
 <head>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap_index.css" rel="stylesheet">
 </head>
 
 

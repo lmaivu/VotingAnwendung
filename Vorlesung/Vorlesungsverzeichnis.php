@@ -83,7 +83,7 @@ require_once("../Mapper/VotingManager.php");
 
 <!-- footer -->
 <div>
-    <?php include "../inc/footer.php"; ?>
+    <?php include "../inc/sticky_footer.php"; ?>
 </div>
 
 <!-- footer Ende -->

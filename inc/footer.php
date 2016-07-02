@@ -1,6 +1,6 @@
 <!-- Footer wird auf jeder Seite eingebunden -->
 
-<footer id="footer">
+<!-- <footer id="footer">
 
     <div class="container" style="background-color: #ebedf2">
         <div class="row">
@@ -18,4 +18,12 @@
         </div>
     </div>
 
-</footer>
+</footer> -->
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        ...
+    </div>
+</nav>
+
+

@@ -51,7 +51,7 @@ include("../inc/navbar.php");
 echo "<a href='../Mapper/DozentPasswort_Form.php?Dozent_ID=$Dozent_ID' class='btn btn-primary btn-sm'>Passwort ändern</a>"
 ?>
 <div>
-    <?php include "../inc/footer.php"; ?>
+    <?php include "../inc/sticky_footer.php"; ?>
 </div>
 
 </body>

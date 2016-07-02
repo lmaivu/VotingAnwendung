@@ -2,8 +2,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     height: 100%;
     margin: 0;
-    text-align: center;
     width: 100%;
+    text-align: center;
+    background-color: whitesmoke;
 }
 
 header.row {
@@ -20,7 +21,7 @@ header nav {
 #box{
 
     background-clip: padding-box;
-    background-image: url('https://mars.iuk.hdm-stuttgart.de/~lv018/background3.jpeg');
+    background-color: whitesmoke;
     background-position: center; /*zentriert*/
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -28,13 +29,26 @@ header nav {
     font-style: normal;
     font-size: 17px;
     font-stretch: expanded;
-    color: black;
+    text-align: justify;
+    color: #534532;
+    position: center;
     padding: 200px;
     margin: 0;
     padding-bottom: 2em;
     padding-top: 10%;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
+button {
+    color: #Cdbfa5;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 17px;
+    font-color: #534532;
+}
 
 
 

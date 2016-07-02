@@ -18,7 +18,9 @@ include("inc/head.php");
         <div id="kopfleiste">
             <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Logo_transparent.png" width="500" height="110" alt="Logo">
             <h3>Prüfen Sie das Wissen ihrer Studenten im Vorlesungssaal<br>
-                - und haben Sie sofort Zugriff auf die Ergebnisse!</h3>
+                - und haben Sie sofort Zugriff auf die Ergebnisse!<br>
+             <br>
+            </h3>
         </div>
 
 

@@ -74,7 +74,8 @@ header nav {
     font-family: 'Open Sans', sans-serif;
     font-size:40px;
     color: #Cdbfa5;
-    float: left
+    float: left;
+    padding-bottom: 10px;
 }
 
 h1 {

@@ -67,6 +67,7 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
             echo "<td>$Voting->Antwort_D</td>"; }
             echo "<td>
                         <a style='background-color: #Cdbfa5; border-color: white' href='../Mapper/qr_code.php?Voting_ID=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
+                        <a style='background-color: #Cdbfa5; border-color: white' href='../Mapper/Link.php?Voting_ID=$Voting->Voting_ID' class='btn btn-primary btn-sm'>Link</a>
                         <a style='background-color: #8e7059; border-color: white' href='../Voting/Result.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>
                         <a style='background-color: #534532; border-color: white' href='../Voting/VotingDelete.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>löschen</a>
 

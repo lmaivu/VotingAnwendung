@@ -3,15 +3,18 @@
 
 <head>
     <link href="css/bootstrap_index.css" rel="stylesheet">
+
     <?php
         include("inc/head.php");
+        include("inc/Footer_index.php");
     ?>
 </head>
+
 
 <body>
 
 <!-- Inhalt-->
-<div id="main">  <!-- div main �ffnen-->
+<div id="main">  <!-- div main öffnen-->
 
         <div id="kopfleiste">
             <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/Logo_transparent.png" width="500" height="110" alt="Logo">
@@ -68,21 +71,11 @@
         <a href="Mapper/info.php"> Was steckt hinter "I will survey"? </a>
     </div>
 
-</div> <!--div main schlie�en -->
-
-
-
+</div> <!--div main schließen -->
 
 
 <!-- Inhalt Ende-->
-    <div id="footer">
-        <?php
-        include("inc/footer.php");
-
-        ?>
-    </div>
 
 </body>
-
 </html>
 

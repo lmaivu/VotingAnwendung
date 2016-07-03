@@ -104,13 +104,11 @@ h1 {
 
 /*footer*/
 #footer {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 25px;
     position: absolute;
     background-color: #ebedf2;
     height: 114px;
     width:100%;
-    margin-top: 0;
+    margin-top: 40px;
 }
 
 /* Box für Loginfehler Anzeigen */

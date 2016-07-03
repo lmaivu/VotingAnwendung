@@ -56,10 +56,10 @@ require_once("../Mapper/VotingManager.php");
                 echo "<td>$Vorlesung->Vorlesung_Name</td>";
                 echo "<td>
 
-                    <a href='VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-info' role='button'>anzeigen</a>
+                    <a style='background-color: #Cdbfa5; border-color: white' href='VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-info' role='button'>anzeigen</a>
                     <!--<a href='VorlesungUpdate_form.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>bearbeiten</a> -->
-                    <a href='VorlesungDelete.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>l&oumlschen</a>
-                    <a href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' type='button' class='btn btn-primary'  role='button'>Voting erstellen</a>
+                    <a style='background-color: #8e7059; border-color: white' href='VorlesungDelete.php?Vorlesung_ID=$Vorlesung_ID' type='button' class='btn btn-primary' role='button'>l&oumlschen</a>
+                    <a style='background-color: #534532; border-color: white' href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' type='button' class='btn btn-primary'  role='button'>Voting erstellen</a>
 
 
             </td>";
@@ -73,7 +73,7 @@ require_once("../Mapper/VotingManager.php");
         </table>
         <br>
 
-        <a type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
+        <a style='background-color: #Cdbfa5; border-color: white' type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
         <br>
         <br>
         </div>

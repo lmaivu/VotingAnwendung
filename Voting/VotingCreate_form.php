@@ -42,23 +42,23 @@ echo "$Vorlesung_Erstellung";
     <form class="form-horizontal" role="form" action="VotingCreate_do.php" method="post">
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="voting_name">Name:</label>
+            <label class="control-label col-sm-2" for="voting_name">Name: </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="Voting_Name" id="Voting_Name" placeholder="Voting-Name">
+                <input type="text" class="form-control" name="Voting_Name" id="Voting_Name" placeholder="Votingname">
             </div>
         </div>
 
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="name">Einschreibeschlüssel:</label>
+            <label class="control-label col-sm-2" for="name">Schlüssel: </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="Einschreibeschlussel" id="Einschreibeschlussel" placeholder="Einschreibeschlüssel:">
+                <input type="text" class="form-control" name="Einschreibeschlussel" id="Einschreibeschlussel" placeholder="Einschreibeschlüssel">
             </div>
         </div>
 
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="name">Ablaufzeit:</label>
+            <label class="control-label col-sm-2" for="name">Ablaufzeit: </label>
             <div class="col-sm-8">
                 <div class='input-group date' id='datetimepicker1'>
                     <input type='text' class="form-control" name="Ablaufzeit" id="Ablaufzeit" placeholder="Ablaufzeit">

@@ -15,6 +15,8 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 
 ?>
 
+<link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
+
 <!DOCTYPE html>
 <html>
 
@@ -24,10 +26,12 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 
 <?php include("../inc/navbar.php"); ?>
 
-<div class="container">
-    <div class="jumbotron" style=background:whitesmoke>
-        <h1><?php echo $Vorlesung->Vorlesung_Name ?></h1><br />
-        <?php echo "<a href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' class='btn btn-default' role='button'><span class='glyphicon glyphicon-stats'></span> Voting anlegen</a>" ?>
+<div id="kopfleiste">
+    <div class="container">
+        <div class="jumbotron" style=background:whitesmoke>
+            <h1><?php echo $Vorlesung->Vorlesung_Name ?></h1><br />
+            <?php echo "<a style='background-color: #Cdbfa5; color: white' href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' class='btn btn-default' role='button'><span class='glyphicon glyphicon-stats'></span> Voting anlegen</a>" ?>
+        </div>
     </div>
 </div>
 
@@ -62,16 +66,16 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
         if(isset($Voting->Antwort_D) && !empty($Voting->Antwort_D)) {
             echo "<td>$Voting->Antwort_D</td>"; }
             echo "<td>
-                        <a href='../Mapper/qr_code.php?Voting_ID=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
-                        <a href='../Voting/Result.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>
-                        <a href='../Voting/VotingDelete.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>löschen</a>
+                        <a style='background-color: #Cdbfa5; border-color: white' href='../Mapper/qr_code.php?Voting_ID=$Voting->Voting_ID' class='btn btn-primary btn-sm'>QR-Code</a>
+                        <a style='background-color: #8e7059; border-color: white' href='../Voting/Result.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>anzeigen</a>
+                        <a style='background-color: #534532; border-color: white' href='../Voting/VotingDelete.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>löschen</a>
 
                       </td>";
             echo "</tr>";
         }
         ?>
         </tbody>
-        <?php echo "<a href='../Voting/Voting_Studies_Test2.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>Studi-Seite</a>" ?>
+        <?php echo "<a style='background-color: #8e7059; border-color: white; font-size: 20px;' href='../Voting/Voting_Studies_Test2.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>Studi-Seite</a>" ?>
 </div>
 
 </body>

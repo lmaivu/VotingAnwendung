@@ -1,16 +1,22 @@
-.kopfleiste {
+#kopfleiste {
 
     background-clip: padding-box;
-    background-color: #Cdbfa5;
+    background-color: transparent;
     background-position: center; /*zentriert*/
     background-attachment: fixed;
     /*browserspezifische Anpassung folgen*/
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     font-size: 40px;
-    color: whitesmoke;
+    color: #534532;
     padding: 0;
     margin: 0;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 20px;
 }
 
 .btn-primary {

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
     <html>
 <?php
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 require_once "../Mapper/VotingManager.php";
 require_once "../Voting/Voting.php";
 include "../inc/head.php";
@@ -13,6 +13,7 @@ include "../inc/head.php";
 <?php
 
 $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
+
 $a_Student = (int)htmlspecialchars($_POST["A"], ENT_QUOTES, "UTF-8");
 
 $b_Student = (int)htmlspecialchars($_POST["B"], ENT_QUOTES, "UTF-8");
@@ -56,9 +57,7 @@ if (isset ($_COOKIE["$Voting->Voting_ID"] )) {
         echo "Sie haben erfolgreich für Antwort D abgestimmt.";
 
 }
-    elseif (!isset ($_POST["A."]) && ($_POST["B."]) && ($_POST["C."]) && ($_POST["D."])) {}
-        else
-            echo "Fehler beim Abstimmen. Probieren Sie es erneut!.<br />";
+
 
 
 

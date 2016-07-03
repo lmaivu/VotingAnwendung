@@ -8,7 +8,7 @@ require_once("../Mapper/VotingManager.php");
 include "../inc/head.php";
 
 
-$Voting_ID = 2;
+$Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
 
@@ -53,7 +53,7 @@ $Voting = $VotingManager->findById($Voting_ID);
                 </div>
                 </td>
                 <td>
-                    <strong> Anzahl der Gesamtstimmen: <?php echo $Voting->b_Student ?> </strong>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->b_Student); ?> </strong>
                 </td>
              </tr>
 
@@ -68,44 +68,49 @@ $Voting = $VotingManager->findById($Voting_ID);
                     </div>
                 </td>
                 <td>
-                    <strong> Anzahl der Gesamtstimmen: <?php echo $Voting->b_Student ?> </strong>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->b_Student) ?> </strong>
                 </td>
             </tr>
 
             <tr>
 
-            <?php  if(isset($Voting->c_Student) && !empty($Voting->c_Student))
-            { ?>
+            <?php if(isset($Voting->c_Student)){ ?>
+
             <td class="form-group" style="width:50px;">
                 <input type="submit" name="C"  value="C"/>
             </td>
                 <td class="pollResultsBar" align="left">
-                    <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_c" ?>%" class="shaded"></div>
+                    <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo "$Voting->Prozent_c" ?>%" class="shaded"></div>
                         <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_C) ?></strong></div>
                     </div>
                 </td>
-            <?php } ?>
+
                 <td>
-                    <strong> Anzahl der Gesamtstimmen: <?php echo $Voting->c_Student ?> </strong>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo(int) htmlspecialchars ($Voting->c_Student) ?> </strong>
                 </td>
+                <?php } ?>
             </tr>
 
+
+            <?php  //if(isset($Voting->d_Student) && !empty($Voting->d_Student)) { ?>
             <tr>
-        <?php  if(isset($Voting->d_Student) && !empty($Voting->d_Student))
-        { ?>
             <td class="form-group" style="width:50px;">
                 <input type="submit" name="D"  value="D"/>
             </td>
             <td class="pollResultsBar" align="left">
-                <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $Voting->Prozent_d ?>%" class="shaded"></div>
+                <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo $Voting->Prozent_d ?>%" class="shaded"></div>
                     <div class="label"><strong> <?php echo htmlspecialchars($Voting->Antwort_D) ?></strong></div>
                 </div>
             </td>
-        <?php } ?>
+
                 <td>
-                    <strong> Anzahl der Gesamtstimmen: <?php echo $Voting->d_Student ?> </strong>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->d_Student )?> </strong>
                 </td>
             </tr>
+            <?php //}
+            ?>
+
+
 
             <tr>
         <div class="form-group">

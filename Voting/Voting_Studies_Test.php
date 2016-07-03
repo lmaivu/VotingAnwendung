@@ -11,7 +11,10 @@ include "../inc/head.php";
 $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
-
+echo "$Voting->a_Student";
+echo "$Voting->b_Student";
+echo "$Voting->c_Student";
+echo "$Voting->d_Student";
 ?>
 
 <!DOCTYPE html>

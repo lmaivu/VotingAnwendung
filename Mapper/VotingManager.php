@@ -149,8 +149,8 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET a_Student =:a_Student+1
-              WHERE Voting_ID = :Voting_ID
+              SET a_Student =":a_Student+1"
+              WHERE Voting_ID = ":Voting_ID"
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':a_Student', $Voting->a_Student);

@@ -32,8 +32,10 @@ if (isset ($_COOKIE["$Voting->Voting_ID"] )) {
     <?php
 }
     elseif (isset ($_POST["A"])){
-        $a_Student= $Voting->a_Student+1;
+        //$a_Student= $Voting->a_Student+1;
         $Voting = $VotingManager->updateA($Voting);
+        $a_Student= $Voting->a_Student;
+        echo "$a_Student";
         echo "Sie haben erfolgreich für Antwort A abgestimmt.<br />";
 
     }

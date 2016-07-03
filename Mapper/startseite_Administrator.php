@@ -1,6 +1,8 @@
 <?php include_once("../inc/session_check.php");
 include("../inc/head.php");
-include("../inc/navbar_Administrator.php"); ?>
+include("../inc/navbar_Administrator.php");
+include "../inc/footer_Administrator.php";
+?>
 
 <head>
     <link href="../css/bootstrap_startseite.css" rel="stylesheet">
@@ -16,10 +18,6 @@ include("../inc/navbar_Administrator.php"); ?>
         </div>
 
         </div>
-</div>
-
-<div>
-    <?php include "../inc/footer_Administrator.php"; ?>
 </div>
 
 </body>

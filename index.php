@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-<?php
-include("inc/head.php");
-?>
-
 <head>
     <link href="css/bootstrap_index.css" rel="stylesheet">
+    <?php
+        include("inc/head.php");
+    ?>
 </head>
-
 
 <body>
 

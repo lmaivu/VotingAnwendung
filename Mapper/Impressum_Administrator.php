@@ -1,4 +1,4 @@
-<!-- Kontakt-Seite mit integrierter Navbar_Administrator & Footer_Administrator-->
+<!-- Kontakt-Seite mit integrierter Navbar_Administrator & Footer_Administrator
 
 <head>
     <meta charset="UTF-8">
@@ -7,20 +7,24 @@
     <!--
      <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="main.css">
-    -->
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <!-- JQuery einbinden -->
+    <!-- JQuery einbinden
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/bootstrap.min.js"></script>﻿
-</head>
+</head> -->
 
 <!DOCTYPE html>
 <html>
 
 <body>
 <div>
-    <?php include "../inc/navbar_Administrator.php"; ?>
+    <?php
+        include "../inc/navbar_Administrator.php";
+        include "../inc/head.php";
+        include "../inc/footer_Administrator.php";
+    ?>
 </div>
 
 <link href="../css/bootstrap_statisch.css" rel="stylesheet"/>

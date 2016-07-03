@@ -20,7 +20,11 @@
 
 <body>
 
-<?php include "../inc/navbar_Administrator.php"; ?>
+<?php
+include "../inc/navbar_Administrator.php";
+include("../inc/head.php");
+include "../inc/footer_Administrator.php";
+?>
 
 <link href="../css/bootstrap_statisch.css" rel="stylesheet"/>
 
@@ -33,11 +37,6 @@
     </h4>
 </div>
 
-
-
-<div>
-    <?php include "../inc/footer_Administrator.php"; ?>
-</div>
 
 </body>
 </html>

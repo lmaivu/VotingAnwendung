@@ -6,6 +6,7 @@ Darstellung der Daten in Tabellenform-->
 
 include "../inc/head.php";
 include "../inc/navbar.php";
+include "../inc/sticky_footer.php";
 
 include("../inc/session_check.php");
 
@@ -72,21 +73,12 @@ require_once("../Mapper/VotingManager.php");
             </tbody>
         </table>
         <br>
-
-        <a style='background-color: #Cdbfa5; border-color: white' type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
-        <br>
+            <a style='background-color: #Cdbfa5; border-color: white' type="button" class="btn btn-primary" href="VorlesungCreate_form.php" role="button">Neue Vorlesung hinzuf&uumlgen</a>
+            <input style='background-color: #534532; border-color: white; color: white;' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
         <br>
         </div>
 
-
     </div> <!--container-->
-
-<!-- footer -->
-<div>
-    <?php include "../inc/sticky_footer.php"; ?>
-</div>
-
-<!-- footer Ende -->
 
 </body>
 

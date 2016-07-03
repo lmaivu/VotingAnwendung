@@ -19,6 +19,12 @@ h1 {
     font-size: 20px;
 }
 
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 16px;
+}
+
 .btn-primary {
     background: #Cdbfa5;
     color: #ffffff;

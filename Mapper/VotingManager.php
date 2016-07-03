@@ -169,7 +169,7 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET b_Student = :b_Student+1,
+              SET b_Student = :b_Student+1
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
@@ -188,7 +188,7 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET c_Student = :c_Student+1,
+              SET c_Student = :c_Student+1
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
@@ -207,7 +207,7 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET d_Student = :d_Student+1,
+              SET d_Student = :d_Student+1
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);

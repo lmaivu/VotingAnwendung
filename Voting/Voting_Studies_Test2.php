@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <?php
 error_reporting(E_ALL);
 include "../inc/head.php";
@@ -44,88 +47,73 @@ $d_Student=(int) $liste1->d_Student;
 <div>
     <div colspan="2" class="pollTitle">Frage: <?php echo $liste1->Frage;?></div> <br>
 
-    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
-        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
+    <?php
 
 
-            <tbody>
-                <tr>
-                    <td class="form-group" style="width:50px;">
-                        <input type="submit" value=" <?php echo "A" ?> " name="A">
-                    </td>
-                    <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_a" ?>%" class="shaded"></div>
-                            <div class="label"><strong><?php echo htmlspecialchars($liste1->Antwort_A) ?></strong></div>
-                        </div>
-                    </td>
-                </tr>
+    $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
+    $VotingManager = new VotingManager();
+    $Voting = $VotingManager->findById($Voting_ID)
 
-
-                <tr>
-                    <td class="pollRadioBtn" style="width:20px;">
-                        <input type="submit" value="<?php echo $b_Student; ?>" name="B">
-                    </td>
-
-                    <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_b" ?>%" class="shaded"></div>
-                            <div class="label"><strong><?php echo htmlspecialchars($liste1->Antwort_B) ?></strong></div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <?php if(isset($liste1->Antwort_C)) { ?>
-                    <td class="pollRadioBtn" style="width:20px;">
-                            <input type="submit" value="<?php echo $c_Student; ?>" name="C">
-
-                    </td>
-
-                    <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_c" ?>%" class="shaded"></div>
-                            <div class="label"><strong><?php echo htmlspecialchars($liste1->Antwort_C) ?></strong></div>
-                        </div>
-                     </td>
-                    <?php }?>
-                </tr>
-
-
-                <tr>
-                    <?php if(isset($liste1->Antwort_D)) { ?>
-                    <td class="pollRadioBtn" style="width:20px;">
-                        <input type="submit" value="<?php echo $d_Student; ?>" name="D">
-
-                    </td>
-
-                    <td class="pollResultsBar" align="left">
-                            <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $liste1->Prozent_d ?>%" class="shaded"></div>
-                                <div class="label"><strong> <?php echo htmlspecialchars($liste1->Antwort_D) ?></strong></div>
-                            </div>
-                    </td>
-                        <?php } ?>
-                </tr>
+    ?>
 
 
 
-                <tr>
-                        <input type="hidden" value="<?php echo $liste1->Voting_ID; ?>" name="Voting_ID">
-                </tr>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-stats"></span> clarovo</a>
+                <a class="btn btn-default navbar-btn" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron" style=background:whitesmoke>
+            <h1>Voting ID: <?php echo $voting_id ?></h1><br />
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h2>Frage: <?php echo $voting->frage?> </h2><br />
+
+        <form role="form" class="form-inlinecy" action="VotingVoting.php" method="post">
+
+            <div class="form-group">
+                <input type="submit" name="a" id="a" value="<?php echo $voting->a ?>"/>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="b" id="b" value="<?php echo $voting->b ?>"/>
+            </div>
+
+            <?php  if(isset($voting->c) && !empty($voting->c))
+            { ?>
+                <div class="form-group">
+                    <input type="submit" name="c" id="c" value="<?php echo $voting->c ?>"/>
+                </div>
+            <?php } ?>
+
+            <?php  if(isset($voting->d) && !empty($voting->d))
+            { ?>
+                <div class="form-group">
+                    <input type="submit" name="d" id="d" value="<?php echo $voting->d ?>"/>
+                </div>
+            <?php } ?>
+
+            <div class="form-group">
+                <input type="hidden" value="<?php echo htmlspecialchars($voting_id); ?>" class="form-control" name="id_voting" id="id_voting" readonly>
+            </div>
+        </form>
+
+    </div>
+
+    <input type="hidden" id="refreshed" value="no">
 
 
-                    <!--
 
-                    <td style="width:100px;font-weight:bold">
-                        <?php //htmlspecialchars($liste1->Stimmen_Gesamt); ?>
-                        Stimmen
-                    </td>
-                    -->
-
-            </tbody>
-        </table>
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;
-    </form>
-</div>
+    </body>
+    </html>
 
 
-</body>
+

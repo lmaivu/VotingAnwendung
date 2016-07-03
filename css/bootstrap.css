@@ -27,18 +27,18 @@ header nav {
     border-radius: 0;
     margin-bottom: 0;
     font-size: 17px;
-    font-family:'Trebuchet MS', Georgia, sans-serif;
-
+    font-family: 'Open Sans', sans-serif;
+    height: 70px;
 }
 
 
 .navbar-brand {
-    font-family: 'Trebuchet MS', Georgia, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 27px;
 
 }
 .navbar-nav li a:hover {
-    color: cornflowerblue !important;
+    color: #534532 !important;
 
 }
 
@@ -81,12 +81,7 @@ header nav {
     height: 100%;
     width: 100%;
 }
-/*
-#kopfleiste {
-    text-shadow: darkgrey 0.1em 0.1em 0.2em;
-}
 
-*/
 
 #standard {
     font-size: 24px;
@@ -133,11 +128,11 @@ h1 {
 
 /*footer*/
 #footer {
-    position: absolute;
     background-color: #ebedf2;
-    height: 114px;
+    height: 110px;
     width:100%;
-    margin-top: 40px;
+    margin: 0;
+    padding-left: 0;
 }
 
 /* Box für Loginfehler Anzeigen */

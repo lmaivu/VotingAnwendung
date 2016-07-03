@@ -77,5 +77,5 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 </body>
 </html>
 
-<?php include("../inc/footer.php"); ?>
+<?php include("../inc/sticky_footer.php"); ?>
 

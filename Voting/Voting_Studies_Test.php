@@ -1,14 +1,21 @@
+<?php include("../inc/cookie.php"); ?>
+
 <?php
+error_reporting(E_ALL);
+
+require_once("../Voting/Voting.php");
+require_once("../Mapper/VotingManager.php");
 include "../inc/head.php";
 
 
-require_once "Voting.php";
-require_once "../Vorlesung/Vorlesung.php";
-require_once "../Mapper/VorlesungManager.php";
-require_once "../Mapper/VotingManager.php";
-include("../inc/cookie.php");
+$Voting_ID = 2;
+$VotingManager = new VotingManager();
+$Voting = $VotingManager->findById($Voting_ID);
 
 ?>
+
+<!DOCTYPE html>
+<html>
 
 <head>
     <link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
@@ -16,116 +23,104 @@ include("../inc/cookie.php");
 </head>
 
 <body>
-
 <?php
 
-$Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8"); //funktioniert noch nicht, muss �ber QR Code �bergeben werden
-$VotingManager = new VotingManager();
-$liste1 = $VotingManager->findById($Voting_ID);
-$a_Student=$liste1->a_Student;
-echo $a_Student + "<br>";
-$b_Student= $liste1->b_Student;
-$c_Student=(int) $liste1->c_Student;
-$d_Student=(int) $liste1->d_Student;
-echo "$b_Student";
-echo "$c_Student";
-echo "$d_Student";
 ?>
-
 <div id="kopfleiste">
     <div class="jumbotron">
         <h1>Voting: <br>
-            <?php echo $liste1->Voting_Name;?>
+            <?php echo $Voting->Voting_Name;?>
         </h1>
     </div>
 </div>
 
 <div>
-    <div colspan="2" class="pollTitle">Frage: <?php echo $liste1->Frage;?></div>
+    <div colspan="2" class="pollTitle">Frage: <?php echo $Voting->Frage;?></div> <br>
 
-    <form action="VotingStudent_Do.php" method="post">
+
+    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
         <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
 
 
             <tbody>
-                <tr>
-                    <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $a_Student; ?>" name="a_Student">
-                    </td>
-                    <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_a" ?>%" class="shaded"></div>
-                            <div class="label"><strong>A.<?php echo htmlspecialchars($liste1->Antwort_A) ?></strong></div>
-                        </div>
-                    </td>
-                </tr>
+            <tr>
+                <td class="form-group" style="width:50px;">
+                <input type="submit" name="A"  value="A"/>
+                </td>
+                <td class="pollResultsBar" align="left">
+                <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_a" ?>%" class="shaded"></div>
+                    <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_A) ?></strong></div>
+                </div>
+                </td>
+                <td>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo $Voting->b_Student ?> </strong>
+                </td>
+             </tr>
 
 
-                <tr>
-                    <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $b_Student; ?>" name="b_Student">
-                    </td>
+            <tr>
+                <td class="form-group" style="width:50px;">
+                <input type="submit" name="B"  value="B">
+                </td>
+                <td class="pollResultsBar" align="left">
+                    <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_b" ?>%" class="shaded"></div>
+                        <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_B) ?></strong></div>
+                    </div>
+                </td>
+                <td>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo $Voting->b_Student ?> </strong>
+                </td>
+            </tr>
 
-                    <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_b" ?>%" class="shaded"></div>
-                            <div class="label"><strong>B. <?php echo htmlspecialchars($liste1->Antwort_B) ?></strong></div>
-                        </div>
-                    </td>
-                </tr>
+            <tr>
 
-                <tr>
-                    <?php if(isset($liste1->Antwort_C)) { ?>
-                    <td class="pollRadioBtn" style="width:20px;">
-                            <input type="radio" value="<?php echo $c_Student; ?>" name="c_Student">
+            <?php  if(isset($Voting->c_Student) && !empty($Voting->c_Student))
+            { ?>
+            <td class="form-group" style="width:50px;">
+                <input type="submit" name="C"  value="C"/>
+            </td>
+                <td class="pollResultsBar" align="left">
+                    <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_c" ?>%" class="shaded"></div>
+                        <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_C) ?></strong></div>
+                    </div>
+                </td>
+            <?php } ?>
+                <td>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo $Voting->c_Student ?> </strong>
+                </td>
+            </tr>
 
-                    </td>
+            <tr>
+        <?php  if(isset($Voting->d_Student) && !empty($Voting->d_Student))
+        { ?>
+            <td class="form-group" style="width:50px;">
+                <input type="submit" name="D"  value="D"/>
+            </td>
+            <td class="pollResultsBar" align="left">
+                <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $Voting->Prozent_d ?>%" class="shaded"></div>
+                    <div class="label"><strong> <?php echo htmlspecialchars($Voting->Antwort_D) ?></strong></div>
+                </div>
+            </td>
+        <?php } ?>
+                <td>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo $Voting->d_Student ?> </strong>
+                </td>
+            </tr>
 
-                    <td class="pollResultsBar" align="left">
-                        <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$liste1->Prozent_c" ?>%" class="shaded"></div>
-                            <div class="label"><strong>C.<?php echo htmlspecialchars($liste1->Antwort_C) ?></strong></div>
-                        </div>
-                     </td>
-                    <?php }?>
-                </tr>
-
-
-                <tr>
-                    <?php if(isset($liste1->Antwort_D)) { ?>
-                    <td class="pollRadioBtn" style="width:20px;">
-                        <input type="radio" value="<?php echo $d_Student; ?>" name="d_Student">
-
-                    </td>
-
-                    <td class="pollResultsBar" align="left">
-                            <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $liste1->Prozent_d ?>%" class="shaded"></div>
-                                <div class="label"><strong>D.<?php echo htmlspecialchars($liste1->Antwort_D) ?></strong></div>
-                            </div>
-                    </td>
-                        <?php } ?>
-                </tr>
-
-
-
-                <tr>
-                        <input type="hidden" value="<?php echo $liste1->Voting_ID; ?>" name="Voting_ID">
-                </tr>
-
-
-                    <!--
-
-                    <td style="width:100px;font-weight:bold">
-                        <?php //htmlspecialchars($liste1->Stimmen_Gesamt); ?>
-                        Stimmen
-                    </td>
-                    -->
-
+            <tr>
+        <div class="form-group">
+            <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
+        </div>
+            </tr>
             </tbody>
-        </table>
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="submit" name="vote_submit" class="btn">Abstimmen</button>
     </form>
+
 </div>
+
+<input type="hidden" id="refreshed" value="no">
 
 
 </body>
+</html>
+
+

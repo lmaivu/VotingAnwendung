@@ -71,11 +71,11 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
         }
         ?>
         </tbody>
-        <?php echo "<a href='../Voting/Voting_Studies_Test.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>Studi-Seite</a>" ?>
+        <?php echo "<a href='../Voting/Voting_Studies_Test2.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>Studi-Seite</a>" ?>
 </div>
 
 </body>
 </html>
 
-<?php include("../inc/footer.php"); ?>
+<?php include("../inc/sticky_footer.php"); ?>
 

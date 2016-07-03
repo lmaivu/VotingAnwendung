@@ -2,7 +2,7 @@
 <html>
 
 
-<?Php
+<?php
 require_once("../Mapper/Manager.php");
 require_once("../Mapper/Dozent.php");
 

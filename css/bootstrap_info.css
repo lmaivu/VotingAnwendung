@@ -50,3 +50,11 @@ button {
     font-color: #534532;
 }
 
+#footer {
+    position: absolute;
+    background-color: #ebedf2;
+    height: 114px;
+    width:100%;
+    margin-top: 40px;
+}
+

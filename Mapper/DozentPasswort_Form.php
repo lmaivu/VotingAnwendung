@@ -38,9 +38,10 @@ $dozent = $DozentManager->findById($Dozent_ID);?>
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="alignment: center">
             <div class="col-sm-offset-2 col-sm-8">
-                <button type="submit" class="btn btn-default">best&aumltigen!</button>
+                <button style='background-color: #534532; border-color: white; color: white;' type="submit" class="btn btn-default">bestätigen!</button>
+                <input style='background-color: #534532; border-color: white; color: white;' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
             </div>
         </div>
 

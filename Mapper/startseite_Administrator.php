@@ -1,7 +1,6 @@
-<?php include_once("../inc/session_check.php");
-include("../inc/head.php");
-include("../inc/navbar_Administrator.php");
-include "../inc/footer_Administrator.php";
+<?php
+    include_once("../inc/session_check.php");
+    include("../inc/head.php");
 ?>
 
 <head>
@@ -9,6 +8,12 @@ include "../inc/footer_Administrator.php";
 </head>
 
 <body>
+
+<?php
+    include("../inc/head.php");
+    include("../inc/navbar_Administrator.php");
+    include "../inc/footer_Administrator.php";
+?>
 
 <div id="menu">
     <div class="row">

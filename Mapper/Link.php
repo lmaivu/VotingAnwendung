@@ -1,5 +1,7 @@
 <?php
 
+include("../inc/");
+
 $login = 'o_7dgmnsdmrq';
 $key = 'R_f9535d857c614860a4dd5bf4d7e80b39';
 $param = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");

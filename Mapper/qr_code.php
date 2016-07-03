@@ -12,7 +12,7 @@ $param = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 ob_start("callback");
 
 // here DB request or some processing
-$codeText = 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Voting_Studies_Test2.php?Voting_ID='.$Voting_ID;
+$codeText = 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Voting_Studies_Test2.php?Voting_ID='.$param;
 
 // end of processing here
 $debugLog = ob_get_contents();
@@ -30,7 +30,7 @@ QRcode::png($codeText);
 
     $login = 'o_7dgmnsdmrq';
     $key = 'R_f9535d857c614860a4dd5bf4d7e80b39';
-    $longurl = 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Voting_Studies_Test2.php?Voting_ID='.$Voting_ID;
+    $longurl = 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Voting_Studies_Test2.php?Voting_ID='.$param;
 
     $url = 'http://api.bit.ly/shorten?version=2.0.1&longUrl='.$longurl.'&login='.$login.'&apiKey='.$key.'';
 

@@ -40,3 +40,5 @@ QRcode::png($codeText);
 
     <p <?php $result->{'results'}->{$longurl}->{'shortUrl'} ?> >
 
+
+<!-- ENDE bit.ly Generierung -->

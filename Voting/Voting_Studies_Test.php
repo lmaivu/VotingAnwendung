@@ -6,8 +6,8 @@ error_reporting(E_ALL);
 require_once("../Voting/Voting.php");
 require_once("../Mapper/VotingManager.php");
 include "../inc/head.php";
-print_r($_COOKIE['Student']);
-$Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
+//print_r($_COOKIE['Student']);
+$Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
 ?>
@@ -21,6 +21,11 @@ $Voting = $VotingManager->findById($Voting_ID);
 </head>
 
 <body>
+
+<?php
+$Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
+
+if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
 
 <div id="kopfleiste">
     <div class="jumbotron">
@@ -135,8 +140,16 @@ $Voting = $VotingManager->findById($Voting_ID);
 
 <input type="hidden" id="refreshed" value="no">
 
-
+<?php }
+else { ?>
+<div class="Fehlermeldung">
+    <?php echo "Falscher Eingabeschlüssel. Bitte versuchen Sie es erneut.<br/>"; ?>
+    <a href="Schluesselabfrage_form.php"> Zurück </a> <?php } ?>
+</div>
+?>
 </body>
+
+
 </html>
 
 

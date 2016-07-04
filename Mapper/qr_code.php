@@ -27,7 +27,7 @@ include "../inc/head.php";
 
 
     // here DB request or some processing
-    $codeText = 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Voting_Studies_Test.php?Voting_ID='.$Voting_ID;
+    $codeText = 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Schluesselabfrage_form.php?Voting_ID='.$Voting_ID;
 
     // Übergabe an Link.php //
 

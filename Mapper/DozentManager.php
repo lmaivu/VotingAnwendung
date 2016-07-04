@@ -124,7 +124,7 @@ VALUES
         return $dozent;
     }
 
-    public function update(Dozent $dozent)
+    public function update($dozent)
     {
         try {
             $stmt = $this->pdo->prepare('

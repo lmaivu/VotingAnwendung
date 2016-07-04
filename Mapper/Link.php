@@ -16,7 +16,7 @@ include "../inc/head.php"
         echo '<img src="../Mapper/qr_code.php?Voting_ID=' . $Voting_ID . '">';?>
         <br>
         <br> <?php
-        echo 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Voting_Studies_Test.php?Voting_ID=' . $Voting_ID . '';
+        echo 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Schluesselabfrage_form.php?Voting_ID=' . $Voting_ID . '';
     ?>
 </div>
 

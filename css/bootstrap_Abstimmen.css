@@ -1,4 +1,10 @@
 .pollResultBar{padding: 2px 0;}
+
+.pollTitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+}
+
 .resultBar{    -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;

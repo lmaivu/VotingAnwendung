@@ -84,7 +84,6 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 </div>
 
 <div>
-    <?php echo "<a style='background-color: #8e7059; color: white; border-color: white; font-size: ' href='../Voting/Voting_Studies_Test2.php?Voting_ID=$Voting->Voting_ID' class='btn btn-default'>Studi-Seite</a>" ?>
     <?php echo "<a style='background-color: #Cdbfa5; color: white; border-color: white' href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' class='btn btn-default' role='button'><span class='glyphicon glyphicon-stats'></span> Voting anlegen</a>" ?>
     <input style='background-color: #534532; border-color: white; color: white; alignment: center' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
 </div>

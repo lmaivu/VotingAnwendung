@@ -41,7 +41,6 @@ require_once("../Mapper/VotingManager.php");
         $VorlesungManager = new VorlesungManager();
         $liste = $VorlesungManager->findAll($dozent);
         $Dozent_ID= $liste->Dozent_ID;
-        echo "int($Dozent_ID)";
         if (count($liste) > 0) { ?>
         <table class="table table-hover table-responsive">
             <thead class="row">

@@ -18,10 +18,13 @@
 
 <body>
 
-<?php
-include "../inc/navbar.php";
-include "../inc/sticky_footer.php";
-?>
+<div>
+    <?php
+        include "../inc/navbar.php";
+        include "../inc/head.php";
+        include "../inc/sticky_footer.php";
+    ?>
+</div>
 
     <link href="../css/bootstrap_statisch.css" rel="stylesheet"/>
 
@@ -32,12 +35,6 @@ include "../inc/sticky_footer.php";
         70569 Stuttgart<br>
         Telefon: 0711 892310<br>
     </h4>
-</div>
-
-
-
-<div>
-    <?php include "../inc/footer.php"; ?>
 </div>
 
 </body>

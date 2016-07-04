@@ -48,7 +48,8 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
-                <button type="submit" class="btn btn-default">Fertig!</button>
+                <button style='background-color: #Cdbfa5; border-color: white; color: white;' type="submit" class="btn btn-default">Fertig!</button>
+                <input style='background-color: #534532; border-color: white; color: white;' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
             </div>
         </div>
 

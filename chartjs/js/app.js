@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
     $.ajax({
-        url: "https://www.mars.iuk-hdm-stuttgart.de/~lv018/chartjs/data.php",
+        url: "https://mars.iuk.hdm-stuttgart.de/~lv018/chartjs/data.php",
         method: "GET",
         success: function(data) {
             console.log(data);

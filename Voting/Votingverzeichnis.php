@@ -41,6 +41,7 @@ require_once("../Mapper/VorlesungManager.php");
     $liste = $VotingManager->findAll ($Vorlesung);
     print_r( $liste);
 
+
     if (count($liste) > 0) { ?>
         <table class="table table-hover">
             <thead>

@@ -118,12 +118,7 @@ echo "
                             borderColor: 'rgba (200, 200, 200, 0.75)',
                             hoverBackgroundColor: 'rgba (200,200,200, 1.5)',
                             hoverBorderColor: 'rgba (200,200,200, 1.5)',
-                            backgroundColor: [
-                                "#FF6384",
-                                "#36A2EB",
-                                "#FFCE56",
-                                "#9FF781"
-                            ]
+                            backgroundColor:  'rgba(200, 200, 200, 0.75)'
 
                         }]
                 },

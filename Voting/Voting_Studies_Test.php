@@ -8,8 +8,7 @@ require_once("../Mapper/VotingManager.php");
 include "../inc/head.php";
 //print_r($_COOKIE['Student']);
 $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
-$VotingManager = new VotingManager();
-$Voting = $VotingManager->findById($Voting_ID);
+
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +23,11 @@ $Voting = $VotingManager->findById($Voting_ID);
 
 <?php
 $Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
+$VotingManager = new VotingManager();
+$Voting = $VotingManager->findById($Voting_ID);
+if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
+    ?>
 
-if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
 
 <div id="kopfleiste">
     <div class="jumbotron">
@@ -48,17 +50,21 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
                 <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                     <input type="hidden" name="A" value="<?php echo $Voting->a_Student?>">
-                    <input type="submit" name="A">
+                    <input type="submit">
                 </td>
+
                 <td class="pollResultsBar" align="left">
                 <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_a" ?>%" class="shaded"></div>
                     <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_A) ?></strong></div>
                 </div>
                 </td>
+
                 <td>
                     <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->a_Student); ?> </strong>
                 </td>
+
              </tr>
+            </tbody>
             </table>
 
             </form>
@@ -66,6 +72,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
     <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
         <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
             <tbody>
+
             <tr>
                 <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
@@ -139,11 +146,15 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
     </form>
 
     <form>
+        <table>
             <tr>
+                <td>
         <div class="form-group">
             <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
         </div>
+                </td>
             </tr>
+        </table>
 
     </form>
 
@@ -157,7 +168,7 @@ else { ?>
     <?php echo "Falscher Eingabeschlüssel. Bitte versuchen Sie es erneut.<br/>"; ?>
     <a href="Schluesselabfrage_form.php"> Zurück </a> <?php } ?>
 </div>
-?>
+
 </body>
 
 

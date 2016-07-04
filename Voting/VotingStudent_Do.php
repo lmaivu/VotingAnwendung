@@ -18,11 +18,11 @@ echo "$Voting_ID.<br />";
 //$a_Student = htmlspecialchars($_POST["A"], ENT_QUOTES, "UTF-8");
 $a_Student = $_POST["A"];
 
-$b_Student = (int)htmlspecialchars($_POST["B"], ENT_QUOTES, "UTF-8");
+$b_Student = $_POST["B"];
 
-$c_Student = (int)htmlspecialchars($_POST["C"], ENT_QUOTES, "UTF-8");
+$c_Student = htmlspecialchars($_POST["C"], ENT_QUOTES, "UTF-8");
 
-$d_Student = (int)htmlspecialchars($_POST["D"], ENT_QUOTES, "UTF-8");
+$d_Student = htmlspecialchars($_POST["D"], ENT_QUOTES, "UTF-8");
 
 echo "$a_Student.<br />";
 echo "$b_Student.<br />";

@@ -13,6 +13,7 @@ include "../inc/head.php";
 <?php
 
 $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
+echo $Voting_ID;
 
 $a_Student = (int)htmlspecialchars($_POST["A"], ENT_QUOTES, "UTF-8");
 
@@ -26,13 +27,13 @@ $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
 
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
-if (isset ($_COOKIE["$Voting->Voting_ID"] )) {
+if (isset ($_COOKIE["Student"] )) {
     echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen."; ?>
     <!--<a href="#"> Hier k&oumlnnen Sie das Ergebnis anschauen. </a> -->
     <?php
 }
     elseif (isset ($_POST["A"])){
-        //$a_Student= $Voting->a_Student+1;
+        //$a_Student= $Voting->a_Student;
         $Voting = $VotingManager->updateA($Voting);
         $a_Student= $Voting->a_Student;
         echo "$a_Student";
@@ -40,23 +41,23 @@ if (isset ($_COOKIE["$Voting->Voting_ID"] )) {
 
     }
     elseif(isset($_POST["B"])){
-        $b_Student= $Voting->b_Student+1;
+        //$b_Student= $Voting->b_Student+1;
         $Voting = $VotingManager->updateB($Voting);
-        echo "Sie haben erfolgreich für Antwort B abgestimmt.";
+        echo "Sie haben erfolgreich für Antwort B abgestimmt.<br />";
 
 }
 
     elseif (isset ($_POST["C"])){
-        $c_Student= $Voting->c_Student+1;
+        //$c_Student= $Voting->c_Student+1;
         $Voting = $VotingManager->updateC($Voting);
-        echo "Sie haben erfolgreich für Antwort C abgestimmt.";
+        echo "Sie haben erfolgreich für Antwort C abgestimmt.<br />";
 
 }
 
     elseif(isset ($_POST["D"])){
-        $d_Student= $Voting->d_Student+1;
+        //$d_Student= $Voting->d_Student+1;
         $Voting = $VotingManager->updateD($Voting);
-        echo "Sie haben erfolgreich für Antwort D abgestimmt.";
+        echo "Sie haben erfolgreich für Antwort D abgestimmt.<br />";
 
 }
 
@@ -84,8 +85,8 @@ echo "Prozentualer Wert f&uumlr C: $Prozent_c.<br />";
 echo "Prozentualer Wert f&uumlr D: $Prozent_d.<br />";
 
 
+echo "
+<a href = 'Voting_Studies_Test.php?Voting_ID=$Voting_ID'> Hier geht es zurück zum Voting.</a>";
 ?>
-<a href = "Voting_Studies_Test.php"> Hier geht es zurück zum Voting.</a>
-
 </body>
 </html>

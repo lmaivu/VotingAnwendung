@@ -93,14 +93,13 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               INSERT INTO Voting
-                (Voting_Name, Einschreibeschlussel, Ablaufzeit, Vorlesung_ID, Frage, Antwort_A, Antwort_B, Antwort_C, Antwort_D)
+                (Voting_Name, Einschreibeschlussel, Voting_Erstellung, Vorlesung_ID, Frage, Antwort_A, Antwort_B, Antwort_C, Antwort_D)
               VALUES
-                (:Voting_Name, :Einschreibeschlussel , :Ablaufzeit, :Vorlesung_ID, :Frage, :Antwort_A, :Antwort_B, :Antwort_C, :Antwort_D)
+                (:Voting_Name, :Einschreibeschlussel , :Voting_Erstellung, :Vorlesung_ID, :Frage, :Antwort_A, :Antwort_B, :Antwort_C, :Antwort_D)
             ');
             $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
             $stmt->bindParam(':Einschreibeschlussel', $Voting->Einschreibeschlussel);
-            $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);
-            //$stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
+            $stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
             $stmt->bindParam(':Frage', $Voting->Frage);
             $stmt->bindParam(':Antwort_A', $Voting->Antwort_A);
             $stmt->bindParam(':Antwort_B', $Voting->Antwort_A);
@@ -125,14 +124,12 @@ class VotingManager
               UPDATE Voting
               SET Voting_Name = :Voting_Name,
                   Einschreibeschlussel = :Einschreibeschlussel,
-                  Ablaufzeit = :Ablaufzeit,
                   Vorlesung_ID = :Vorlesung_ID
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':Voting_Name', $Voting->Voting_Name);
             $stmt->bindParam(':Einschreibeschlussel', $Voting->Einschreibeschlussel);
-            $stmt->bindParam(':Ablaufzeit', $Voting->Ablaufzeit);;
             $stmt->bindParam(':Vorlesung_ID', $Voting->Vorlesung_ID);
 
 
@@ -149,10 +146,11 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET a_Student =":a_Student+1"
-              WHERE Voting_ID = ":Voting_ID"
+              SET a_Student =:a_Student+1
+              WHERE Voting_ID = $Voting->Voting_ID
+
             ');
-            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
+            //$stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->bindParam(':a_Student', $Voting->a_Student);
 
             $stmt->execute();

@@ -5,11 +5,11 @@ require_once("../Mapper/VotingManager.php");
 require_once("../Voting/Voting.php");
 
 
-if (isset($_COOKIE["$Voting->Voting_ID"]))
+if (isset($_COOKIE["Student"]))
     $voted = True;
 else
     $voted = False;
-setcookie ("$Voting->Voting_ID", "Student", time()+31536000);
+setcookie ("Student", "gevotet", time()+31536000);
 
 
 ?>

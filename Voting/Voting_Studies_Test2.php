@@ -23,86 +23,59 @@ include("../inc/cookie.php");
 
 <?php
 
-//$Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8"); //funktioniert noch nicht, muss �ber QR Code �bergeben werden
-$Voting_ID =2;
+$Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8"); //funktioniert noch nicht, muss �ber QR Code �bergeben werden
+
 $VotingManager = new VotingManager();
-$liste1 = $VotingManager->findById($Voting_ID);
+$Voting = $VotingManager->findById($Voting_ID);
 
-$a_Student=$liste1->a_Student;
+$a_Student= $Voting->a_Student;
 
-$b_Student= (int) $liste1->b_Student;
-$c_Student=(int) $liste1->c_Student;
-$d_Student=(int) $liste1->d_Student;
+$b_Student= (int) $Voting->b_Student;
+
 
 ?>
 
 <div id="kopfleiste">
     <div class="jumbotron">
         <h1>Voting: <br>
-            <?php echo $liste1->Voting_Name;?>
+            <?php echo $Voting->Voting_Name;?>
         </h1>
     </div>
 </div>
 
-<div>
-    <div colspan="2" class="pollTitle">Frage: <?php echo $liste1->Frage;?></div> <br>
-
-    <?php
 
 
-    $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
-    $VotingManager = new VotingManager();
-    $Voting = $VotingManager->findById($Voting_ID)
-
-    ?>
-
-
-
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-stats"></span> clarovo</a>
-                <a class="btn btn-default navbar-btn" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="jumbotron" style=background:whitesmoke>
-            <h1>Voting ID: <?php echo $voting_id ?></h1><br />
-        </div>
-    </div>
 
     <div class="container">
 
-        <h2>Frage: <?php echo $voting->frage?> </h2><br />
+        <h2>Frage: <?php echo $Voting->Frage?> </h2><br />
 
-        <form role="form" class="form-inlinecy" action="VotingVoting.php" method="post">
+        <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
 
             <div class="form-group">
-                <input type="submit" name="a" id="a" value="<?php echo $voting->a ?>"/>
+                <input type="submit" name="A" id="A" value="<?php echo $Voting->a_Student ?>"/>
             </div>
 
             <div class="form-group">
-                <input type="submit" name="b" id="b" value="<?php echo $voting->b ?>"/>
+                <input type="submit" name="B" id="B" value="<?php echo $Voting->b_Student ?>"/>
             </div>
 
-            <?php  if(isset($voting->c) && !empty($voting->c))
+            <?php  if(isset($Voting->Antwort_C) && !empty($Voting->Antwort_C))
             { ?>
                 <div class="form-group">
-                    <input type="submit" name="c" id="c" value="<?php echo $voting->c ?>"/>
+                    <input type="submit" name="C" id="C" value="<?php echo $Voting->c_Student ?>"/>
                 </div>
             <?php } ?>
 
-            <?php  if(isset($voting->d) && !empty($voting->d))
+            <?php  if(isset($Voting->Antwort_D) && !empty($Voting->Antwort_D))
             { ?>
                 <div class="form-group">
-                    <input type="submit" name="d" id="d" value="<?php echo $voting->d ?>"/>
+                    <input type="submit" name="D" id="D" value="<?php echo $Voting->d_Student ?>"/>
                 </div>
             <?php } ?>
 
             <div class="form-group">
-                <input type="hidden" value="<?php echo htmlspecialchars($voting_id); ?>" class="form-control" name="id_voting" id="id_voting" readonly>
+                <input type="text" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
             </div>
         </form>
 

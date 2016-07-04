@@ -13,7 +13,6 @@ require_once("Voting.php");
 //echo "$Voting_ID";
 $Voting_Name = htmlspecialchars($_POST["Voting_Name"], ENT_QUOTES, "UTF-8");
 $Vorlesung_ID = htmlspecialchars($_POST["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
-$Ablaufzeit = htmlspecialchars($_POST["Ablaufzeit"], ENT_QUOTES, "UTF-8");
 $Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
 $Voting_Erstellung = htmlspecialchars($_POST["Voting_Erstellung"], ENT_QUOTES, "UTF-8");
 
@@ -24,7 +23,7 @@ $Antwort_C = htmlspecialchars($_POST["Antwort_C"], ENT_QUOTES, "UTF-8");
 $Antwort_D = htmlspecialchars($_POST["Antwort_D"], ENT_QUOTES, "UTF-8");
 echo "$Frage";
 
-if (!empty($Voting_Name) && !empty($Ablaufzeit) && !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel) && !empty($Frage) && !empty($Antwort_A) && !empty($Antwort_B)
+if (!empty($Voting_Name) && !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel) && !empty($Frage) && !empty($Antwort_A) && !empty($Antwort_B)
 ) {
     $votingdaten = [
 
@@ -32,7 +31,6 @@ if (!empty($Voting_Name) && !empty($Ablaufzeit) && !empty($Vorlesung_ID)&& !empt
         "Voting_Erstellung" => $Voting_Erstellung,
         "Vorlesung_ID" => $Vorlesung_ID,
         "Einschreibeschlussel" => $Einschreibeschlussel,
-        "Ablaufzeit" => $Ablaufzeit,
         "Frage" => $Frage,
         "Antwort_A" => $Antwort_A,
         "Antwort_B" => $Antwort_B,
@@ -44,9 +42,10 @@ if (!empty($Voting_Name) && !empty($Ablaufzeit) && !empty($Vorlesung_ID)&& !empt
     $Voting = new Voting($votingdaten);
     $VotingManager = new VotingManager();
     $VotingManager->save($Voting);
+    print_r($VotingManager);
 
     //<a href='../Vorlesung/VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID'> </a>
-    header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
+    //header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
 } else {
     echo "Achtung! Bitte alle Felder ausf&uumlllen!<br/>";
 }

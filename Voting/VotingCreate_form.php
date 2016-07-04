@@ -24,13 +24,11 @@ require_once ("../Vorlesung/Vorlesung.php");
     include("../inc/navbar.php");
     include "../inc/sticky_footer.php";
     $Vorlesung_ID = (int)htmlspecialchars($_GET["Vorlesung_ID"], ENT_QUOTES, "UTF-8");
-    $Dozent_ID = (int)htmlspecialchars($_GET["Dozent_ID"], ENT_QUOTES, "UTF-8");
-    echo "$Dozent->Dozent_ID";
     date_default_timezone_set('UTC+2');
     date_default_timezone_set("Europe/Berlin");
     $timestamp = time();
-    $Vorlesung_Erstellung = date("Y-m-d H:i:s", $timestamp);
-    echo "<strong>Datum: </strong>$Vorlesung_Erstellung";
+    $Voting_Erstellung = date("Y-m-d H:i:s", $timestamp);
+    echo "<strong>Datum: </strong>$Voting_Erstellung";
 
 
 //echo $Vorlesung_ID;
@@ -54,28 +52,12 @@ require_once ("../Vorlesung/Vorlesung.php");
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Schlüssel: </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="Einschreibeschlussel" id="Einschreibeschlussel" placeholder="Einschreibeschlüssel">
+                <input type="password" class="form-control" name="Einschreibeschlussel" id="Einschreibeschlussel" placeholder="Einschreibeschlüssel">
             </div>
         </div>
 
 
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="name">Ablaufzeit: </label>
-            <div class="col-sm-8">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" name="Ablaufzeit" id="Ablaufzeit" placeholder="Ablaufzeit">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
 
-            <script type="text/javascript"> //Link zu javascript fehlt
-                $(function () {
-                    $('#datetimepicker1').dateTime('show');
-                });
-            </script>
-        </div> <!--form-group-->
 
 
     <!--</form>
@@ -148,16 +130,11 @@ require_once ("../Vorlesung/Vorlesung.php");
         <div class="form-group">
             <label class="control-label col-sm-5">
             <div class="col-sm-6">
-                <input type="hidden" value="<?php echo $Vorlesung_Erstellung;?>" class="form-control" name="Vorlesung_Erstellung" id="Vorlesung_Erstellung" readonly>
+                <input type="hidden" value="<?php echo $Voting_Erstellung;?>" class="form-control" name="Voting_Erstellung" id="Voting_Erstellung" readonly>
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="control-label col-sm-5">
-            <div class="col-sm-6">
-                <input type="hidden" value="<?php echo $Dozent->Dozent_ID;?>" class="form-control" name="Dozent_ID" id="Dozent_ID" readonly>
-            </div>
-        </div>
+
     </form>
 </div> <!--<div class="container"> -->
 

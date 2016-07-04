@@ -6,15 +6,11 @@ error_reporting(E_ALL);
 require_once("../Voting/Voting.php");
 require_once("../Mapper/VotingManager.php");
 include "../inc/head.php";
-
-
+print_r($_COOKIE ['Student']);
 $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
-echo "$Voting->a_Student";
-echo "$Voting->b_Student";
-echo "$Voting->c_Student";
-echo "$Voting->d_Student";
+
 ?>
 
 <!DOCTYPE html>
@@ -56,14 +52,14 @@ echo "$Voting->d_Student";
                 </div>
                 </td>
                 <td>
-                    <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->b_Student); ?> </strong>
+                    <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->a_Student); ?> </strong>
                 </td>
              </tr>
 
 
             <tr>
                 <td class="form-group" style="width:50px;">
-                <input type="submit" name="B"  value="B">
+                <input type="submit" name="B"  value="B"/>
                 </td>
                 <td class="pollResultsBar" align="left">
                     <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_b" ?>%" class="shaded"></div>
@@ -77,7 +73,7 @@ echo "$Voting->d_Student";
 
             <tr>
 
-            <?php if(isset($Voting->c_Student)){ ?>
+            <?php if(isset($Voting->Antwort_C) && !empty($Voting->Antwort_C)){ ?>
 
             <td class="form-group" style="width:50px;">
                 <input type="submit" name="C"  value="C"/>
@@ -95,7 +91,7 @@ echo "$Voting->d_Student";
             </tr>
 
 
-            <?php  //if(isset($Voting->d_Student) && !empty($Voting->d_Student)) { ?>
+            <?php  if(isset($Voting->Antwort_D) && !empty($Voting->Antwort_D)) { ?>
             <tr>
             <td class="form-group" style="width:50px;">
                 <input type="submit" name="D"  value="D"/>
@@ -110,7 +106,7 @@ echo "$Voting->d_Student";
                     <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->d_Student )?> </strong>
                 </td>
             </tr>
-            <?php //}
+            <?php }
             ?>
 
 

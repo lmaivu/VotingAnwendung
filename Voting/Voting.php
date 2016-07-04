@@ -33,7 +33,6 @@ class Voting
 
             $this->Voting_Name = $data['Voting_Name'];
             $this->Einschreibeschlussel = $data['Einschreibeschlussel'];
-            $this->Ablaufzeit = $data['Ablaufzeit'];
             $this->Voting_Erstellung = $data['Voting_Erstellung'];
             $this->Vorlesung_ID = $data['Vorlesung_ID'];
             $this->Frage = $data['Frage'];
@@ -52,7 +51,7 @@ class Voting
     }
 
     public function __toString() {
-        return $this->Voting_ID." ".$this->Voting_Name." ".$this->Einschreibeschlussel." ".$this->Ablaufzeit." ".$this->Voting_Erstellung." ".$this->Voting_ID;
+        return $this->Voting_ID." ".$this->Voting_Name." ".$this->Einschreibeschlussel." ".$this->Voting_Erstellung." ".$this->Voting_ID;
         //�ffentliche Methode __troString() wird definiert
         //AUfgabe: Ausgabe id name usw  der Klasse
     }

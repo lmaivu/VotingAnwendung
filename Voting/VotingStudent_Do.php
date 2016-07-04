@@ -115,10 +115,10 @@ echo "
                         {
                             data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
                             label: 'Voting Ergebnis',
-                            borderColor: 'rgba (200, 200, 200, 0.75)',
-                            hoverBackgroundColor: 'rgba (200,200,200, 1.5)',
-                            hoverBorderColor: 'rgba (200,200,200, 1.5)',
-                            backgroundColor:  'rgba(200, 200, 200, 0.75)'
+                            borderColor: 'rgba (230, 230, 180, 1)',
+                            hoverBackgroundColor: 'rgba (245,245,200, 1,5)',
+                            hoverBorderColor: 'rgba (230,230,180, 1,5)',
+                            backgroundColor:  'rgba(245,245,200, 1)'
 
                         }]
                 },

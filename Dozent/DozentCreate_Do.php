@@ -1,9 +1,11 @@
-<?php include("../inc/session_check.php"); ?>
+<?php
+include("../inc/session_check.php");
+?>
     <!-- Datei um das Voting Hinzuf?gen Formular zu ?berpr?fen, die eingegebenen Werte werden als string umgewandelt und gespeichert,
 als neuer Datensatz der Klasse Voting hi-->
 
- <!DOCTYPE html>
- <html>
+<!DOCTYPE html>
+<html>
 
 <body>
 
@@ -11,7 +13,7 @@ als neuer Datensatz der Klasse Voting hi-->
 <?php
 require_once("../Mapper/DozentManager.php");
 require_once("../Mapper/Dozent.php");
-require_once ("../inc/head.php");
+include ("../inc/head.php");
 
 $login = htmlspecialchars($_POST["login"], ENT_QUOTES, "UTF-8");
 $vorname = htmlspecialchars($_POST["vorname"], ENT_QUOTES, "UTF-8");
@@ -32,12 +34,17 @@ if (!empty($login) && !empty($vorname) && !empty($nachname) && !empty($password)
     $DozentManager = new DozentManager();
     $DozentManager->create
     ($dozent);
-    echo "Sie haben sich erfolgreich registriert. Zum Fortfahren melden Sie sich an."; ?> <br>
-    <a href= "../index.php"> Anmeldeseite </a>
-<?php
-} else {
-    echo "Error: Bitte alle Felder ausf&uumlllen!<br/>"; }
-?>
+
+    echo "Sie haben erfolgreich einen neuen Dozenten registriert.<br/>";
+    echo "<a href= ../index.php> Zur&uumlck zur Anmeldeseite </a> ";
+
+
+}
+else { ?>
+    <div class="Fehlermeldung">
+        <?php echo "Bitte alle Felder ausfüllen!<br/>";} ?>
+        <a href="../Dozent/DozentCreate_Form.php"> Zurück </a>
+    </div>
 </div>
 </body>
 </html>

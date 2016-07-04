@@ -55,7 +55,7 @@
         <strong>Telefon: </strong>0711-892310<br>
     </h4>
     <?php
-        echo "<a style='background-color: #Cdbfa5; font-size: 15px' href='../index.php' class='btn btn-primary btn-sm'>Zurück zur Startseite</a>"
+        echo "<a style='background-color: #Cdbfa5; font-size: 15px; border-color: white' href='../index.php' class='btn btn-primary btn-sm'>Zurück zur Startseite</a>"
     ?>
 </div>
 

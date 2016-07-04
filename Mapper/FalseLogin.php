@@ -6,15 +6,16 @@
 <body>
 
 <div class="content">
-    <div class="LoginFehler"> <!-- Box f¸r Loginfehler Anzeigen-->
+    <div class="LoginFehler">
 
-<?php
-echo " Sie k&oumlnnen nicht angemeldet werden. Falsche E-Mail oder falsches Passwort.
-Bitte versuchen Sie es erneut."
-?> <br>
+        <?php
+            echo " Sie k√∂nnen nicht angemeldet werden. Falsche E-Mail oder falsches Passwort. <br>
+            Bitte versuchen Sie es erneut."
+        ?> <br>
+        <br>
 
-<a href="../index.php"> Zur&uuml;ck zur Anmeldung. </a>
-    </div> <!-- Box f¸r Loginfehler Anzeigen-->
+        <a href="../index.php"> Zur√ºck zur Anmeldung. </a>
+    </div>
 </div>
 
 </body>

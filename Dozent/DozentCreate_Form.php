@@ -8,8 +8,10 @@
 
 <body>
 
-<?php include("../inc/navbar_Administrator.php")
-; ?>
+<?php
+    include("../inc/navbar_Administrator.php");
+    include "../inc/footer_Administrator.php";
+?>
 
 <link href="../css/bootstrap.css" rel="stylesheet">
 
@@ -59,14 +61,10 @@
                 <input type="hidden" value="<?php echo htmlspecialchars($dozent->Dozent_ID); ?>" class="form-control" name="Dozent_ID" id="Dozent_ID" readonly>
 
 
-            </div> <!--�berpr�fen ob das klappt-->
+            </div>
 
     </form>
 
-</div>
-
-<div>
-    <?php include "../inc/footer_Administrator.php"; ?>
 </div>
 
 </body>

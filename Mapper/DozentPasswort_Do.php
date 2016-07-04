@@ -1,5 +1,6 @@
 <?php
 include("../inc/session_check.php");
+include("../inc/head.php");
 require_once ("DozentManager.php");
 require_once("Dozent.php");
 
@@ -32,9 +33,14 @@ if ($hash == $hash2 && !empty($hash) && !empty($hash2)) {
     echo "Sie haben Ihr Passwort erfolgreich geändert. Melden Sie sich bitte erneut an";
     echo "<a href= ../index.php> Zur&uumlck zur Anmeldeseite </a> ";
 }
-else {
-    echo "Bitte alle Felder ausfüllen oder die Passwörter stimmen nicht überein.";
-}
+else { ?>
+    <div class="Fehlermeldung">
+        <?php echo "Bitte alle Felder ausfüllen oder die Passwörter stimmen nicht überein.<br/>";} ?>
+        <a href="../Mapper/DozentPasswort_Form.php"> Zurück </a>
+    </div>
+
+<?php
+
 /**
 $daten = [
         "hash" => $hash,
@@ -55,7 +61,7 @@ $daten = [
 
 <a href= "../index.php"> Zur&uumlck zur Anmeldeseite </a> **/
 
-
+?>
 
 
 

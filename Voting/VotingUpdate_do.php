@@ -42,6 +42,9 @@ if (!empty($Voting_Name) && !empty($Ablaufzeit) && !empty($Vorlesung_ID)&& !empt
     $VotingManager->save($Voting);
     //header('Location: ../Voting/Votingverzeichnis.php');
     header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
-} else {
-    echo "Achtung! Bitte alle Felder ausf&uumlllen!<br/>";
+} else { ?>
+    <div class="Fehlermeldung">
+        <?php echo "Achtung! Bitte alle Felder ausfüllen!<br/>";} ?>
+        <a href="../Voting/VotingUpdate_form.php"> Zurück </a>
+    </div>
 }

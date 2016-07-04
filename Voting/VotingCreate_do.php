@@ -1,12 +1,11 @@
-<!-- Datei um das Voting Hinzuf�gen Formular zu �berpr�fen, die eingegebenen Werte werden als string umgewandelt und gespeichert,
+<!-- Datei um das Voting Hinzufügen Formular zu überprüfen, die eingegebenen Werte werden als string umgewandelt und gespeichert,
 als neuer Datensatz der Klasse Voting-->
 
-<?php include("../inc/session_check.php"); ?>
-
 <?php
+include("../inc/session_check.php");
+include("../inc/head.php");
 require_once("../Mapper/VotingManager.php");
 require_once("Voting.php");
-
 
 
 //$Voting_ID = (int) htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
@@ -46,7 +45,11 @@ if (!empty($Voting_Name) && !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel
 
     //<a href='../Vorlesung/VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID'> </a>
     //header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
-} else {
-    echo "Achtung! Bitte alle Felder ausf&uumlllen!<br/>";
+} else { ?>
+    <div class="Fehlermeldung">
+    <?php echo "Achtung! Bitte alle Felder ausf&uumlllen!<br/>"; ?>
+        <a href="../Voting/VotingCreate_form.php"> Zurück </a>
+    </div>
+<?php
 }
 ?>

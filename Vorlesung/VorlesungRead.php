@@ -24,18 +24,21 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 
 <body>
 
-<?php include("../inc/navbar.php"); ?>
+<?php
+    include("../inc/navbar.php");
+    include "../inc/sticky_footer.php";
+?>
 
 <div id="kopfleiste">
     <div class="container">
         <div class="jumbotron" style=background:whitesmoke>
-            <h1><?php echo $Vorlesung->Vorlesung_Name ?></h1><br />
-            <?php echo "<a style='background-color: #Cdbfa5; color: white' href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' class='btn btn-default' role='button'><span class='glyphicon glyphicon-stats'></span> Voting anlegen</a>" ?>
+            <h1><?php echo $Vorlesung->Vorlesung_Name ?></h1>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div id="tabelle">
+    <div class="container">
 
     <h1>Votings</h1>
     <table class="table table-hover table-striped">
@@ -48,8 +51,8 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
             <th class="col-md-1">Antwort D</th>
             <th class="col-md-2">Optionen</th></tr>
         </thead>
-        <tbody>
 
+        <tbody>
         <?php
         require_once("../Voting/Voting.php");
         require_once("../Mapper/VotingManager.php");
@@ -76,11 +79,15 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
         }
         ?>
         </tbody>
-        <?php echo "<a style='background-color: #8e7059; border-color: white; font-size: 20px;' href='../Voting/Voting_Studies_Test2.php?Voting_ID=$Voting->Voting_ID' class='btn btn-danger btn-sm'>Studi-Seite</a>" ?>
+    </table>
+    </div>
+</div>
+
+<div>
+    <?php echo "<a style='background-color: #8e7059; color: white; border-color: white; font-size: ' href='../Voting/Voting_Studies_Test2.php?Voting_ID=$Voting->Voting_ID' class='btn btn-default'>Studi-Seite</a>" ?>
+    <?php echo "<a style='background-color: #Cdbfa5; color: white; border-color: white' href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' class='btn btn-default' role='button'><span class='glyphicon glyphicon-stats'></span> Voting anlegen</a>" ?>
+    <input style='background-color: #534532; border-color: white; color: white; alignment: center' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
 </div>
 
 </body>
 </html>
-
-<?php include("../inc/sticky_footer.php"); ?>
-

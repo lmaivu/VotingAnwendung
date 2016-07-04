@@ -4,28 +4,37 @@
 
 $(document).ready(function(){
     $.ajax({
-        url: "http://localhost/chartjs/data.php",
+        url: "https://www.mars.iuk-hdm-stuttgart.de/~lv018/chartjs/data.php",
         method: "GET",
         success: function(data) {
             console.log(data);
-            var player = [];
-            var score = [];
+            var Antwort = [];
+            var Vote = [];
 
             for(var i in data) {
-                player.push("Player " + data[i].playerid);
-                score.push(data[i].score);
+                Antwort.push("Antwort " + A);
+                Antwort.push("Antwort " + B);
+
+                if (isset(data[i].Antwort_C)) {
+                    Antwort.push("Antwort " + C);
+                }
+                if (isset(data[i].Antwort_D)) {
+                    Antwort.push("Antwort " + D);
+                }
+
+                Vote.push(data[i].Vote);
             }
 
             var chartdata = {
-                labels: player,
+                labels: Antwort,
                 datasets : [
                     {
-                        label: 'Player Score',
+                        label: 'Antwort',
                         backgroundColor: 'rgba(200, 200, 200, 0.75)',
                         borderColor: 'rgba(200, 200, 200, 0.75)',
                         hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
                         hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                        data: score
+                        data: Vote
                     }
                 ]
             };

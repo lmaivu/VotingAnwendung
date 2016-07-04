@@ -1,4 +1,4 @@
-<?php include("../inc/cookie.php"); ?>
+<?php //include("../inc/cookie.php"); ?>
 
 <?php
 error_reporting(E_ALL);
@@ -10,7 +10,6 @@ print_r($_COOKIE['Student']);
 $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
-
 ?>
 
 <!DOCTYPE html>
@@ -22,9 +21,7 @@ $Voting = $VotingManager->findById($Voting_ID);
 </head>
 
 <body>
-<?php
 
-?>
 <div id="kopfleiste">
     <div class="jumbotron">
         <h1>Voting: <br>
@@ -44,7 +41,9 @@ $Voting = $VotingManager->findById($Voting_ID);
             <tbody>
             <tr>
                 <td class="form-group" style="width:50px;">
-                <input type="submit" name="A"  value="A"/>
+                    <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
+                    <input type="hidden" name="A" value="<?php echo $Voting->a_Student?>">
+                    <input type="submit">
                 </td>
                 <td class="pollResultsBar" align="left">
                 <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_a" ?>%" class="shaded"></div>
@@ -56,10 +55,14 @@ $Voting = $VotingManager->findById($Voting_ID);
                 </td>
              </tr>
 
+            </form>
 
+    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
             <tr>
                 <td class="form-group" style="width:50px;">
-                <input type="submit" name="B"  value="B"/>
+                    <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
+                    <input type="hidden" name="B" value="<?php echo $Voting->b_Student?>">
+                    <input type="submit">
                 </td>
                 <td class="pollResultsBar" align="left">
                     <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_b" ?>%" class="shaded"></div>
@@ -72,11 +75,16 @@ $Voting = $VotingManager->findById($Voting_ID);
             </tr>
 
             <tr>
+    </form>
+
+    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
 
             <?php if(isset($Voting->Antwort_C) && !empty($Voting->Antwort_C)){ ?>
 
             <td class="form-group" style="width:50px;">
-                <input type="submit" name="C"  value="C"/>
+                <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
+                <input type="hidden" name="C" value="<?php echo $Voting->c_Student?>">
+                <input type="submit">
             </td>
                 <td class="pollResultsBar" align="left">
                     <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo "$Voting->Prozent_c" ?>%" class="shaded"></div>
@@ -90,11 +98,15 @@ $Voting = $VotingManager->findById($Voting_ID);
                 <?php } ?>
             </tr>
 
+    </form>
 
+    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
             <?php  if(isset($Voting->Antwort_D) && !empty($Voting->Antwort_D)) { ?>
             <tr>
             <td class="form-group" style="width:50px;">
-                <input type="submit" name="D"  value="D"/>
+                <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
+                <input type="hidden" name="D" value="<?php echo $Voting->d_Student?>">
+                <input type="submit">
             </td>
             <td class="pollResultsBar" align="left">
                 <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo $Voting->Prozent_d ?>%" class="shaded"></div>
@@ -108,9 +120,9 @@ $Voting = $VotingManager->findById($Voting_ID);
             </tr>
             <?php }
             ?>
+    </form>
 
-
-
+    <form>
             <tr>
         <div class="form-group">
             <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>

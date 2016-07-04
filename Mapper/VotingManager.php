@@ -144,17 +144,16 @@ class VotingManager
     public function updateA (Voting $Voting)
     {
         try {
+
+
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET a_Student =:a_Student+1
-              WHERE Voting_ID = $Voting->Voting_ID
+              SET a_Student = a_Student + 1
+              WHERE Voting_ID = :Voting_ID
 
             ');
-            //$stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
-            $stmt->bindParam(':a_Student', $Voting->a_Student);
-
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
             $stmt->execute();
-            //$stmt->execute(array('a_Student' => ':a_Student+1'));
         } catch (PDOException $e) {
             echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
             die();

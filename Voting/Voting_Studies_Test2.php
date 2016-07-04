@@ -10,7 +10,7 @@ require_once "Voting.php";
 require_once "../Vorlesung/Vorlesung.php";
 require_once "../Mapper/VorlesungManager.php";
 require_once "../Mapper/VotingManager.php";
-include("../inc/cookie.php");
+//include("../inc/cookie.php");
 
 ?>
 

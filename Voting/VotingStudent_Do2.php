@@ -1,4 +1,4 @@
-<?php include("../inc/cookie.php"); ?>
+<?php// include("../inc/cookie.php"); ?>
     <!DOCTYPE html>
     <html>
 <?php
@@ -18,7 +18,7 @@ $Voting = $VotingManager->findById($Voting_ID);
 $con = mysqli_connect("localhost", "lv018", "naiT0ohd0e", "u-lv018");
 
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
-if (isset ($_COOKIE["Student"] )) {
+if (isset ($_COOKIE["bl"] )) {
 echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.";
 }
 

@@ -12,14 +12,17 @@ $(document).ready(function(){
             var Vote = [];
 
             for(var i in data) {
-                Antwort.push("Antwort " + A);
-                Antwort.push("Antwort " + B);
+                Antwort.push("Antwort A");
+                Antwort.push("Antwort A" + data[i].Antwort_A);
+
+                Antwort.push("Antwort B");
+                Antwort.push("Antwort B" + data[i].Antwort_B);
 
                 if (isset(data[i].Antwort_C)) {
-                    Antwort.push("Antwort " + C);
+                    Antwort.push("Antwort C");
                 }
                 if (isset(data[i].Antwort_D)) {
-                    Antwort.push("Antwort " + D);
+                    Antwort.push("Antwort " + data[i].Antwort_D);
                 }
 
                 Vote.push(data[i].Vote);

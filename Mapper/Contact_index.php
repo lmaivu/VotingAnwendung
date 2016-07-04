@@ -33,7 +33,7 @@ include "../inc/Footer_index.php";
     </h4>
      <br>
     <?php
-    echo "<a style='background-color: #Cdbfa5; font-size: 15px' href='../index.php' class='btn btn-primary btn-sm'>Zurück zur Startseite</a>"
+    echo "<a style='background-color: #Cdbfa5; font-size: 15px; border-color: white' href='../index.php' class='btn btn-primary btn-sm'>Zurück zur Startseite</a>"
     ?>
 </div>
 

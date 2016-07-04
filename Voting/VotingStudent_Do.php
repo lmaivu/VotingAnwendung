@@ -28,7 +28,7 @@ echo "$a_Student.<br />";
 echo "$b_Student.<br />";
 echo "$c_Student.<br />";
 echo "$d_Student.<br />";
-print_r( $_COOKIE ['Student']);
+
 
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
@@ -40,8 +40,6 @@ if ((isset ($_COOKIE["Bl"] ))) {
     <?php
 }
     elseif (isset ($_POST["A"])){
-        //$a_Student= $Voting->a_Student;
-//        $Voting = $VotingManager->updateA($Voting);
         $VotingManager->updateA($Voting);
         echo "$Voting->a_Student";
         echo "Sie haben erfolgreich für Antwort A abgestimmt.<br />";
@@ -49,21 +47,21 @@ if ((isset ($_COOKIE["Bl"] ))) {
     }
     elseif(isset($_POST["B"])){
         //$b_Student= $Voting->b_Student+1;
-        $Voting = $VotingManager->updateB($Voting);
+       $VotingManager->updateB($Voting);
         echo "Sie haben erfolgreich für Antwort B abgestimmt.<br />";
 
 }
 
     elseif (isset ($_POST["C"])){
         //$c_Student= $Voting->c_Student+1;
-        $Voting = $VotingManager->updateC($Voting);
+        $VotingManager->updateC($Voting);
         echo "Sie haben erfolgreich für Antwort C abgestimmt.<br />";
 
 }
 
     elseif(isset ($_POST["D"])){
         //$d_Student= $Voting->d_Student+1;
-        $Voting = $VotingManager->updateD($Voting);
+        $VotingManager->updateD($Voting);
         echo "Sie haben erfolgreich für Antwort D abgestimmt.<br />";
 
 }

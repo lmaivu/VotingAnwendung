@@ -40,10 +40,10 @@ $Voting = $VotingManager->findById($Voting_ID);
 
             <tbody>
             <tr>
-                <td class="form-group" style="width:50px;">
+                <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                     <input type="hidden" name="A" value="<?php echo $Voting->a_Student?>">
-                    <input type="submit">
+                    <input type="submit" name="A">
                 </td>
                 <td class="pollResultsBar" align="left">
                 <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_a" ?>%" class="shaded"></div>
@@ -59,7 +59,7 @@ $Voting = $VotingManager->findById($Voting_ID);
 
     <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
             <tr>
-                <td class="form-group" style="width:50px;">
+                <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                     <input type="hidden" name="B" value="<?php echo $Voting->b_Student?>">
                     <input type="submit">
@@ -81,7 +81,7 @@ $Voting = $VotingManager->findById($Voting_ID);
 
             <?php if(isset($Voting->Antwort_C) && !empty($Voting->Antwort_C)){ ?>
 
-            <td class="form-group" style="width:50px;">
+            <td class="form-group" style="width:70px;">
                 <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                 <input type="hidden" name="C" value="<?php echo $Voting->c_Student?>">
                 <input type="submit">
@@ -103,7 +103,7 @@ $Voting = $VotingManager->findById($Voting_ID);
     <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
             <?php  if(isset($Voting->Antwort_D) && !empty($Voting->Antwort_D)) { ?>
             <tr>
-            <td class="form-group" style="width:50px;">
+            <td class="form-group" style="width:70px;">
                 <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                 <input type="hidden" name="D" value="<?php echo $Voting->d_Student?>">
                 <input type="submit">

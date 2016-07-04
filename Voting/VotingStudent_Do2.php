@@ -73,6 +73,6 @@ echo "Prozentualer Wert f&uumlr D: $Prozent_d.<br />";
 
 
 echo"
-<a href = 'Voting_Studies_Test.php?Voting_ID=$Voting_ID'> Hier geht es zurück zum Voting.</a>"
+<a href = 'Voting_Studies_Test2.php?Voting_ID=$Voting_ID'> Hier geht es zurück zum Voting.</a>"
 
     ?>

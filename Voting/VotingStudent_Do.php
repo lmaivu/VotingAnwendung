@@ -13,7 +13,7 @@ include "../inc/head.php";
 <?php
 
 $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
-echo $Voting_ID;
+echo "$Voting_ID.<br />";
 
 $a_Student = (int)htmlspecialchars($_POST["A"], ENT_QUOTES, "UTF-8");
 
@@ -23,11 +23,17 @@ $c_Student = (int)htmlspecialchars($_POST["C"], ENT_QUOTES, "UTF-8");
 
 $d_Student = (int)htmlspecialchars($_POST["D"], ENT_QUOTES, "UTF-8");
 
+echo "$a_Student.<br />";
+echo "$b_Student.<br />";
+echo "$c_Student.<br />";
+echo "$d_Student.<br />";
+print_r( $_COOKIE ['Student']);
+
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
 
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
-if (isset ($_COOKIE["Student"] )) {
+if ((isset ($_COOKIE["Student"] ))) {
     echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen."; ?>
     <!--<a href="#"> Hier k&oumlnnen Sie das Ergebnis anschauen. </a> -->
     <?php

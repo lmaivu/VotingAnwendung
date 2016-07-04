@@ -50,7 +50,7 @@ $b_Student= (int) $Voting->b_Student;
 
         <h2>Frage: <?php echo $Voting->Frage?> </h2><br />
 
-        <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
+        <form role="form" class="form-inlinecy" action="VotingStudent_Do2.php" method="post">
 
             <div class="form-group">
                 <input type="submit" name="A" id="A" value="<?php echo $Voting->a_Student ?>"/>

@@ -102,7 +102,7 @@ class VotingManager
             $stmt->bindParam(':Voting_Erstellung', $Voting->Voting_Erstellung);
             $stmt->bindParam(':Frage', $Voting->Frage);
             $stmt->bindParam(':Antwort_A', $Voting->Antwort_A);
-            $stmt->bindParam(':Antwort_B', $Voting->Antwort_A);
+            $stmt->bindParam(':Antwort_B', $Voting->Antwort_B);
             $stmt->bindParam(':Antwort_C', $Voting->Antwort_C);
             $stmt->bindParam(':Antwort_D', $Voting->Antwort_D);
             $stmt->bindParam(':Vorlesung_ID', $Voting->Vorlesung_ID);
@@ -166,11 +166,10 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET b_Student = :b_Student+1
+              SET b_Student = b_Student+1
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
-            $stmt->bindParam(':b_Student', $Voting->b_Student);
 
             $stmt->execute();
         } catch (PDOException $e) {
@@ -185,11 +184,10 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET c_Student = :c_Student+1
+              SET c_Student = c_Student+1
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
-            $stmt->bindParam(':c_Student', $Voting->c_Student);
 
             $stmt->execute();
         } catch (PDOException $e) {
@@ -204,11 +202,10 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET d_Student = :d_Student+1
+              SET d_Student = d_Student+1
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
-            $stmt->bindParam(':d_Student', $Voting->d_Student);
 
             $stmt->execute();
         } catch (PDOException $e) {

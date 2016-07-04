@@ -59,10 +59,13 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
                     <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->a_Student); ?> </strong>
                 </td>
              </tr>
+            </table>
 
             </form>
 
     <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
+        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
+            <tbody>
             <tr>
                 <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
@@ -79,11 +82,14 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
                 </td>
             </tr>
 
-            <tr>
+            </tbody>
+            </table>
     </form>
 
     <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
-
+        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
+        <tbody>
+        <tr>
             <?php if(isset($Voting->Antwort_C) && !empty($Voting->Antwort_C)){ ?>
 
             <td class="form-group" style="width:70px;">
@@ -102,10 +108,13 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
                 </td>
                 <?php } ?>
             </tr>
-
+        </tbody>
+        </table>
     </form>
 
     <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
+        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
+            <tbody>
             <?php  if(isset($Voting->Antwort_D) && !empty($Voting->Antwort_D)) { ?>
             <tr>
             <td class="form-group" style="width:70px;">
@@ -125,6 +134,8 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
             </tr>
             <?php }
             ?>
+            </tbody>
+            </table>
     </form>
 
     <form>
@@ -133,7 +144,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {?>
             <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
         </div>
             </tr>
-            </tbody>
+
     </form>
 
 </div>

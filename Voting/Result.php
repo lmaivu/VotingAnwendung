@@ -7,9 +7,6 @@
     <title>Charts mit JQuery / HTML5 Canvas</title>
     <!--<script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-    <script type="text/javascript" src="../jqueryMai/jqPlot/dist/plugins/jquery.min.js"></script>
-    <script type="text/javascript" src="../jquery.jqplot.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../jquery.jqplot.min.css" />
 </head>
 <?php
 

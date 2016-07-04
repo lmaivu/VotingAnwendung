@@ -20,7 +20,7 @@ $Antwort_A = htmlspecialchars($_POST["Antwort_A"], ENT_QUOTES, "UTF-8");
 $Antwort_B = htmlspecialchars($_POST["Antwort_B"], ENT_QUOTES, "UTF-8");
 $Antwort_C = htmlspecialchars($_POST["Antwort_C"], ENT_QUOTES, "UTF-8");
 $Antwort_D = htmlspecialchars($_POST["Antwort_D"], ENT_QUOTES, "UTF-8");
-echo "$Frage";
+
 
 if (!empty($Voting_Name) && !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel) && !empty($Frage) && !empty($Antwort_A) && !empty($Antwort_B)
 ) {
@@ -41,10 +41,10 @@ if (!empty($Voting_Name) && !empty($Vorlesung_ID)&& !empty($Einschreibeschlussel
     $Voting = new Voting($votingdaten);
     $VotingManager = new VotingManager();
     $VotingManager->save($Voting);
-    print_r($VotingManager);
+
 
     //<a href='../Vorlesung/VorlesungRead.php?Vorlesung_ID=$Vorlesung_ID'> </a>
-    //header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
+    header('Location: ../Vorlesung/Vorlesungsverzeichnis.php');
 } else { ?>
     <div class="Fehlermeldung">
     <?php echo "Achtung! Bitte alle Felder ausf&uumlllen!<br/>"; ?>

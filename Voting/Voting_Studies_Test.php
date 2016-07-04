@@ -49,7 +49,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
             <tr>
                 <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
-                    <input type="hidden" name="A" value="<?php echo $Voting->a_Student?>">
+                    <input type="hidden" name="A" value="<?php echo (int)$Voting->a_Student?>">
                     <input type="submit">
                 </td>
 
@@ -76,7 +76,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
             <tr>
                 <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
-                    <input type="hidden" name="B" value="<?php echo $Voting->b_Student?>">
+                    <input type="hidden" name="B" value="<?php echo (int)$Voting->b_Student?>">
                     <input type="submit">
                 </td>
                 <td class="pollResultsBar" align="left">
@@ -101,7 +101,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
 
             <td class="form-group" style="width:70px;">
                 <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
-                <input type="hidden" name="C" value="<?php echo $Voting->c_Student?>">
+                <input type="hidden" name="C" value="<?php echo (int)$Voting->c_Student?>">
                 <input type="submit">
             </td>
                 <td class="pollResultsBar" align="left">

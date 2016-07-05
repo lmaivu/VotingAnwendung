@@ -1,4 +1,6 @@
-<?php include("../inc/head.php"); ?>
+<?php
+    include("../inc/head.php");
+?>
 
 <!DOCTYPE html>
 <html>

@@ -43,12 +43,6 @@
         Matrikelnummer 30352<br>
     </h4>
 
-    <h3 id="title2"> Verantwortlich nach § 6 Abs.2 MDStV: </h3>
-    <h4 style="line-height: 150%; font-size: 15px"> <strong>Hochschule der Medien Stuttgart</strong><br>
-        Nobelstraße 10<br>
-        70569 Stuttgart<br>
-        <strong>Telefon: </strong>0711-892310<br>
-    </h4>
 
 </div>
 

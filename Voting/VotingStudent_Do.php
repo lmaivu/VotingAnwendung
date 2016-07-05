@@ -26,6 +26,15 @@ $d_Student = $_POST["D"];
 
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
+echo "Das ist Prozent A $Voting->Prozent_a";
+echo "Das ist Prozent B $Voting->Prozent_b";
+echo "Das ist Prozent C $Voting->Prozent_c";
+echo "Das ist Prozent D $Voting->Prozent_d"; ?>
+
+<h1> Danke für das Voten für die Frage <br>
+     "<?php echo $Voting->Frage?>" </h1>
+
+<?php
 
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
 if ((isset ($_COOKIE["Bl"] ))) {
@@ -75,8 +84,14 @@ $neuB = round($b*100/$count) ;
 $neuC = round($c*100/$count) ;
 $neuD = round($d*100/$count) ;
 
-$neuesErgebnisA = "UPDATE Voting SET a_Student=5  WHERE Voting_ID=$Voting_ID";
-$runErgebnis=mysqli_query($daten, $neuesErgebnisA);
+//$a_Student = round($a*100/$count) ;
+//$b_Student = round($b*100/$count) ;
+//$c_Student = round($c*100/$count) ;
+//$d_Student = round($d*100/$count) ;
+
+$resultA = "UPDATE Voting SET a_Student='".$neuA."'  WHERE Voting_ID=$Voting_ID";
+echo $resultA;
+$runErgebnis=mysqli_query($daten, $resultA);
 
 //$VotingManager->updateProzent($Voting);
 
@@ -92,12 +107,20 @@ echo "Prozentualer Wert f&uumlr D: $neuD%<br />";
 <!DOCTYPE HTML>
 <html>
 <br />
+
 <head>
     <script src="../chartjs/js/Chart.min.js"></script>
     <script src="../chartjs/js/jquery.min.js"></script>
+    <style type="text/css">
+        #chart-container {
+            width: 640px;
+            height: auto;
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
+<div id="chart-container">
     <canvas id="myChart">
         <script>
             var ctx = document.getElementById("myChart");

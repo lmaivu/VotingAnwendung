@@ -15,9 +15,8 @@ body {
 #kopfleiste{
     background-clip: padding-box;
     background-color: transparent;
-    background-position: center; /*zentriert*/
+    background-position: center;
     background-attachment: fixed;
-    /*browserspezifische Anpassung folgen*/
     background-repeat: no-repeat;
     font-family: "Tahoma", sans-serif;
     font-size: 40px;
@@ -45,4 +44,9 @@ body {
 .btn-primary {
     background-color: #Cdbfa5;
 }
+
+
+
+
+
 

@@ -1,4 +1,4 @@
-<?php //include("../inc/cookie.php"); ?>
+
 <!DOCTYPE html>
     <html>
 <?php
@@ -28,7 +28,9 @@ echo $Prozent_c;
 
 
 $VotingManager = new VotingManager();
-$Voting = $VotingManager->findById($Voting_ID); ?>
+$Voting = $VotingManager->findById($Voting_ID);
+include("../inc/cookie.php");
+echo "$Voting->Voting_ID";?>
 
 <h1> Danke für das Abstimmen zur Frage: <br>
      "<?php echo $Voting->Frage?>" <br /> <br /> </h1>
@@ -36,7 +38,8 @@ $Voting = $VotingManager->findById($Voting_ID); ?>
 <?php
 
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
-if (isset($_COOKIE["Student"])) {
+$VotingManager->findById($Voting_ID);
+if (isset($_COOKIE["$Voting->Voting_ID"])) {
     echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.<br /> <br />";
 
 }

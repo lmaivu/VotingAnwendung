@@ -39,7 +39,7 @@ $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 
 <?php
 
-if (($_COOKIE["Student"] == $Voting_ID )) {
+if (isset ($_COOKIE["Student"]) ) {
     echo "Danke für die Teilnahme am Voting. .<br>
     Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.<br /> <br />";}
 

@@ -36,7 +36,7 @@ $Voting = $VotingManager->findById($Voting_ID); ?>
 <?php
 
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
-if ($_COOKIE["Student"]== $Voting_ID ) {
+if (isset($_COOKIE["Student"])) {
     echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.<br /> <br />";
 
 }

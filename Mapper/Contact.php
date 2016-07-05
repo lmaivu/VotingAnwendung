@@ -30,7 +30,7 @@
 
 <div id="box">
     <h1 id="title"> Kontakt </h1>
-    <h4><strong>Hochschule der Medien Stuttgart</strong><br>
+    <h4 style="line-height: 150%"><strong>Hochschule der Medien Stuttgart</strong><br>
         Nobelstra&szlige 10<br>
         70569 Stuttgart<br>
         Telefon: 0711 892310<br>

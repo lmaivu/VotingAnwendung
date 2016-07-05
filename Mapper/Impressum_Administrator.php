@@ -33,7 +33,7 @@
     <h1 id="title"> Impressum </h1>
 
     <h3 id="title2"> Anbieter: </h3>
-    <h4> <strong>Mai Vu</strong><br>
+    <h4 style="line-height: 150%; font-size: 15px"> <strong>Mai Vu</strong><br>
         Studentin Online-Medien-Management<br>
         3.Fachsemester<br>
         Matrikelnummer 30449<br>
@@ -50,7 +50,7 @@
     </h4>
 
     <h3 id="title2"> Verantwortlich nach § 6 Abs.2 MDStV: </h3>
-    <h4> <strong>Hochschule der Medien Stuttgart</strong><br>
+    <h4 style="line-height: 150%; font-size: 15px"> <strong>Hochschule der Medien Stuttgart</strong><br>
         Nobelstraße 10<br>
         70569 Stuttgart<br>
         <strong>Telefon: </strong>0711-892310<br>

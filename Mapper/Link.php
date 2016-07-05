@@ -12,7 +12,7 @@ require_once("../Mapper/VotingManager.php");
 
 
 
-<div class="info">
+<div class="share">
     <p style="font-family: 'Open Sans', sans-serif"> Über diesen QR-Code oder den Link gelangen Sie<br>
         zur Abstimmung!</p>
     <?php
@@ -24,9 +24,11 @@ require_once("../Mapper/VotingManager.php");
         echo '<img src="../Mapper/qr_code.php?Voting_ID=' . $Voting_ID . '">';?>
         <br>
         <br>
-        <p style="font-family: 'Open Sans', sans-serif"><strong>Link: </strong><?php echo 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Schluesselabfrage_form.php?Voting_ID=' . $Voting_ID . ''; ?></p>
+        <p style="font-family: 'Open Sans', sans-serif"><strong>Link: </strong><br>
+            <?php echo 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Schluesselabfrage_form.php?Voting_ID=' . $Voting_ID . ''; ?></p>
         <br>
-        <p style="font-family: 'Open Sans', sans-serif"> <strong>Einschreibeschlüssel: </strong><?php echo $Einschreibeschlussel; ?> </p>
+        <p style="font-family: 'Open Sans', sans-serif"> <strong>Einschreibeschlüssel: </strong><br>
+            <?php echo $Einschreibeschlussel; ?> </p>
 </div>
 
 <div>

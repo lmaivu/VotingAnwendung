@@ -42,8 +42,6 @@ $Voting = $VotingManager->findById($Voting_ID);
 
 <?php
 
-
-
 $Prozent_a = $Voting->Prozent_a;
 $Prozent_b = $Voting->Prozent_b;
 $Prozent_c = $Voting->Prozent_c;

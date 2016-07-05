@@ -30,17 +30,14 @@
     <h3 id="title2"> Anbieter: </h3>
     <h4 style="line-height: 150%; font-size: 15px"> <strong>Mai Vu</strong><br>
         Studentin Online-Medien-Management<br>
-        3.Fachsemester<br>
         Matrikelnummer 30449<br>
         <br>
         <strong>Lukas Neuffer</strong><br>
         Student Online-Medien-Management<br>
-        3.Fachsemester<br>font-size: 15px
         Matrikelnummer 30444<br>
-        <br>font-size: 15px
+        <br>
         <strong>Lena Bogunovic</strong><br>
         Studentin Online-Medien-Management<br>
-        3.Fachsemester<br>
         Matrikelnummer 30352<br>
     </h4>
 

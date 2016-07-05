@@ -1,13 +1,10 @@
-<!-- session als Kommentar, jquery??? warum klappt das verdammt nochmal nicht-->
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Charts mit JQuery / HTML5 Canvas</title>
-    <!--<script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
 </head>
+
 <?php
 
 include "../inc/head.php";
@@ -87,9 +84,6 @@ echo
 
     </script>
         </div>
-<div>
-        <button id="updateDataPoint">Update Data Point</button>
-    </div>
 
     <div>
         <input style='background-color: #534532; border-color: white; color: white; alignment: center' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">

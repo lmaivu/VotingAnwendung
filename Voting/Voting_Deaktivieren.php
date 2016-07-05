@@ -25,7 +25,7 @@ if ($Voting->aktiv ==1) {
     $aktiv_daten = mysqli_query($daten, $aktiv);
     echo " Sie haben das Voting erfolgreich beendet.</br>
     Hier kommen Sie zur&uumlck zum Voting.</br><br>"; ?>
-    <input style='background-color: #534532; border-color: white; color: white;' type="button" class="btn btn-default" value="Zur�ck" onClick="history.back()">
+    <input style='background-color: #534532; border-color: white; color: white;' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
 <?php }
 else {
     echo "Das Voting kann erst nach der Freigabe deaktiviert werden.<br />";

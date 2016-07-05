@@ -2,7 +2,7 @@
 <!DOCTYPE html>
     <html>
 <?php
-//error_reporting(E_ALL);
+
 require_once "../Mapper/VotingManager.php";
 require_once "../Voting/Voting.php";
 include "../inc/head.php";
@@ -22,15 +22,12 @@ $_POST["Prozent_a"];
 $Prozent_b = $_POST["Prozent_b"];
 $Prozent_c = $_POST["Prozent_c"];
 $Prozent_d = $_POST["Prozent_d"];
-echo $Prozent_b;
-echo $Prozent_c;
-
 
 
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
-include("../inc/cookie.php");
-echo "$Voting->Voting_ID";?>
+include("../inc/cookie.php");?>
+
 
 <h1> Danke für das Abstimmen zur Frage: <br>
      "<?php echo $Voting->Frage?>" <br /> <br /> </h1>

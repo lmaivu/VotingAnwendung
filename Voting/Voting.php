@@ -5,9 +5,9 @@ class Voting
     public $Voting_ID;
     public $Voting_Name;
     public $Einschreibeschlussel;
-    public $Ablaufzeit;
     public $Voting_Erstellung;
     public $Vorlesung_ID;
+
     public $Frage;
     public $Antwort_A;
     public $a_Student;
@@ -17,8 +17,14 @@ class Voting
     public $c_Student;
     public $Antwort_D;
     public $d_Student;
-    public $Stimmen_Gesamt;
-    public $Dozent_ID;
+
+
+    public $Prozent_a;
+    public $Prozent_b;
+    public $Prozent_c;
+    public $Prozent_d;
+    public $aktiv;
+
 
 
     function __construct($data=null) { //Konstruktor wird definiert mit dem Parameter $data mit dem festen Wert 0
@@ -44,8 +50,11 @@ class Voting
             $this->c_Student = $data['c_Student'];
             $this->Antwort_D = $data['Antwort_D'];
             $this->d_Student = $data['d_Student'];
-            $this->Stimmen_Gesamt = $data['Stimmen_Gesamt'];
-            $this->Dozent_ID = $data['Dozent_ID'];
+            $this->Prozent_a = $data['Prozent_a'];
+            $this->Prozent_b = $data['Prozent_b'];
+            $this->Prozent_c = $data['Prozent_c'];
+            $this->Prozent_d = $data['Prozent_d'];
+            $this->aktiv = $data['aktiv'];
             //automatische Setzung dieser Daten
         }
     }

@@ -23,36 +23,65 @@ $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findbyId($Voting_ID);
 
-$Antwort_A =$Voting ['a_Student'];
-$Antwort_B =$Voting ['b_Student'];
-$Antwort_C =$Voting ['c_Student'];
-$Antwort_D =$Voting ['d_Student'];
+$VotingManager->countVote($Voting_ID);
+$a = $Voting->a_Student;
+$b = $Voting->b_Student;
+$c = $Voting->c_Student;
+$d = $Voting->d_Student;
 
-$count = $Antwort_A+ $Antwort_B+ $Antwort_C+ $Antwort_D;
+$count = $a+ $b+ $c+ $d;
 
-$Prozent_a = round($Antwort_A*100/$count) . "%";
-$Prozent_b = round($Antwort_B*100/$count) . "%";
-$Prozent_c = round($Antwort_C*100/$count) . "%";
-$Prozent_d = round($Antwort_D*100/$count) . "%";;
+$Prozent_a = round($a*100/$count) . "%";
+$Prozent_b = round($b*100/$count) . "%";
+$Prozent_c = round($c*100/$count) . "%";
+$Prozent_d = round($d*100/$count) . "%";;
 
 ?>
+
+
+
+<?php
+//$Voting = new Voting($votingdaten);
+//$VotingManager = new VotingManager();?>
+
+<head>
+    <script src="../chartjs/js/Chart.min.js"></script>
+    <script src="../chartjs/js/jquery.min.js"></script>
+</head>
 
 <body>
 
 <?php
-//$Voting = new Voting($votingdaten);
-//$VotingManager = new VotingManager();
-$VotingManager->save($Voting); ?>
+echo
+"<a style='background-color: #8e7059; border-color: white' href='Voting_Aktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting aktivieren</a>";
+echo
+"<a style='background-color: #8e7059; border-color: white' href='Voting_Deaktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting deaktivieren</a>";
+?>
+    <div class="container">
+    <canvas id="myChart">
+        <script>
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["A", "B", "C", "D"],
+                    datasets: [
+                        {
+                            data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
+                            label: 'Voting Ergebnis',
+                            borderColor: 'rgba (230, 230, 180, 1)',
+                            hoverBackgroundColor: 'rgba (245,245,200, 1,5)',
+                            hoverBorderColor: 'rgba (230,230,180, 1,5)',
+                            backgroundColor:  'rgba(245,245,200, 1)'
 
-
-
-<div>
-    <div id="chart" style="height: 400px; width: 400px">
-
+                        }]
+                        },
+                        options: {
+                        cutoutPercentage: 0
+                        }
+                        });
+    </script>
     </div>
 
-
-
-</div>
 
 </body>

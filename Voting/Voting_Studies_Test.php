@@ -17,6 +17,22 @@ $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 <head>
     <link rel="stylesheet" href="../css/bootstrap_verzeichnis.css">
     <link rel="stylesheet" href="../css/bootstrap_Abstimmen.css">
+
+    <style type="text/css">
+        <!--
+
+        .vote {
+            cursor: pointer;
+            font: 11px Verdana,sans-serif;
+            color: antiquewhite;
+            background-color: #bfaa9a;
+            width: 50px;
+            padding: 2px;
+            line-height: 130%;
+        }
+
+        -->
+    </style>
 </head>
 
 <body>
@@ -25,6 +41,14 @@ $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 $Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
+$Prozent_a = $Voting->Prozent_a;
+$Prozent_b = $Voting->Prozent_b;
+$Prozent_c = $Voting->Prozent_c;
+$Prozent_d = $Voting->Prozent_d;
+echo $Prozent_a;
+echo $Prozent_b;
+echo $Prozent_c;
+echo $Prozent_d;
 if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
     ?>
 
@@ -50,11 +74,11 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
                 <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                     <input type="hidden" name="A" value="<?php echo (int)$Voting->a_Student?>">
-                    <input type="submit">
+                    <input class="vote" type="submit" value="A">
                 </td>
 
                 <td class="pollResultsBar" align="left">
-                <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_a" ?>%" class="shaded"></div>
+                <div class="resultBar" style="padding:10px;"> <div style="width:<?php echo $Voting->Prozent_a ?>%" class="shaded"></div>
                     <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_A) ?></strong></div>
                 </div>
                 </td>
@@ -77,10 +101,10 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
                 <td class="form-group" style="width:70px;">
                     <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                     <input type="hidden" name="B" value="<?php echo (int)$Voting->b_Student?>">
-                    <input type="submit">
+                    <input class="vote" type="submit" value="B">
                 </td>
                 <td class="pollResultsBar" align="left">
-                    <div class="resultBar" style="padding:10px;"><div style="width:<?php echo "$Voting->Prozent_b" ?>%" class="shaded"></div>
+                    <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $Voting->Prozent_b ?>%" class="shaded"></div>
                         <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_B) ?></strong></div>
                     </div>
                 </td>
@@ -102,10 +126,10 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
             <td class="form-group" style="width:70px;">
                 <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                 <input type="hidden" name="C" value="<?php echo (int)$Voting->c_Student?>">
-                <input type="submit">
+                <input class="vote" type="submit" value="C">
             </td>
                 <td class="pollResultsBar" align="left">
-                    <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo "$Voting->Prozent_c" ?>%" class="shaded"></div>
+                    <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $Voting->Prozent_c ?>%" class="shaded"></div>
                         <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_C) ?></strong></div>
                     </div>
                 </td>
@@ -127,10 +151,10 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
             <td class="form-group" style="width:70px;">
                 <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
                 <input type="hidden" name="D" value="<?php echo $Voting->d_Student?>">
-                <input type="submit">
+                <input class="vote" type="submit" value="D" >
             </td>
             <td class="pollResultsBar" align="left">
-                <div class="resultBar" style="padding:10px;"><div style="width:<?php //echo $Voting->Prozent_d ?>%" class="shaded"></div>
+                <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $Voting->Prozent_d ?>%" class="shaded"></div>
                     <div class="label"><strong> <?php echo htmlspecialchars($Voting->Antwort_D) ?></strong></div>
                 </div>
             </td>

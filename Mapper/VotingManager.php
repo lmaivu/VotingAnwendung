@@ -215,6 +215,36 @@ class VotingManager
         return $Voting;
     }
 
+    public function updateProzent(Voting $Voting)
+    {
+        try {
+            $stmt = $this->pdo->prepare('
+              UPDATE Voting
+              SET Prozent_a = 10,
+                  Prozent_b = :Prozent_b,
+                  Prozent_c = :Prozent_c,
+                  Prozent_d = :Prozent_d
+
+              WHERE Voting_ID = :Voting_ID
+            ');
+            $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
+            //$stmt->bindParam(':Prozent_a', $neuA);
+            $stmt->bindParam(':Prozent_b', $neuB);
+            $stmt->bindParam(':Prozent_c', $neuC);
+            $stmt->bindParam(':Prozent_d', $neuD);
+
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+        return $Voting;
+    }
+
+
+
+
+
     public function delete(Voting $Voting)
     {
         if (!isset($Voting->Voting_ID)) {
@@ -238,7 +268,7 @@ class VotingManager
 
 
 
-public function countVote($Voting_ID) //nochmal überprüfen ob Vorlesung_ID oder Voting_ID
+public function countVote($Voting_ID)
 {
     try {
         $stmt = $this->pdo->prepare('SELECT a_Student, b_Student, c_Student, d_Student FROM Voting WHERE Voting_ID = :Voting_ID');

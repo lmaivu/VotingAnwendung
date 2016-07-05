@@ -13,21 +13,15 @@ include "../inc/head.php";
 <?php
 
 $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
-echo "$Voting_ID.<br />";
 
-//$a_Student = htmlspecialchars($_POST["A"], ENT_QUOTES, "UTF-8");
 $a_Student = $_POST["A"];
 
 $b_Student = $_POST["B"];
 
-$c_Student = htmlspecialchars($_POST["C"], ENT_QUOTES, "UTF-8");
+$c_Student = $_POST["C"];
 
-$d_Student = htmlspecialchars($_POST["D"], ENT_QUOTES, "UTF-8");
+$d_Student = $_POST["D"];
 
-echo "$a_Student.<br />";
-echo "$b_Student.<br />";
-echo "$c_Student.<br />";
-echo "$d_Student.<br />";
 
 
 $VotingManager = new VotingManager();
@@ -46,21 +40,18 @@ if ((isset ($_COOKIE["Bl"] ))) {
 
     }
     elseif(isset($_POST["B"])){
-        //$b_Student= $Voting->b_Student+1;
        $VotingManager->updateB($Voting);
         echo "Sie haben erfolgreich für Antwort B abgestimmt.<br />";
 
 }
 
     elseif (isset ($_POST["C"])){
-        //$c_Student= $Voting->c_Student+1;
         $VotingManager->updateC($Voting);
         echo "Sie haben erfolgreich für Antwort C abgestimmt.<br />";
 
 }
 
     elseif(isset ($_POST["D"])){
-        //$d_Student= $Voting->d_Student+1;
         $VotingManager->updateD($Voting);
         echo "Sie haben erfolgreich für Antwort D abgestimmt.<br />";
 
@@ -68,30 +59,33 @@ if ((isset ($_COOKIE["Bl"] ))) {
 
 
 
-
-$Voting = $VotingManager->countVote($Voting_ID);
 $a = $Voting->a_Student;
 $b = $Voting->b_Student;
 $c = $Voting->c_Student;
 $d = $Voting->d_Student;
 
+//Prozentsatz in DB speichern und ausgeben
 $count = $a+$b+$c+$d;
 echo "Hier können Sie die Übersicht sehen.<br/>.<br/>";
 echo "Gesamtanzahl der Votings: $count.<br />";
 
-$Prozent_a = round($a*100/$count) . "%";
-$Prozent_b = round($b*100/$count) . "%";
-$Prozent_c = round($c*100/$count) . "%";
-$Prozent_d = round($d*100/$count) . "%";
+$daten = mysqli_connect("localhost", "lv018", "naiT0ohd0e", "u-lv018");
+$neuA = round($a*100/$count) ;
+$neuB = round($b*100/$count) ;
+$neuC = round($c*100/$count) ;
+$neuD = round($d*100/$count) ;
 
-echo "Prozentualer Wert f&uumlr A: $Prozent_a.<br />";
-echo "Prozentualer Wert f&uumlr B: $Prozent_b.<br />";
-echo "Prozentualer Wert f&uumlr C: $Prozent_c.<br />";
-echo "Prozentualer Wert f&uumlr D: $Prozent_d.<br />";
+$neuesErgebnisA = "UPDATE Voting SET a_Student=5  WHERE Voting_ID=$Voting_ID";
+$runErgebnis=mysqli_query($daten, $neuesErgebnisA);
+
+//$VotingManager->updateProzent($Voting);
 
 
-echo "
-<a href = 'Voting_Studies_Test.php?Voting_ID=$Voting_ID'> Hier geht es zurück zum Voting.</a>";
+echo "Prozentualer Wert f&uumlr A: $neuA%<br />";
+echo "Prozentualer Wert f&uumlr B: $neuB%<br />";
+echo "Prozentualer Wert f&uumlr C: $neuC%<br />";
+echo "Prozentualer Wert f&uumlr D: $neuD%<br />";
+
 ?>
 
 

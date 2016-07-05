@@ -1,19 +1,16 @@
-<!-- Kontakt-Seite mit integrierter Navbar_Administrator & Footer_Administrator
+<!-- Kontakt-Seite für Administrator -->
 
 <head>
     <meta charset="UTF-8">
     <title> I will survey - Voting </title>
     <link href="../css/bootstrap.css" rel="stylesheet">
-    <!--
-     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="main.css">
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <!-- JQuery einbinden
+    <!-- JQuery einbinden -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/bootstrap.min.js"></script>﻿
-</head> -->
+</head>
 
 <!DOCTYPE html>
 <html>
@@ -33,7 +30,7 @@
     <h1 id="title"> Impressum </h1>
 
     <h3 id="title2"> Anbieter: </h3>
-    <h4> <strong>Mai Vu</strong><br>
+    <h4 style="line-height: 150%; font-size: 15px"> <strong>Mai Vu</strong><br>
         Studentin Online-Medien-Management<br>
         3.Fachsemester<br>
         Matrikelnummer 30449<br>
@@ -50,7 +47,7 @@
     </h4>
 
     <h3 id="title2"> Verantwortlich nach § 6 Abs.2 MDStV: </h3>
-    <h4> <strong>Hochschule der Medien Stuttgart</strong><br>
+    <h4 style="line-height: 150%; font-size: 15px"> <strong>Hochschule der Medien Stuttgart</strong><br>
         Nobelstraße 10<br>
         70569 Stuttgart<br>
         <strong>Telefon: </strong>0711-892310<br>

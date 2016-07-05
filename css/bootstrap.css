@@ -163,3 +163,10 @@ h1 {
     color: black;
     font-size: 18px;
 }
+
+/* Link Ausgabe */
+.share {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    background-color: transparent;
+}

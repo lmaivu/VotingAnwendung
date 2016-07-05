@@ -69,16 +69,58 @@ if ((isset ($_COOKIE["Bl"] ))) {
 }
 
 
-
+echo "Hier können Sie die Übersicht sehen.<br/>.<br/>";
 $a = $Voting->a_Student;
 $b = $Voting->b_Student;
 $c = $Voting->c_Student;
-$d = $Voting->d_Student;
+$d = $Voting->d_Student; ?>
+
+<!DOCTYPE HTML>
+<html>
+<br />
+
+<head>
+    <script src="../chartjs/js/Chart.min.js"></script>
+    <script src="../chartjs/js/jquery.min.js"></script>
+    <style type="text/css">
+    #chart-container {
+    width: 640px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+<div id="chart-container">
+    <canvas id="myChart">
+        <script>
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["A", "B", "C", "D"],
+                    datasets: [
+                        {
+                            data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
+label: 'Voting Ergebnis',
+borderColor: 'rgba (230, 230, 180, 1)',
+hoverBackgroundColor: 'rgba (245,245,200, 1,5)',
+hoverBorderColor: 'rgba (230,230,180, 1,5)',
+backgroundColor:  'rgba(245,245,200, 1)'
+
+}]
+},
+options: {
+cutoutPercentage: 0
+}
+});
+</script>
+</div>
 
 
+<?php
 //Prozentsatz in DB speichern und ausgeben
 $count = $a+$b+$c+$d;
-echo "Hier können Sie die Übersicht sehen.<br/>.<br/>";
 echo "Gesamtanzahl der Votings: $count.<br />";
 
 $daten = mysqli_connect("localhost", "lv018", "naiT0ohd0e", "u-lv018");
@@ -113,48 +155,5 @@ echo "Prozentualer Wert f&uumlr D: $neuD%<br />";
 ?>
 
 
-<!DOCTYPE HTML>
-<html>
-<br />
-
-<head>
-    <script src="../chartjs/js/Chart.min.js"></script>
-    <script src="../chartjs/js/jquery.min.js"></script>
-    <style type="text/css">
-        #chart-container {
-            width: 640px;
-            height: auto;
-        }
-    </style>
-</head>
-
-<body>
-<div id="chart-container">
-    <canvas id="myChart">
-        <script>
-            var ctx = document.getElementById("myChart");
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ["A", "B", "C", "D"],
-                    datasets: [
-                        {
-                            data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
-                            label: 'Voting Ergebnis',
-                            borderColor: 'rgba (230, 230, 180, 1)',
-                            hoverBackgroundColor: 'rgba (245,245,200, 1,5)',
-                            hoverBorderColor: 'rgba (230,230,180, 1,5)',
-                            backgroundColor:  'rgba(245,245,200, 1)'
-
-                        }]
-                },
-                options: {
-                    cutoutPercentage: 0
-                }
-            });
-        </script>
-</div>
-</body>
-</html>
 </body>
 </html>

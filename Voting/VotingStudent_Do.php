@@ -30,14 +30,14 @@ echo $Prozent_c;
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID); ?>
 
-<h1> Danke für das Voten für die Frage <br>
-     "<?php echo $Voting->Frage?>" </h1>
+<h1> Danke für das Abstimmen zur Frage: <br>
+     "<?php echo $Voting->Frage?>" <br /> <br /> </h1>
 
 <?php
 
 //-------------Cookie checken, hat der Student schon gevoted?--------------------------
 if ((isset ($_COOKIE["Bl"] ))) {
-    echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen."; ?>
+    echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.<br /> <br />"; ?>
     <!--<a href="#"> Hier k&oumlnnen Sie das Ergebnis anschauen. </a> -->
     <?php
 }
@@ -68,8 +68,6 @@ if ((isset ($_COOKIE["Bl"] ))) {
 
 }
 
-
-echo "Hier können Sie die Übersicht sehen.<br/>.<br/>";
 $a = $Voting->a_Student;
 $b = $Voting->b_Student;
 $c = $Voting->c_Student;
@@ -91,7 +89,7 @@ $d = $Voting->d_Student; ?>
 </head>
 
 <body>
-<div id="chart-container">
+<div style="width:1000px; margin:auto" id="chart-container">
     <canvas id="myChart">
         <script>
             var ctx = document.getElementById("myChart");
@@ -103,11 +101,10 @@ $d = $Voting->d_Student; ?>
                         {
                             data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
 label: 'Voting Ergebnis',
-borderColor: 'rgba (230, 230, 180, 1)',
-hoverBackgroundColor: 'rgba (245,245,200, 1,5)',
-hoverBorderColor: 'rgba (230,230,180, 1,5)',
-backgroundColor:  'rgba(245,245,200, 1)'
-
+borderColor: '#Cdbfa5',
+hoverBackgroundColor: '#8e7059',
+hoverBorderColor: '#Cdbfa5',
+backgroundColor:  '#Cdbfa5'
 }]
 },
 options: {
@@ -121,7 +118,7 @@ cutoutPercentage: 0
 <?php
 //Prozentsatz in DB speichern und ausgeben
 $count = $a+$b+$c+$d;
-echo "Gesamtanzahl der Votings: $count.<br />";
+echo "<strong>Gesamtanzahl der Votings:</strong> $count.<br />";
 
 $daten = mysqli_connect("localhost", "lv018", "naiT0ohd0e", "u-lv018");
 $neuA = round($a*100/$count) ;
@@ -140,19 +137,23 @@ $runErgebnisB=mysqli_query($daten, $resultB);
 $runErgebnisC=mysqli_query($daten, $resultC);
 $runErgebnisD=mysqli_query($daten, $resultD);
 //print_r($runErgebnis);
-echo "$Voting->Prozent_a.<br>";
+
 //$VotingManager->updateProzent($Voting);
 
 //$VotingManager-> updateProzent ($Voting);
 
 
 
-echo "Prozentualer Wert f&uumlr A: $neuA%<br />";
-echo "Prozentualer Wert f&uumlr B: $neuB%<br />";
-echo "Prozentualer Wert f&uumlr C: $neuC%<br />";
-echo "Prozentualer Wert f&uumlr D: $neuD%<br />";
+echo "<strong>Prozentualer Wert f&uumlr A:</strong> $neuA%<br />";
+echo "<strong>Prozentualer Wert f&uumlr B:</strong> $neuB%<br />";
+echo "<strong>Prozentualer Wert f&uumlr C:</strong> $neuC%<br />";
+echo "<strong>Prozentualer Wert f&uumlr D:</strong> $neuD%<br />";
+echo "<br />";
+
 
 ?>
+
+<a style="background-color: #Cdbfa5; font-family: 'Open Sans', sans-serif; font-size: 17px; border-color: white" href='../Mapper/info.php' class='btn btn-primary btn-sm'>Mehr über <em>I will survey </em>!</a>
 
 
 </body>

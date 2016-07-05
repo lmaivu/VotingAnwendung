@@ -1,3 +1,5 @@
+<?php include("../inc/head.php"); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,19 +13,23 @@ $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
+?>
 
+<div class="Fehlermeldung">
+
+<?php
 if ($Voting->aktiv ==0) {
     $aktiv = "UPDATE Voting SET aktiv=1 WHERE Voting_ID=$Voting_ID";
     $aktiv_daten = mysqli_query($daten, $aktiv);
     echo " Sie haben das Voting erfolgreich freigegeben.</br>
-    Hier kommen Sie zur&uumlck zum Voting.</br>"; ?>
-    <input style='background-color: #534532; border-color: white; color: white;' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
+    Hier kommen Sie zur&uumlck zum Voting.</br><br>"; ?>
+    <input style='background-color: #534532; border-color: white; color: white;' type="button" class="btn btn-default" value="Zurï¿½ck" onClick="history.back()">
 <?php }
 else {
-    echo "Das Voting ist bereits aktiviert.";
-    echo " Hier kommen Sie zur&uumlck zum Voting.</br>"; ?>
-    <input style='background-color: #534532; border-color: white; color: white;' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
+    echo "Das Voting ist bereits aktiviert.<br>";
+    echo " Hier kommen Sie zur&uumlck zum Voting.</br><br />"; ?>
+    <input style='background-color: #Cdbfa5; border-color: white; color: white;' type="button" class="btn btn-default" value="ZurÃ¼ck" onClick="history.back()">
 <?php } ?>
-
+</div>
 
 </html>

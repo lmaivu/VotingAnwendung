@@ -9,7 +9,7 @@ if (isset($_COOKIE["Student"]))
     $voted = True;
 else
     $voted = False;
-setcookie ("Student", "$Voting->Voting_ID", time()+31536000);
+setcookie ("Student", "$Voting_ID", time()+31536000);
 
 
 ?>

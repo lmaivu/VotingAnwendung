@@ -35,13 +35,8 @@ $Voting = $VotingManager->findById($Voting_ID); ?>
 
 <?php
 
-//-------------Cookie checken, hat der Student schon gevoted?--------------------------
-if ((isset ($_COOKIE["Bl"] ))) {
-    echo "Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.<br /> <br />"; ?>
-    <!--<a href="#"> Hier k&oumlnnen Sie das Ergebnis anschauen. </a> -->
-    <?php
-}
-    elseif (isset ($_POST["A"])){
+//-------------Checken was über POST übermittelt wurde--------------------------
+if (isset ($_POST["A"])){
         $VotingManager->updateA($Voting);
         $Voting = $VotingManager->findById($Voting_ID);
         echo "Sie haben erfolgreich für Antwort A abgestimmt.<br />";

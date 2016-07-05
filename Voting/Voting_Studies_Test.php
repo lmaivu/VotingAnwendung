@@ -1,12 +1,10 @@
-<?php //include("../inc/cookie.php"); ?>
 
 <?php
 error_reporting(E_ALL);
-
+include("../inc/cookie.php");
 require_once("../Voting/Voting.php");
 require_once("../Mapper/VotingManager.php");
 include "../inc/head.php";
-//print_r($_COOKIE['Student']);
 $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 
 ?>
@@ -40,6 +38,13 @@ $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 <body>
 
 <?php
+
+if (isset ($_COOKIE["Student"]) ) {
+    echo "Danke für die Teilnahme am Voting. .<br>
+    Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.<br /> <br />";}
+
+else {
+
 $Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
@@ -203,6 +208,7 @@ else { ?>
     <?php echo "Falscher Eingabeschlüssel. Bitte versuchen Sie es erneut.<br/>"; ?>
     <a href="Schluesselabfrage_form.php"> Zurück </a> <?php } ?>
 </div>
+<?php }?>
 
 </body>
 

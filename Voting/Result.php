@@ -47,7 +47,7 @@ $Prozent_d = round($d*100/$count) . "%";;
 <head>
     <script src="../chartjs/js/Chart.min.js"></script>
     <script src="../chartjs/js/jquery.min.js"></script>
-    <meta http-equiv="refresh" content="7" /> <!--Hier wird die Seite alle 7 Sekunden neu geladen>
+    <meta http-equiv="refresh" content="7" /> <!--Hier wird die Seite alle 7 Sekunden neu geladen> -->
 </head>
 
 <body>
@@ -58,30 +58,37 @@ echo
 echo
 "<a style='background-color: #8e7059; border-color: white; color: white; font-size: 15px' href='Voting_Deaktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting deaktivieren</a>";
 ?>
+
     <div class="container">
     <canvas id="myChart">
-        <script>
-            var ctx = document.getElementById("myChart");
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ["A", "B", "C", "D"],
-                    datasets: [
-                        {
-                            data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
-                            label: 'Voting Ergebnis',
-                            borderColor: '#Cdbfa5',
-                            hoverBackgroundColor: '#8e7059',
-                            hoverBorderColor: '#Cdbfa5',
-                            backgroundColor:  '#Cdbfa5'
 
-                        }]
-                        },
-                        options: {
+        <script>
+
+                var ctx = document.getElementById("myChart");
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["A", "B", "C", "D"],
+                        datasets: [
+                            {
+                                data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
+                                label: 'Voting Ergebnis',
+                                borderColor: '#Cdbfa5',
+                                hoverBackgroundColor: '#8e7059',
+                                hoverBorderColor: '#Cdbfa5',
+                                backgroundColor: '#Cdbfa5'
+
+                            }]
+                    },
+                    options: {
                         cutoutPercentage: 0
-                        }
-                        });
+                    }
+                });
+
     </script>
+        </div>
+<div>
+        <button id="updateDataPoint">Update Data Point</button>
     </div>
 
     <div>

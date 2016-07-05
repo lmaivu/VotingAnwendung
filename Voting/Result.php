@@ -12,7 +12,7 @@
 
 include "../inc/head.php";
 include "../inc/navbar.php";
-include "../inc/footer.php";
+include "../inc/sticky_footer.php";
 
 ?>
 
@@ -53,9 +53,9 @@ $Prozent_d = round($d*100/$count) . "%";;
 
 <?php
 echo
-"<a style='background-color: #8e7059; border-color: white' href='Voting_Aktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting aktivieren</a>";
+"<a style='background-color: #Cdbfa5; border-color: white; color: white; font-size: 15px' href='Voting_Aktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting aktivieren</a>";
 echo
-"<a style='background-color: #8e7059; border-color: white' href='Voting_Deaktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting deaktivieren</a>";
+"<a style='background-color: #8e7059; border-color: white; color: white; font-size: 15px' href='Voting_Deaktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting deaktivieren</a>";
 ?>
     <div class="container">
     <canvas id="myChart">
@@ -69,10 +69,10 @@ echo
                         {
                             data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
                             label: 'Voting Ergebnis',
-                            borderColor: 'rgba (230, 230, 180, 1)',
-                            hoverBackgroundColor: 'rgba (245,245,200, 1,5)',
-                            hoverBorderColor: 'rgba (230,230,180, 1,5)',
-                            backgroundColor:  'rgba(245,245,200, 1)'
+                            borderColor: '#Cdbfa5',
+                            hoverBackgroundColor: '#8e7059',
+                            hoverBorderColor: '#Cdbfa5',
+                            backgroundColor:  '#Cdbfa5'
 
                         }]
                         },
@@ -83,5 +83,9 @@ echo
     </script>
     </div>
 
+    <div>
+        <input style='background-color: #534532; border-color: white; color: white; alignment: center' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
+    </div>
 
 </body>
+</html>

@@ -47,10 +47,10 @@ $Prozent_a = $Voting->Prozent_a;
 $Prozent_b = $Voting->Prozent_b;
 $Prozent_c = $Voting->Prozent_c;
 $Prozent_d = $Voting->Prozent_d;
-echo $Prozent_a;
-echo $Prozent_b;
-echo $Prozent_c;
-echo $Prozent_d;
+echo "$Prozent_a.<br>";
+echo "$Prozent_b.<br>";
+echo "$Prozent_c.<br>";
+echo "$Prozent_d.<br>";
 if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
     ?>
 
@@ -177,6 +177,10 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
                 <td>
         <div class="form-group">
             <input type="hidden" value="<?php echo htmlspecialchars($Voting_ID); ?>" class="form-control" name="Voting_ID" id="Voting_ID" readonly>
+            <input type="hidden" value="<?php echo $Prozent_a; ?>" class="form-control" name="Prozent_a" id="Prozent_a" readonly>
+            <input type="hidden" value="<?php echo $Prozent_b; ?>" class="form-control" name="Prozent_b" id="Prozent_b" readonly>
+            <input type="hidden" value="<?php echo $Prozent_c; ?>" class="form-control" name="Prozent_c" id="Prozent_c" readonly>
+            <input type="hidden" value="<?php echo $Prozent_d; ?>" class="form-control" name="Prozent_d" id="Prozent_d" readonly>
         </div>
                 </td>
             </tr>

@@ -220,7 +220,7 @@ class VotingManager
         try {
             $stmt = $this->pdo->prepare('
               UPDATE Voting
-              SET Prozent_a = 10,
+              SET Prozent_a = :Prozent_a,
                   Prozent_b = :Prozent_b,
                   Prozent_c = :Prozent_c,
                   Prozent_d = :Prozent_d
@@ -228,10 +228,10 @@ class VotingManager
               WHERE Voting_ID = :Voting_ID
             ');
             $stmt->bindParam(':Voting_ID', $Voting->Voting_ID);
-            //$stmt->bindParam(':Prozent_a', $neuA);
-            $stmt->bindParam(':Prozent_b', $neuB);
-            $stmt->bindParam(':Prozent_c', $neuC);
-            $stmt->bindParam(':Prozent_d', $neuD);
+            $stmt->bindParam(':Prozent_a', $Prozent_a);
+            $stmt->bindParam(':Prozent_b', $Prozent_b);
+            $stmt->bindParam(':Prozent_c', $Prozent_c);
+            $stmt->bindParam(':Prozent_d', $Prozent_d);
 
             $stmt->execute();
         } catch (PDOException $e) {
@@ -240,6 +240,8 @@ class VotingManager
         }
         return $Voting;
     }
+
+
 
 
 

@@ -25,9 +25,8 @@ require_once("../Mapper/VotingManager.php");
         <br>
         <br>
         <p style="font-family: 'Open Sans', sans-serif"><strong>Link: </strong><?php echo 'https://mars.iuk.hdm-stuttgart.de/~lv018/Voting/Schluesselabfrage_form.php?Voting_ID=' . $Voting_ID . ''; ?></p>
-        <br> <?php
-        echo 'Einschreibeschlüssel: ' . $Einschreibeschlussel . '';
-    ?>
+        <br>
+        <p style="font-family: 'Open Sans', sans-serif"> <strong>Einschreibeschlüssel: </strong><?php echo $Einschreibeschlussel; ?> </p>
 </div>
 
 <div>

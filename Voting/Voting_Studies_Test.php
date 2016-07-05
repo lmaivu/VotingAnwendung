@@ -23,12 +23,14 @@ $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 
         .vote {
             cursor: pointer;
-            font: 11px Verdana,sans-serif;
-            color: antiquewhite;
-            background-color: #bfaa9a;
+            font: 15px Verdana,sans-serif;
+            color: white;
+            background-color: #8e7059;
+            border-color: white;
             width: 50px;
             padding: 2px;
             line-height: 130%;
+            position: center;
         }
 
         -->

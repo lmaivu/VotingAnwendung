@@ -47,6 +47,7 @@ $Prozent_d = round($d*100/$count) . "%";;
 <head>
     <script src="../chartjs/js/Chart.min.js"></script>
     <script src="../chartjs/js/jquery.min.js"></script>
+    <meta http-equiv="refresh" content="7" /> <!--Hier wird die Seite alle 7 Sekunden neu geladen>
 </head>
 
 <body>

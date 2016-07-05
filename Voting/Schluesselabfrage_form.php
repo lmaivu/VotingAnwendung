@@ -35,12 +35,12 @@ if ($neuesErgebnis == 1) {
             <button style="background-color: #534532; border-color: white; color: white" type="submit" class="btn btn-default">Go!</button>
         </div>
     </div>
-
+<div class="Fehlermeldung">
 <?php }
 else {
     echo "Das Voting wurde bereits beendet.";
 }?>
-
+</div>
 
 
 

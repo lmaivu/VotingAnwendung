@@ -6,8 +6,6 @@ require_once("../Mapper/VotingManager.php");
 
 $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 
-echo $Voting_ID;
-
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +18,7 @@ $Voting = $VotingManager->findById($Voting_ID);
 
 
 
-echo ($Voting);
 $neuesErgebnis = $Voting->aktiv;
-echo $neuesErgebnis;
 
 if ($neuesErgebnis == 1) {
 

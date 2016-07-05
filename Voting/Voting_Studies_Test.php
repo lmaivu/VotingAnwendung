@@ -184,7 +184,16 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
 
 </div>
 
-<input type="hidden" id="refreshed" value="no">
+<input type="hidden" id="aktualisieren" value="no">
+
+    <script type="text/javascript">
+        onload=function(){
+            var e=document.getElementById("aktualisieren");
+            if(e.value=="no")e.value="yes";
+            else{e.value="no";location.reload();}
+        }
+    </script>
+
 
 <?php }
 else { ?>

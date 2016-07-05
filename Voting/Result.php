@@ -87,5 +87,5 @@ echo
         <input style='background-color: #534532; border-color: white; color: white; alignment: center' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
     </div>
 
-
 </body>
+</html>

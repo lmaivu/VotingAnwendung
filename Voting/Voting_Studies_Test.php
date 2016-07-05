@@ -1,12 +1,10 @@
-<?php //include("../inc/cookie.php"); ?>
 
 <?php
 error_reporting(E_ALL);
-
+include("../inc/cookie.php");
 require_once("../Voting/Voting.php");
 require_once("../Mapper/VotingManager.php");
 include "../inc/head.php";
-//print_r($_COOKIE['Student']);
 $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 
 ?>
@@ -40,6 +38,13 @@ $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 <body>
 
 <?php
+
+if (isset ($_COOKIE["Student"]) ) {
+    echo "Danke für die Teilnahme am Voting. .<br>
+    Sie haben bereits erfolgreich Ihre Voting-Stimme abgegeben. Jeder Student kann nur ein Mal abstimmen.<br /> <br />";}
+
+else {
+
 $Einschreibeschlussel = htmlspecialchars($_POST["Einschreibeschlussel"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findById($Voting_ID);
@@ -47,10 +52,7 @@ $Prozent_a = $Voting->Prozent_a;
 $Prozent_b = $Voting->Prozent_b;
 $Prozent_c = $Voting->Prozent_c;
 $Prozent_d = $Voting->Prozent_d;
-echo "$Prozent_a.<br>";
-echo "$Prozent_b.<br>";
-echo "$Prozent_c.<br>";
-echo "$Prozent_d.<br>";
+
 if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
     ?>
 
@@ -64,12 +66,11 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
 </div>
 
 <div>
-    <div colspan="2" class="pollTitle">Frage: <?php echo $Voting->Frage;?></div> <br>
+    <div style="font-family: 'Open Sans', sans-serif; font-size: 30px;" colspan="2" class="pollTitle">Frage: <?php echo $Voting->Frage;?></div> <br>
 
 
-    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
-        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
-
+    <form style="width:700px; margin:auto" role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
+        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 700px;">
 
             <tbody>
             <tr>
@@ -81,7 +82,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
 
                 <td class="pollResultsBar" align="left">
                 <div class="resultBar" style="padding:10px;"> <div style="width:<?php echo $Voting->Prozent_a ?>%" class="shaded"></div>
-                    <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_A) ?></strong></div>
+                    <div style="font-family: 'Open Sans', sans-serif; font-style: normal; font-size: 15px; color: #534532; alignment: left" class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_A) ?></strong></div>
                 </div>
                 </td>
 
@@ -89,14 +90,14 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
                     <strong> Anzahl der Gesamtstimmen: <?php echo (int) htmlspecialchars ($Voting->a_Student); ?> </strong>
                 </td>
 
-             </tr>
+            </tr>
             </tbody>
-            </table>
+        </table>
 
-            </form>
+    </form>
 
-    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
-        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
+    <form style="width:700px; margin:auto" role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
+        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 700px;">
             <tbody>
 
             <tr>
@@ -107,7 +108,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
                 </td>
                 <td class="pollResultsBar" align="left">
                     <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $Voting->Prozent_b ?>%" class="shaded"></div>
-                        <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_B) ?></strong></div>
+                        <div style="font-family: 'Open Sans', sans-serif; font-style: normal; font-size: 15px; color: #534532; alignment: left" class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_B) ?></strong></div>
                     </div>
                 </td>
                 <td>
@@ -119,8 +120,8 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
             </table>
     </form>
 
-    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
-        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
+    <form style="width:700px; margin:auto" role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
+        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 700px;">
         <tbody>
         <tr>
             <?php if(isset($Voting->Antwort_C) && !empty($Voting->Antwort_C)){ ?>
@@ -132,7 +133,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
             </td>
                 <td class="pollResultsBar" align="left">
                     <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $Voting->Prozent_c ?>%" class="shaded"></div>
-                        <div class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_C) ?></strong></div>
+                        <div style="font-family: 'Open Sans', sans-serif; font-style: normal; font-size: 15px; color: #534532; alignment: left" class="label"><strong><?php echo htmlspecialchars($Voting->Antwort_C) ?></strong></div>
                     </div>
                 </td>
 
@@ -145,8 +146,8 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
         </table>
     </form>
 
-    <form role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
-        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 550px;">
+    <form style="width:700px; margin:auto" role="form" class="form-inlinecy" action="VotingStudent_Do.php" method="post">
+        <table cellspacing="0" cellpadding="1" style="table-layout: fixed; width: 700px;">
             <tbody>
             <?php  if(isset($Voting->Antwort_D) && !empty($Voting->Antwort_D)) { ?>
             <tr>
@@ -157,7 +158,7 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
             </td>
             <td class="pollResultsBar" align="left">
                 <div class="resultBar" style="padding:10px;"><div style="width:<?php echo $Voting->Prozent_d ?>%" class="shaded"></div>
-                    <div class="label"><strong> <?php echo htmlspecialchars($Voting->Antwort_D) ?></strong></div>
+                    <div style="font-family: 'Open Sans', sans-serif; font-style: normal; font-size: 15px; color: #534532; alignment: left" class="label"><strong> <?php echo htmlspecialchars($Voting->Antwort_D) ?></strong></div>
                 </div>
             </td>
 
@@ -207,6 +208,7 @@ else { ?>
     <?php echo "Falscher Eingabeschlüssel. Bitte versuchen Sie es erneut.<br/>"; ?>
     <a href="Schluesselabfrage_form.php"> Zurück </a> <?php } ?>
 </div>
+<?php }?>
 
 </body>
 

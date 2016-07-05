@@ -26,13 +26,15 @@
 
     <link href="../css/bootstrap_statisch.css" rel="stylesheet"/>
 
+
 <div id="box">
     <h1 id="title"> Kontakt </h1>
-    <h4 style="line-height: 150%; font-size: 15px"><strong>Hochschule der Medien Stuttgart</strong><br>
+    <h4 style="line-height: 150%; font-size: 15px"><strong>MaLeLu GmbH</strong><br>
         Nobelstra&szlige 10<br>
         70569 Stuttgart<br>
         Telefon: 0711 892310<br>
     </h4>
+    <img src="https://mars.iuk.hdm-stuttgart.de/~lv018/MaLeLu.png" width="100px" height="auto" alt="Logo">
 </div>
 
 </body>

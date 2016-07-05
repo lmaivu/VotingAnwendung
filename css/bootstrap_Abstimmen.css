@@ -1,3 +1,9 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 120%;
+}
+
 .pollResultBar{padding: 2px 0;}
 
 .pollTitle {
@@ -42,17 +48,21 @@
     top: 1px;
 }
 /*Button*/
-.btn{ background-color: #5B74A8;
+.btn{ background-color: #Cdbfa5;
     background-position: 0 0;
     background-repeat: no-repeat;
+    border-color: white;
     border:1px solid;
     color:white;
     font-weight:bold;
     padding:5px;
     cursor:pointer;
-    border-color: #29447E #29447E #1A356E;
 }
 
 .btn:active{
-    background:#4f6aa3;
+    background:#Cdbfa5;
+}
+
+.btn-primary {
+    font-size: 17px;
 }

@@ -242,11 +242,6 @@ class VotingManager
     }
 
 
-
-
-
-
-
     public function delete(Voting $Voting)
     {
         if (!isset($Voting->Voting_ID)) {

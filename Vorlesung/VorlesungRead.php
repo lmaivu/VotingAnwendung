@@ -83,7 +83,7 @@ $Vorlesung = $VorlesungManager->findById($Vorlesung_ID);
 </div>
 
 <div>
-    <?php echo "<a style='background-color: #Cdbfa5; color: white; border-color: white' href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' class='btn btn-default' role='button'><span class='glyphicon glyphicon-stats'></span> Voting anlegen</a>" ?>
+    <?php echo "<a style='background-color: #Cdbfa5; color: white; border-color: white' href='../Voting/VotingCreate_form.php?Vorlesung_ID=$Vorlesung_ID&Dozent_ID=$Dozent_ID' class='btn btn-default' role='button'> Voting anlegen</a>" ?>
     <input style='background-color: #534532; border-color: white; color: white; alignment: center' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
 </div>
 

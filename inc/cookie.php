@@ -7,3 +7,4 @@ else {
     setcookie ("$Voting->Voting_ID", "Student", time()+31536000); }
 
 ?>
+

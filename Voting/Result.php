@@ -11,14 +11,13 @@ include "../inc/head.php";
 include "../inc/navbar.php";
 include "../inc/sticky_footer.php";
 
-?>
-
-<?php // include ("../inc/session_check.php");
+include ("../inc/session_check.php");
 require_once("Voting.php");
 require_once("../Mapper/VotingManager.php");
 $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findbyId($Voting_ID);
+
 
 $VotingManager->countVote($Voting_ID);
 $a = $Voting->a_Student;
@@ -28,18 +27,9 @@ $d = $Voting->d_Student;
 
 $count = $a+ $b+ $c+ $d;
 
-$Prozent_a = round($a*100/$count) . "%";
-$Prozent_b = round($b*100/$count) . "%";
-$Prozent_c = round($c*100/$count) . "%";
-$Prozent_d = round($d*100/$count) . "%";;
 
 ?>
 
-
-
-<?php
-//$Voting = new Voting($votingdaten);
-//$VotingManager = new VotingManager();?>
 
 <head>
     <script src="../chartjs/js/Chart.min.js"></script>
@@ -49,12 +39,35 @@ $Prozent_d = round($d*100/$count) . "%";;
 
 <body>
 
+
+
+<br>
+<br>
 <?php
+
+if ($count == 0){?>
+<h4>
+    <?php echo "Es wurde bisher noch keine Stimme abgegeben.<br> <br>";?>
+</h4>
+
+<?php }
+else {?>
+    <h1> Hier k&oumlnnen Sie die Voting-Ergebnisse einsehen </h1>
+    <br> <br> <br>
+    <?php echo "Frage:<br/>"; ?>
+    <h1> <?php echo $Voting->Frage; ?>"</h1>
+    <?php
+    $Prozent_a = round($a*100/$count) . "%";
+    $Prozent_b = round($b*100/$count) . "%";
+    $Prozent_c = round($c*100/$count) . "%";
+    $Prozent_d = round($d*100/$count) . "%";}
+
 echo
 "<a style='background-color: #Cdbfa5; border-color: white; color: white; font-size: 15px' href='Voting_Aktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting aktivieren</a>";
 echo
 "<a style='background-color: #8e7059; border-color: white; color: white; font-size: 15px' href='Voting_Deaktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting deaktivieren</a>";
 ?>
+<br>
 
     <div class="container">
     <canvas id="myChart">
@@ -84,7 +97,8 @@ echo
 
     </script>
         </div>
-
+<h4> <?php echo "Erstellungsdatum:<br>";?> </h4>
+<h5> <?php echo $Voting->Voting_Erstellung;?> </h5>
     <div>
         <input style='background-color: #534532; border-color: white; color: white; alignment: center' type="button" class="btn btn-default" value="Zurück" onClick="history.back()">
     </div>

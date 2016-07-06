@@ -9,7 +9,7 @@ als neuer Datensatz der Klasse Voting hi-->
 
 <body>
 
-<div id="standard">
+<div class="Fehlermeldung">
 <?php
 require_once("../Mapper/DozentManager.php");
 require_once("../Mapper/Dozent.php");
@@ -38,12 +38,11 @@ if (!empty($login) && !empty($vorname) && !empty($nachname) && !empty($password)
     echo "Sie haben erfolgreich einen neuen Dozenten registriert.<br/>";
     echo "<a href= ../index.php> Zur&uumlck zur Anmeldeseite </a> ";
 
-
 }
 else { ?>
     <div class="Fehlermeldung">
-        <?php echo "Bitte alle Felder ausfüllen!<br/>";} ?>
-        <a href="../Dozent/DozentCreate_Form.php"> Zurück </a>
+        <?php echo "Bitte alle Felder ausfüllen!<br/>"; ?>
+        <a href="../Dozent/DozentCreate_Form.php"> Zurück </a> <?php } ?>
     </div>
 </div>
 </body>

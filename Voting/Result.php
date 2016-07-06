@@ -18,18 +18,7 @@ $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findbyId($Voting_ID);
 
-
-$VotingManager->countVote($Voting_ID);
-$a = $Voting->a_Student;
-$b = $Voting->b_Student;
-$c = $Voting->c_Student;
-$d = $Voting->d_Student;
-
-$count = $a+ $b+ $c+ $d;
-
-
 ?>
-
 
 <head>
     <script src="../chartjs/js/Chart.min.js"></script>
@@ -39,16 +28,17 @@ $count = $a+ $b+ $c+ $d;
 
 <body>
 
-
-
 <br>
 <br>
 <?php
+$a = $Voting->a_Student;
+$b = $Voting->b_Student;
+$c = $Voting->c_Student;
+$d = $Voting->d_Student;
+$count = $a+ $b+ $c+ $d;
 
 if ($count == 0){?>
-<h4>
-    <?php echo "Es wurde bisher noch keine Stimme abgegeben.<br> <br>";?>
-</h4>
+<h4><?php echo "Es wurde bisher noch keine Stimme abgegeben.<br> <br>";?> </h4>
 
 <?php }
 else {?>
@@ -63,9 +53,11 @@ else {?>
     $Prozent_d = round($d*100/$count) . "%";}
 
 echo
-"<a style='background-color: #Cdbfa5; border-color: white; color: white; font-size: 15px' href='Voting_Aktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting aktivieren</a>";
+"<a style='background-color: #Cdbfa5; border-color: white; color: white; font-size: 15px'
+href='Voting_Aktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting aktivieren</a>";
 echo
-"<a style='background-color: #8e7059; border-color: white; color: white; font-size: 15px' href='Voting_Deaktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting deaktivieren</a>";
+"<a style='background-color: #8e7059; border-color: white; color: white; font-size: 15px'
+href='Voting_Deaktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-success btn-sm'>Voting deaktivieren</a>";
 ?>
 <br>
 

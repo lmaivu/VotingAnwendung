@@ -29,6 +29,7 @@ include ("../inc/session_check.php");
 require_once("Voting.php");
 require_once("../Mapper/VotingManager.php");
 $Voting_ID = (int)htmlspecialchars($_GET["Voting_ID"], ENT_QUOTES, "UTF-8");
+
 $VotingManager = new VotingManager();
 $Voting = $VotingManager->findbyId($Voting_ID);
 

@@ -96,9 +96,7 @@ href='Voting_Deaktivieren.php?Voting_ID=$Voting->Voting_ID' class='btn btn-succe
 
                             }]
                     },
-                    options: {
-                        cutoutPercentage: 0
-                    }
+
                 });
 
     </script>
@@ -134,7 +132,7 @@ $Prozent_a = round($a*100/$count) . "%";
 $Prozent_b = round($b*100/$count) . "%";
 $Prozent_c = round($c*100/$count) . "%";
 $Prozent_d = round($d*100/$count) . "%";
-
+echo "<strong>Gesamtanzahl der Votings:</strong> $count.<br />";
 echo "<strong>Prozentualer Wert f&uumlr A:</strong> $Prozent_a<br />";
 echo "<strong>Prozentualer Wert f&uumlr B:</strong> $Prozent_b<br />";
 echo "<strong>Prozentualer Wert f&uumlr C:</strong> $Prozent_c<br />";

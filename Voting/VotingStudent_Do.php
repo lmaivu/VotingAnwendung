@@ -117,9 +117,6 @@ hoverBorderColor: '#Cdbfa5',
 backgroundColor:  '#Cdbfa5'
 }]
 },
-options: {
-cutoutPercentage: 0
-}
 });
 </script>
 </div>

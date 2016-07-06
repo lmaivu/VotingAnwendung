@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
-    <html>
-<?php
+<html>
 
+<?php
 require_once "../Mapper/VotingManager.php";
 require_once "../Voting/Voting.php";
 include "../inc/head.php";
@@ -11,17 +10,12 @@ include "../inc/head.php";
 
 <body>
 <?php
-
 $Voting_ID = (int)htmlspecialchars($_POST["Voting_ID"], ENT_QUOTES, "UTF-8");
 
 $a_Student = $_POST["A"];
 $b_Student = $_POST["B"];
 $c_Student = $_POST["C"];
 $d_Student = $_POST["D"];
-$_POST["Prozent_a"];
-$Prozent_b = $_POST["Prozent_b"];
-$Prozent_c = $_POST["Prozent_c"];
-$Prozent_d = $_POST["Prozent_d"];
 
 
 $VotingManager = new VotingManager();

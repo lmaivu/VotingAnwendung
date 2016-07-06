@@ -1,7 +1,5 @@
 
 <?php
-error_reporting(E_ALL);
-
 require_once("../Voting/Voting.php");
 require_once("../Mapper/VotingManager.php");
 include "../inc/head.php";
@@ -191,8 +189,10 @@ if ($Einschreibeschlussel=="$Voting->Einschreibeschlussel") {
 else { ?>
 <div class="Fehlermeldung">
     <?php echo "Falscher Eingabeschlüssel. Bitte versuchen Sie es erneut.<br/>"; ?>
-    <a href="Schluesselabfrage_form.php"> Zurück </a> <?php } ?>
-</div>
+    <a href="Schluesselabfrage_form.php"> Zurück </a>
+    </div>
+<?php } ?>
+
 
 
 </body>

@@ -1,9 +1,9 @@
 <?php
 
 if (isset ($_COOKIE["$Voting->Voting_ID"])) {
-    $voted = True; }
+    $cookie = 1; }
 else {
-    $voted = False;
+    $cookie = 0;
     setcookie ("$Voting->Voting_ID", "Student", time()+31536000); }
 
 ?>

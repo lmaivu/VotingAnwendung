@@ -72,7 +72,6 @@ require_once ("../Vorlesung/Vorlesung.php");
     <h2>Erstellen Sie hier Frage und Antworten!</h2>
 
     <p>Formulieren Sie eine Frage und die möglichen Antworten.<br>
-    Wählen Sie anschließend aus, ob die jeweilige Antwort richtig oder falsch ist.<br>
     Geben Sie bitte mindestens zwei Antwortmöglichkeiten an.
     </p>
 

@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html>
 
+<style type="text/css">
+    <!--
+
+    .vote {
+        cursor: pointer;
+        font: 15px Verdana,sans-serif;
+        color: white;
+        background-color: #8e7059;
+        border-color: white;
+        width: 50px;
+        padding: 2px;
+        line-height: 130%;
+        position: center;
+    }
+
+    -->
+</style>
 <?php
 require_once "../Mapper/VotingManager.php";
 require_once "../Voting/Voting.php";
@@ -107,6 +124,26 @@ cutoutPercentage: 0
 </script>
 </div>
 
+<br>
+<div class="form-group">
+
+    <div class="col-sm-offset-2 col-sm-2">
+        <input class="vote" type="submit" value="A" > <?php echo "$Voting->Antwort_A";?>
+    </div>
+    <div class="col-sm-2">
+        <input class="vote" type="submit" value="B" > <?php echo "$Voting->Antwort_B";?>
+    </div>
+    <div class="col-sm-2">
+        <input class="vote" type="submit" value="C" > <?php echo "$Voting->Antwort_C";?>
+    </div>
+    <div class="col-sm-2">
+        <input class="vote" type="submit" value="D" > <?php echo "$Voting->Antwort_D";?>
+    </div>
+    <div class= "col-sm-offset-2 offset-sm-2"></div>
+</div>
+
+<br>
+<br>
 
 <?php
 //Prozentsatz in DB speichern und ausgeben

@@ -44,7 +44,7 @@ if ($neuesErgebnis == 1) {
 <?php }
 
 else {
-    echo "Das Voting wurde bereits beendet.";
+    echo "Das Voting wurde noch nicht aktiviert oder bereits beendet.";
 }?>
 </div>
 
